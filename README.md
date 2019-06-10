@@ -12,12 +12,14 @@ This project is an example of using RPyC to make measurements in Python by calli
 3. Python modules
   *  RPyC
   *  pythonnet: provides clr (Common Language Runtime)
+4. Launce the server by running RFmxService.py
 
 ## Client
 1. Python interpreter
   * The example was tested and developed using python 3.6
 2. Python modules
   * RPyC
+3. Run the examples in the client folder.
 
 # Hardware Setup
 * All hardware is to be installed on the server.

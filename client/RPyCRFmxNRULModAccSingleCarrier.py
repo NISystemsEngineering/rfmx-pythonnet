@@ -1,4 +1,4 @@
-
+# DEMO EXAMPLE: Client side execution of RFmx NR on a remote server
 from pathlib import Path, PureWindowsPath
 import rpyc
 
@@ -7,7 +7,7 @@ hostName = 'NI-RFSE'                # Name or IP address of the RPyC server
 hostPort = 18861                    # Port number of the RPyC server
 generatorResourceName = '5840'      # Resource name of the Generator on the Host
 analyzerResourceName = '5840'       # Resource name of the Analyzer on the Host
-waveformFolder = Path('../waveforms')          # Example: waveformFolder = "c:/niremote/waveforms" , '.' denotes same directory as this .py file, if running on the server
+waveformFolder = Path('../waveforms') # Example: waveformFolder = "c:/niremote/waveforms" , '.' denotes same directory as this .py file, if running on the server
 waveformFileName = 'nr100.tdms'     # Name of the .tdms waveform to play
                                     # Note that in this example all of the waveforms are on the server and need to be pathed as such
 
@@ -118,9 +118,11 @@ print("done")
 # Measurement configuration
 print("Configuring analyzer..", end = '')
 
+# Get NR Handle
 nr = InstrMX.RFmxNRMXExtension.GetNRSignalConfiguration(instrSession)
-
 instrSession.ConfigureFrequencyReference("", frequencyReferenceSource, frequencyReferenceFrequency)
+
+# Configure the NR Measurement
 nr.SetSelectedPorts("", selectedPorts)
 nr.ConfigureRF("", centerFrequency, referenceLevel, externalAttenuation)
 nr.ConfigureDigitalEdgeTrigger("", digitalEdgeSource, digitalEdge, triggerDelay, enableTrigger)
@@ -170,10 +172,8 @@ print("done")
 
 # Initiate and fetch results
 print("Initiating and fetching results..", end = '')
-
 rfsgSession.Initiate()
 nr.Initiate("", "")
-
 instrSession.WaitForAcquisitionComplete(10)
 rfsgSession.Abort()
 

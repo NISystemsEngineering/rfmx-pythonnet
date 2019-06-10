@@ -91,6 +91,15 @@ def init_NRMx():
     except: print("NR not available.")
     return NRMX
 
+def init_WlanMx():
+    WlanMX = None
+    try:
+        clr.AddReference("NationalInstruments.RFmx.WlanMX.Fx40")
+        import NationalInstruments.RFmx.WlanMX as WlanMX
+        print("Wlan Initialized")
+    except: print("NR not available.")
+    return WlanMX
+
 # Run the initializations
 # Names must match the esposed properties in the RFmxService
 ModularInstruments = init_ModularInstruments()
@@ -100,6 +109,7 @@ InstrMX = init_InstrMx()
 SpecAnMX = init_SpecAnMx()
 LteMX = init_LteMx()
 NRMX = init_NRMx()
+WlanMX = init_WlanMx()
 
 # create RFmxServer service that inherits from rpyc.Service
 
@@ -118,6 +128,7 @@ class RFmxService(rpyc.Service):
     exposed_SpecAnMX = SpecAnMX
     exposed_LteMX = LteMX
     exposed_NRMX = NRMX
+    exposed_WlanMX = WlanMX
 
     # this function helps keep a global reference to an open RFmx session on the server
     def RFmxRemoteInstrMX(self, resourceName, optionString):
