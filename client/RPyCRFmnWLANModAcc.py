@@ -195,4 +195,4 @@ print("")
 
 #Close instrument session
 instrSession.Close()
-
+rfsgSession.Close()
