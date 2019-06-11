@@ -215,3 +215,4 @@ print("Component Carrier Quadrature Error Mean (deg)  : {0}".format(componentCar
 
 #Close instrument session
 instrSession.Close()
+rfsgSession.Close()
