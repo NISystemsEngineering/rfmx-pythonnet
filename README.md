@@ -1,29 +1,63 @@
 # Introduction
-This project is an example of using RPyC to make measurements in Python by calling into an RPyC server hosting NI software such as RFmx and RFSG.
+This project is an example of using RPyC to make measurements in Python by calling into an RPyC server hosting NI software such as NI-RFmx and NI-RFSG.
 
 # Software
 ## Server
 1. NI Software
-  * RFmx and personalities 3.0 or newer. The Wireless Test Suite installer 2019.01 contains all of these.
-  * RFSA 18.2.1
-  * RFSG 18.2.1
-2. Python interpreter.
+  * NI-RFmx and personalities 3.0 or newer. The [Wireless Test Suite](https://www.ni.com/en-us/support/downloads/software-products/download.rfmx-cellular-bundle.html) installer 2019.01 contains all of these.
+  * RFSA 18.2.1 or greater
+  * RFSG 18.2.1 or greater
+2. Python interpreter
   * The example was tested and developed using python 3.6
 3. Python modules
   *  RPyC
   *  pythonnet: provides clr (Common Language Runtime)
-4. Launce the server by running RFmxService.py
+4. Launch the server by running RFmxService.py
 
 ## Client
 1. Python interpreter
   * The example was tested and developed using python 3.6
 2. Python modules
   * RPyC
-3. Run the examples in the client folder.
+3. Run the examples in the client folder
 
 # Hardware Setup
 * All hardware is to be installed on the server.
-* The example requires a vector signal generator and a vector signal analyzer.  The example was tested and developed using an NI 5840 VST.
+* The examples require a vector signal generator and a vector signal analyzer.  The examples were tested and developed using an NI 5840 VST.
+
+# Value Statement
+Using Python, we can remotely execute NI instrument drivers running on a Windows system (PXIe controller for example) from a client that supports Python.
+
+![](doc/img/interoperability.png)
+
+# Supported Clients
+  * Windows
+  * Macintosh
+  * Linux
+  * Any others that can run Python and RpyC
+
+# How it Works
+The server script imports the required libraries/modules for communicating with the instrument(s).
+
+![](doc/img/service1.png)
+
+Next, the server script defines the RFmxService class. Instrument drivers are set as properties to expose to the client. Additional helper functions can also be defined.
+
+![](doc/img/service2.png)
+
+Finally, the server script starts a new instance of a multi-threaded server using the RFmxService class definition. The server is ready to accept connection requests from clients.
+
+![](doc/img/service3.png)
+
+Clients start by opening a connection to the server and getting the required instrument driver references. They are then ready to make driver calls. These calls are transported to the server for execution.
+
+![](doc/img/client1.png)
+
+The client can program the instrument(s) just like they would if they were writing the code natively on the server. Remote communication and execution is transparent to the user.
+
+![](doc/img/pythonvsnet.png)
+
+Since the .NET driver is imported into Python, we have full instrument support out of the box for executing test sequences from the client.
 
 # Contribute
 * Do you have some examples to contribute? Let us know!
