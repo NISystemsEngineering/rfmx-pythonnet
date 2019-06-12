@@ -28,7 +28,7 @@ This project is an example of using RPyC to make measurements in Python by calli
 # Value Statement
 Using Python, we can remotely execute NI instrument drivers running on a Windows system (PXIe controller for example) from a client that supports Python.
 
-![](doc/img/interoperability.png)
+![](doc/img/interoperability.PNG)
 
 # Supported Clients
   * Windows
@@ -39,23 +39,23 @@ Using Python, we can remotely execute NI instrument drivers running on a Windows
 # How it Works
 The server script imports the required libraries/modules for communicating with the instrument(s).
 
-![](doc/img/service1.png)
+![](doc/img/service1.PNG)
 
 Next, the server script defines the RFmxService class. Instrument drivers are set as properties to expose to the client. Additional helper functions can also be defined.
 
-![](doc/img/service2.png)
+![](doc/img/service2.PNG)
 
 Finally, the server script starts a new instance of a multi-threaded server using the RFmxService class definition. The server is ready to accept connection requests from clients.
 
-![](doc/img/service3.png)
+![](doc/img/service3.PNG)
 
 Clients start by opening a connection to the server and getting the required instrument driver references. They are then ready to make driver calls. These calls are transported to the server for execution.
 
-![](doc/img/client1.png)
+![](doc/img/client1.PNG)
 
 The client can program the instrument(s) just like they would if they were writing the code natively on the server. Remote communication and execution is transparent to the user.
 
-![](doc/img/pythonvsnet.png)
+![](doc/img/pythonvsnet.PNG)
 
 Since the .NET driver is imported into Python, we have full instrument support out of the box for executing test sequences from the client.
 
