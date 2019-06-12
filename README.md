@@ -1,5 +1,5 @@
 # Introduction
-This project is an example of using RPyC to make measurements in Python by calling into an RPyC server hosting NI software such as NI-RFmx and NI-RFSG.
+This project is an example of using [RPyC](https://rpyc.readthedocs.io/en/latest/) to make measurements in Python by calling into an RPyC server hosting NI software such as NI-RFmx and NI-RFSG.
 
 # Software
 ## Server
@@ -34,7 +34,7 @@ Using Python, we can remotely execute NI instrument drivers running on a Windows
   * Windows
   * Macintosh
   * Linux
-  * Any others that can run Python and RpyC
+  * Any others that can run Python and RPyC
 
 # How it Works
 The server script imports the required libraries/modules for communicating with the instrument(s).
