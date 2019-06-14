@@ -59,5 +59,8 @@ The client can program the instrument(s) just like they would if they were writi
 
 Since the .NET driver is imported into Python, we have full instrument support out of the box for executing test sequences from the client.
 
+# Demo Video 
+A demo video is available on YouTube [here](https://youtu.be/8k9pwcwbPfk).
+
 # Contribute
 * Do you have some examples to contribute? Let us know!
