@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AFF5A39-30D6-46D0-BD28-C82DF8184AD0}</ProjectGuid>
+    <ProjectGuid>{6D31E490-D6BC-4FEF-8CC1-50FEC66FCE15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NationalInstruments.RFToolkits.Interop</RootNamespace>
-    <AssemblyName>NationalInstruments.RFToolkits.Interop.Fx40</AssemblyName>
+    <RootNamespace>NationalInstruments.ModularInstruments.Interop</RootNamespace>
+    <AssemblyName>NationalInstruments.ModularInstruments.Interop.Fx40</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,17 +21,14 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\NationalInstruments.RFToolkits.Interop.Fx40.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -40,8 +37,6 @@
     <Compile Include="niInteropCommon.cs" />
     <Compile Include="niRFSA.cs" />
     <Compile Include="niRFSG.cs" />
-    <Compile Include="niWLANA.cs" />
-    <Compile Include="niWLANG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
