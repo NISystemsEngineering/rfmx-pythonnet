@@ -10,7 +10,7 @@ import os
 
 # Add search paths for .NET assemblies to system path
 sys.path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
-sys.path.append(os.path.abspath(os.path.dirname(__file__) + "\\..\\..\\bin"))
+sys.path.append(os.path.abspath(os.getcwd() + "\\..\\bin"))
 
 # Add in all of the IVI .NET paths for finding additional assemblies
 iviDotNetPath = os.environ["ProgramFiles"] + r"\IVI Foundation\IVI\Microsoft.NET\Framework64"
