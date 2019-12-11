@@ -8,14 +8,11 @@ import clr
 import sys
 import os
 
-programFilesPath64 = os.environ["ProgramFiles"]
-programFilesPath32 = os.environ["ProgramFiles(x86)"]
-
 # Add search path for NI .NET assemblies to system path
-sys.path.append(programFilesPath32 + r'\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current')
+sys.path.append(os.environ["ProgramFiles(x86)"] + r'\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current')
 
 # Add in all of the IVI .NET paths for finding additional assemblies
-iviDotNetPath = programFilesPath64 + r'\IVI Foundation\IVI\Microsoft.NET\Framework64'
+iviDotNetPath = os.environ["ProgramFiles"] + r'\IVI Foundation\IVI\Microsoft.NET\Framework64'
 for x in os.walk(iviDotNetPath):
     sys.path.append(x[0])
 
