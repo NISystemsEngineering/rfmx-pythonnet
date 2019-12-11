@@ -20,38 +20,41 @@ for x in os.walk(iviDotNetPath):
     sys.path.append(x[0])
 
 # This function allows for dynamic importation of modules since some modules may not be installed
-def ImportDotNetModule(assemblyName, namespace):
+def ImportDotNetSubmodule(assemblyName, namespace):
     from System.IO import FileNotFoundException
-    module = None
+    submodule = None
     try:
         clr.AddReference(assemblyName)
-        module = __import__(namespace)
+        submoduleName = namespace.split('.')[-1]
+        exec("import " + namespace + " as " + submoduleName)
+        submodule = eval(submoduleName)
         print(namespace + " imported successfully from " + assemblyName + '.')
     except FileNotFoundException:
         print(assemblyName + " was not found.")
-    except:
+    except Exception as e:
         print("An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
-    return module
+        print(e)
+    return submodule
 
 # Global variables
 instr = None
 
 class RFmxService(rpyc.Service):
     # Import common modules
-    exposed_System = System = ImportDotNetModule("System", "System")
-    exposed_NationalInstruments = ImportDotNetModule("NationalInstruments.Common", "NationalInstruments")
-    exposed_ModularInstruments = ImportDotNetModule("NationalInstruments.ModularInstruments.Common", "NationalInstruments.ModularInstruments")
+    exposed_System = ImportDotNetSubmodule("System", "System")
+    exposed_NationalInstruments = ImportDotNetSubmodule("NationalInstruments.Common", "NationalInstruments")
+    exposed_ModularInstruments = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.Common", "NationalInstruments.ModularInstruments")
 
     # Import generation modules
-    exposed_NIRfsg = ImportDotNetModule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
-    exposed_NIRfsgPlayback = ImportDotNetModule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
+    exposed_NIRfsg = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
+    exposed_NIRfsgPlayback = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
 
     # Import measurement modules
-    exposed_InstrMX = ImportDotNetModule("NationalInstruments.RFmx.InstrMX.Fx40", "NationalInstruments.RFmx.InstrMX")
-    exposed_SpecAnMX = ImportDotNetModule("NationalInstruments.RFmx.SpecAnMX.Fx40", "NationalInstruments.RFmx.SpecAnMX")
-    exposed_LteMX = ImportDotNetModule("NationalInstruments.RFmx.LteMX.Fx40", "NationalInstruments.RFmx.LteMX")
-    exposed_NRMX = ImportDotNetModule("NationalInstruments.RFmx.NRMX.Fx40", "NationalInstruments.RFmx.NRMX")
-    exposed_WlanMX = ImportDotNetModule("NationalInstruments.RFmx.WlanMX.Fx40", "NationalInstruments.RFmx.WlanMX")
+    exposed_InstrMX = ImportDotNetSubmodule("NationalInstruments.RFmx.InstrMX.Fx40", "NationalInstruments.RFmx.InstrMX")
+    exposed_SpecAnMX = ImportDotNetSubmodule("NationalInstruments.RFmx.SpecAnMX.Fx40", "NationalInstruments.RFmx.SpecAnMX")
+    exposed_LteMX = ImportDotNetSubmodule("NationalInstruments.RFmx.LteMX.Fx40", "NationalInstruments.RFmx.LteMX")
+    exposed_NRMX = ImportDotNetSubmodule("NationalInstruments.RFmx.NRMX.Fx40", "NationalInstruments.RFmx.NRMX")
+    exposed_WlanMX = ImportDotNetSubmodule("NationalInstruments.RFmx.WlanMX.Fx40", "NationalInstruments.RFmx.WlanMX")
 
     # This function helps keep a global reference to an open RFmx session on the server
     def GetGlobalInstrMX(self, resourceName, optionString):
@@ -59,22 +62,22 @@ class RFmxService(rpyc.Service):
         if instr is not None and not instr.IsDisposed:
             return instr
         else:
-            instr = InstrMX.RFmxInstrMX(resourceName, optionString)
+            instr = self.exposed_InstrMX.RFmxInstrMX(resourceName, optionString)
             return instr
 
     def ComplexWaveform(self, nettype, param):
-        return NationalInstruments.ComplexWaveform[nettype](param)
+        return self.exposed_NationalInstruments.ComplexWaveform[nettype](param)
 
-    def exec(self, source):
-        exec(source, globals(), locals())
+    def exec(self, expression):
+        exec(expression)
 
     def eval(self, expression):
-        return eval(expression, globals(), locals())
+        return eval(expression)
 
 # start the server
 if __name__ == "__main__":
     port = 18861
-    print("Starting RFmxService on port " + str(port))
+    print("Starting RFmxService on port " + str(port) + '.')
     from rpyc.utils.server import ThreadedServer
     t = ThreadedServer(RFmxService, port = port, protocol_config = {"allow_all_attrs" : True, "allow_setattr": True})
     try:
@@ -82,4 +85,4 @@ if __name__ == "__main__":
     except:
         pass
     t.close()
-    print("RFmxService stopped")
+    print("RFmxService stopped.")
