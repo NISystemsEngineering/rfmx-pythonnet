@@ -47,6 +47,9 @@ class RFmxService(rpyc.Service):
     exposed_NIRfsg = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
     exposed_NIRfsgPlayback = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
 
+    # Import RFSA acquisition modules
+    exposed_NIRfsa = exposed_NIRfsa = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsa.Fx40", "NationalInstruments.ModularInstruments.NIRfsa")
+
     # Import RFmx measurement modules
     exposed_InstrMX = ImportDotNetSubmodule("NationalInstruments.RFmx.InstrMX.Fx40", "NationalInstruments.RFmx.InstrMX")
     exposed_SpecAnMX = ImportDotNetSubmodule("NationalInstruments.RFmx.SpecAnMX.Fx40", "NationalInstruments.RFmx.SpecAnMX")
@@ -55,6 +58,7 @@ class RFmxService(rpyc.Service):
     exposed_WlanMX = ImportDotNetSubmodule("NationalInstruments.RFmx.WlanMX.Fx40", "NationalInstruments.RFmx.WlanMX")
 
     # Import measurement toolkit modules
+    exposed_ModularInstrumentsInterop = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.Interop.Fx40", "NationalInstruments.ModularInstruments.Interop")
     exposed_WlanTK = ImportDotNetSubmodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")
 
     # This function helps keep a global reference to an open RFmx session on the server
