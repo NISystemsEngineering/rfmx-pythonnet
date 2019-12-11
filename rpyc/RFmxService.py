@@ -44,6 +44,10 @@ def init_NiRfsg():
         import NationalInstruments.ModularInstruments.NIRfsg as NIRfsg
         print("NiRfsg Initialized")
     except: print("NiRfsg not available.")
+    
+    NIRfsg.NIRfsg("resource", False, True)
+
+
     return NIRfsg
 
 def init_NiRfsgPlayback():
