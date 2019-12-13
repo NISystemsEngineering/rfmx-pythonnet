@@ -4,9 +4,9 @@ import rpyc
 # # # # # RPyC Configuration # # # # #
 hostName = 'semoore-pxi'                # Name or IP address of the RPyC server
 hostPort = 18861                    # Port number of the RPyC server
-print("Opening connection to RFmxService on " + hostName)
+print("Opening connection to RFmxService on " + hostName + "..", end = '')
 conn = rpyc.connect(hostName, hostPort)
-print("Connection opened successfully")
+print("done")
 
 # Instantiate exported classes from the service
 print("Importing classes from service..", end = '')
@@ -42,22 +42,19 @@ print("done")
 # # # # # Analyzer Configuration # # # # #
 print("Configuring analyzer..", end = '')
 rfsaSession = ModInstInterop.niRFSA(analyzerResourceName, True, False)
-rfsaSession.ConfigureRefClock("OnboardClock", 10e6)
+rfsaSession.ConfigureRefClock("PXI_Clk", 10e6)
 rfsaSession.SetExternalGain(None, -(externalAttenuation))
 rfsaSession.ConfigureReferenceLevel(None, refLevel)
 rfsaSession.ConfigureIQPowerEdgeRefTrigger("0", refLevel - 20.0, ModInstInterop.niRFSAConstants.RisingSlope, 0.0)
-#handles = System.Array.CreateInstance(System.Runtime.InteropServices.HandleRef, 1)
-handles = [rfsaSession.Handle]
-handles = System.Array.CreateInstance(System.Runtime.InteropServices.HandleRef, 1)
-handles[0] = rfsaSession.Handle
-wlana.RFSAConfigureFrequencySingleLO(handles, WlanTK.niWLANAConstants.LOSourceOnboard, System.Runtime.InteropServices.HandleRef(), carrierFrequency, False, False)
+wlana.RFSAConfigureFrequencySingleLO([rfsaSession.Handle], WlanTK.niWLANAConstants.LOSourceOnboard, System.Runtime.InteropServices.HandleRef(), carrierFrequency, False, False)
 print("done")
 
 # # # # # Measure and Print Results # # # # #
 print("Measuring..", end = '')
-wlana.RFSAMIMOMeasure(handles, None, 1, timeout)
+wlana.RFSAMIMOMeasure([rfsaSession.Handle], None, 1, timeout)
 print("done")
 _, rmsEvm = wlana.GetResultOfdmDemodRmsEvm("stream0", 0.0)
-print(rmsEvm)
+print("RMS EVM Mean (dB): {0:.3f}".format(rmsEvm))
 
+# # # # # Clean Up # # # # #
 rfsaSession.Close()
