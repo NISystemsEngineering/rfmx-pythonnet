@@ -3,19 +3,23 @@
 # 2. Import the assembly
 # 3. Expose the assembly via the RFmxService (rpyc)
 
-import rpyc
-import clr
-import sys
+from sys import path
 import os
+import clr
+import rpyc
+from colorama import init, Fore
 
 # Add search paths for .NET assemblies to system path
-sys.path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
-sys.path.append(os.path.abspath(os.getcwd() + "\\..\\bin"))
+path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
+path.append(os.path.abspath(__file__ + "\\..\\..\\bin"))
 
 # Add in all of the IVI .NET paths for finding additional assemblies
 iviDotNetPath = os.environ["ProgramFiles"] + r"\IVI Foundation\IVI\Microsoft.NET\Framework64"
 for x in os.walk(iviDotNetPath):
-    sys.path.append(x[0])
+    path.append(x[0])
+
+# Prepare terminal for colored printing
+init()
 
 # This function allows for dynamic importation of modules since some modules may not be installed
 def ImportDotNetSubmodule(assemblyName, namespace):
@@ -28,10 +32,11 @@ def ImportDotNetSubmodule(assemblyName, namespace):
         submodule = eval(submoduleName)
         print(namespace + " imported successfully from " + assemblyName + '.')
     except FileNotFoundException:
-        print(assemblyName + " was not found.")
+        print(Fore.YELLOW + assemblyName + " was not found." + Fore.RESET)
     except Exception as e:
-        print("An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
+        print(Fore.RED + "An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
         print(e)
+        print(Fore.RESET)
     return submodule
 
 # Global variables
