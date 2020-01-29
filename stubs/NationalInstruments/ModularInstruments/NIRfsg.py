@@ -10,8 +10,10 @@
 
 class NIRfsg(object, IDisposable, IServiceProvider, IIviDriver, ITClockSynchronizableDevice):
     """
-    NIRfsg(resourceName: str, idQuery: bool, reset: bool)
-    NIRfsg(resourceName: str, idQuery: bool, reset: bool, optionString: str)
+    NIRfsg(resourceName: str, idQuery: bool, reset: bool)
+
+    NIRfsg(resourceName: str, idQuery: bool, reset: bool, optionString: str)
+
     NIRfsg(instrumentHandle: IntPtr)
     """
     def Abort(self):
@@ -66,8 +68,10 @@ class NIRfsg(object, IDisposable, IServiceProvider, IIviDriver, ITClockSynchroni
     @staticmethod # known case of __new__
     def __new__(self, *__args):
         """
-        __new__(cls: type, resourceName: str, idQuery: bool, reset: bool)
-        __new__(cls: type, resourceName: str, idQuery: bool, reset: bool, optionString: str)
+        __new__(cls: type, resourceName: str, idQuery: bool, reset: bool)
+
+        __new__(cls: type, resourceName: str, idQuery: bool, reset: bool, optionString: str)
+
         __new__(cls: type, instrumentHandle: IntPtr)
         """
         pass
@@ -76,109 +80,151 @@ class NIRfsg(object, IDisposable, IServiceProvider, IIviDriver, ITClockSynchroni
         """ __repr__(self: object) -> str """
         pass
 
-    Arb = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Arb(self: NIRfsg) -> RfsgArb
-
+    Arb = property(lambda self: RfsgArb(), lambda self, v: None, lambda self: None)  # default
+    """Get: Arb(self: NIRfsg) -> RfsgArb
+
+
+
 """
 
-    ArbSampleClock = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ArbSampleClock(self: NIRfsg) -> RfsgArbSampleClock
-
+    ArbSampleClock = property(lambda self: RfsgArbSampleClock(), lambda self, v: None, lambda self: None)  # default
+    """Get: ArbSampleClock(self: NIRfsg) -> RfsgArbSampleClock
+
+
+
 """
 
-    BasicConfigurationList = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: BasicConfigurationList(self: NIRfsg) -> RfsgBasicConfigurationList
-
+    BasicConfigurationList = property(lambda self: RfsgBasicConfigurationList(), lambda self, v: None, lambda self: None)  # default
+    """Get: BasicConfigurationList(self: NIRfsg) -> RfsgBasicConfigurationList
+
+
+
 """
 
-    Calibration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Calibration(self: NIRfsg) -> RfsgCalibration
-
+    Calibration = property(lambda self: RfsgCalibration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Calibration(self: NIRfsg) -> RfsgCalibration
+
+
+
 """
 
-    Deembedding = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Deembedding(self: NIRfsg) -> RfsgDeembedding
-
+    Deembedding = property(lambda self: RfsgDeembedding(), lambda self, v: None, lambda self: None)  # default
+    """Get: Deembedding(self: NIRfsg) -> RfsgDeembedding
+
+
+
 """
 
-    DeviceCharacteristics = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeviceCharacteristics(self: NIRfsg) -> RfsgDeviceCharacteristics
-
+    DeviceCharacteristics = property(lambda self: RfsgDeviceCharacteristics(), lambda self, v: None, lambda self: None)  # default
+    """Get: DeviceCharacteristics(self: NIRfsg) -> RfsgDeviceCharacteristics
+
+
+
 """
 
-    DeviceEvents = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeviceEvents(self: NIRfsg) -> RfsgDeviceEvents
-
+    DeviceEvents = property(lambda self: RfsgDeviceEvents(), lambda self, v: None, lambda self: None)  # default
+    """Get: DeviceEvents(self: NIRfsg) -> RfsgDeviceEvents
+
+
+
 """
 
-    DriverIdentity = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DriverIdentity(self: NIRfsg) -> RfsgDriverIdentity
-
+    DriverIdentity = property(lambda self: RfsgDriverIdentity(), lambda self, v: None, lambda self: None)  # default
+    """Get: DriverIdentity(self: NIRfsg) -> RfsgDriverIdentity
+
+
+
 """
 
-    DriverOperation = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DriverOperation(self: NIRfsg) -> RfsgDriverOperation
-
+    DriverOperation = property(lambda self: RfsgDriverOperation(), lambda self, v: None, lambda self: None)  # default
+    """Get: DriverOperation(self: NIRfsg) -> RfsgDriverOperation
+
+
+
 """
 
-    DriverUtility = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DriverUtility(self: NIRfsg) -> RfsgDriverUtility
-
+    DriverUtility = property(lambda self: RfsgDriverUtility(), lambda self, v: None, lambda self: None)  # default
+    """Get: DriverUtility(self: NIRfsg) -> RfsgDriverUtility
+
+
+
 """
 
-    ErrorInfoUtility = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ErrorInfoUtility(self: NIRfsg) -> RfsgErrorInfoUtility
-
+    ErrorInfoUtility = property(lambda self: RfsgErrorInfoUtility(), lambda self, v: None, lambda self: None)  # default
+    """Get: ErrorInfoUtility(self: NIRfsg) -> RfsgErrorInfoUtility
+
+
+
 """
 
-    FrequencyReference = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencyReference(self: NIRfsg) -> RfsgFrequencyReference
-
+    FrequencyReference = property(lambda self: RfsgFrequencyReference(), lambda self, v: None, lambda self: None)  # default
+    """Get: FrequencyReference(self: NIRfsg) -> RfsgFrequencyReference
+
+
+
 """
 
-    Identity = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Identity(self: NIRfsg) -> RfsgDriverIdentity
-
+    Identity = property(lambda self: RfsgDriverIdentity(), lambda self, v: None, lambda self: None)  # default
+    """Get: Identity(self: NIRfsg) -> RfsgDriverIdentity
+
+
+
 """
 
-    IQImpairments = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IQImpairments(self: NIRfsg) -> RfsgIQImpairment
-
+    IQImpairments = property(lambda self: RfsgIQImpairment(), lambda self, v: None, lambda self: None)  # default
+    """Get: IQImpairments(self: NIRfsg) -> RfsgIQImpairment
+
+
+
 """
 
-    IQOutPort = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IQOutPort(self: NIRfsg) -> RfsgIQOutPort
-
+    IQOutPort = property(lambda self: RfsgIQOutPort(), lambda self, v: None, lambda self: None)  # default
+    """Get: IQOutPort(self: NIRfsg) -> RfsgIQOutPort
+
+
+
 """
 
     IsDisposed = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsDisposed(self: NIRfsg) -> bool
-
+    """Get: IsDisposed(self: NIRfsg) -> bool
+
+
+
 """
 
-    Modulation = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Modulation(self: NIRfsg) -> RfsgModulation
-
+    Modulation = property(lambda self: RfsgModulation(), lambda self, v: None, lambda self: None)  # default
+    """Get: Modulation(self: NIRfsg) -> RfsgModulation
+
+
+
 """
 
-    RF = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RF(self: NIRfsg) -> RfsgRF
-
+    RF = property(lambda self: RfsgRF(), lambda self, v: None, lambda self: None)  # default
+    """Get: RF(self: NIRfsg) -> RfsgRF
+
+
+
 """
 
-    SignalPath = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalPath(self: NIRfsg) -> RfsgSignalPath
-
+    SignalPath = property(lambda self: RfsgSignalPath(), lambda self, v: None, lambda self: None)  # default
+    """Get: SignalPath(self: NIRfsg) -> RfsgSignalPath
+
+
+
 """
 
-    Triggers = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Triggers(self: NIRfsg) -> RfsgTriggers
-
+    Triggers = property(lambda self: RfsgTriggers(), lambda self, v: None, lambda self: None)  # default
+    """Get: Triggers(self: NIRfsg) -> RfsgTriggers
+
+
+
 """
 
-    Utility = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Utility(self: NIRfsg) -> RfsgDriverUtility
-
+    Utility = property(lambda self: RfsgDriverUtility(), lambda self, v: None, lambda self: None)  # default
+    """Get: Utility(self: NIRfsg) -> RfsgDriverUtility
+
+
+
 """
 
 
@@ -269,69 +315,102 @@ class RfsgSubObject(object):
 class RfsgAnalogModulation(RfsgSubObject):
     # no doc
     AMSensitivity = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AMSensitivity(self: RfsgAnalogModulation) -> float
-
-Set: AMSensitivity(self: RfsgAnalogModulation) = value
+    """Get: AMSensitivity(self: RfsgAnalogModulation) -> float
+
+
+
+Set: AMSensitivity(self: RfsgAnalogModulation) = value
+
 """
 
     FMBand = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FMBand(self: RfsgAnalogModulation) -> RfsgAnalogModulationFMBand
-
-Set: FMBand(self: RfsgAnalogModulation) = value
+    """Get: FMBand(self: RfsgAnalogModulation) -> RfsgAnalogModulationFMBand
+
+
+
+Set: FMBand(self: RfsgAnalogModulation) = value
+
 """
 
     FMDeviation = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FMDeviation(self: RfsgAnalogModulation) -> float
-
-Set: FMDeviation(self: RfsgAnalogModulation) = value
+    """Get: FMDeviation(self: RfsgAnalogModulation) -> float
+
+
+
+Set: FMDeviation(self: RfsgAnalogModulation) = value
+
 """
 
     FMNarrowbandIntegrator = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FMNarrowbandIntegrator(self: RfsgAnalogModulation) -> RfsgAnalogModulationFMNarrowbandIntegrator
-
-Set: FMNarrowbandIntegrator(self: RfsgAnalogModulation) = value
+    """Get: FMNarrowbandIntegrator(self: RfsgAnalogModulation) -> RfsgAnalogModulationFMNarrowbandIntegrator
+
+
+
+Set: FMNarrowbandIntegrator(self: RfsgAnalogModulation) = value
+
 """
 
     FMSensitivity = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FMSensitivity(self: RfsgAnalogModulation) -> float
-
-Set: FMSensitivity(self: RfsgAnalogModulation) = value
+    """Get: FMSensitivity(self: RfsgAnalogModulation) -> float
+
+
+
+Set: FMSensitivity(self: RfsgAnalogModulation) = value
+
 """
 
     ModulationType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ModulationType(self: RfsgAnalogModulation) -> RfsgAnalogModulationType
-
-Set: ModulationType(self: RfsgAnalogModulation) = value
+    """Get: ModulationType(self: RfsgAnalogModulation) -> RfsgAnalogModulationType
+
+
+
+Set: ModulationType(self: RfsgAnalogModulation) = value
+
 """
 
     PMDeviation = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PMDeviation(self: RfsgAnalogModulation) -> float
-
-Set: PMDeviation(self: RfsgAnalogModulation) = value
+    """Get: PMDeviation(self: RfsgAnalogModulation) -> float
+
+
+
+Set: PMDeviation(self: RfsgAnalogModulation) = value
+
 """
 
     PMMode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PMMode(self: RfsgAnalogModulation) -> RfsgAnalogModulationPMMode
-
-Set: PMMode(self: RfsgAnalogModulation) = value
+    """Get: PMMode(self: RfsgAnalogModulation) -> RfsgAnalogModulationPMMode
+
+
+
+Set: PMMode(self: RfsgAnalogModulation) = value
+
 """
 
     PMSensitivity = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PMSensitivity(self: RfsgAnalogModulation) -> float
-
-Set: PMSensitivity(self: RfsgAnalogModulation) = value
+    """Get: PMSensitivity(self: RfsgAnalogModulation) -> float
+
+
+
+Set: PMSensitivity(self: RfsgAnalogModulation) = value
+
 """
 
     WaveformFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformFrequency(self: RfsgAnalogModulation) -> float
-
-Set: WaveformFrequency(self: RfsgAnalogModulation) = value
+    """Get: WaveformFrequency(self: RfsgAnalogModulation) -> float
+
+
+
+Set: WaveformFrequency(self: RfsgAnalogModulation) = value
+
 """
 
     WaveformType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformType(self: RfsgAnalogModulation) -> RfsgAnalogModulationWaveformType
-
-Set: WaveformType(self: RfsgAnalogModulation) = value
+    """Get: WaveformType(self: RfsgAnalogModulation) -> RfsgAnalogModulationWaveformType
+
+
+
+Set: WaveformType(self: RfsgAnalogModulation) = value
+
 """
 
 
@@ -567,153 +646,225 @@ class RfsgArb(RfsgSubObject):
         pass
 
     AbsoluteDelay = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AbsoluteDelay(self: RfsgArb) -> float
-
-Set: AbsoluteDelay(self: RfsgArb) = value
+    """Get: AbsoluteDelay(self: RfsgArb) -> float
+
+
+
+Set: AbsoluteDelay(self: RfsgArb) = value
+
 """
 
     CarrierFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: CarrierFrequency(self: RfsgArb) -> float
-
-Set: CarrierFrequency(self: RfsgArb) = value
+    """Get: CarrierFrequency(self: RfsgArb) -> float
+
+
+
+Set: CarrierFrequency(self: RfsgArb) = value
+
 """
 
     DataTransfer = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DataTransfer(self: RfsgArb) -> RfsgDataTransfer
-
+    """Get: DataTransfer(self: RfsgArb) -> RfsgDataTransfer
+
+
+
 """
 
     DeviceInstantaneousBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeviceInstantaneousBandwidth(self: RfsgArb) -> float
-
-Set: DeviceInstantaneousBandwidth(self: RfsgArb) = value
+    """Get: DeviceInstantaneousBandwidth(self: RfsgArb) -> float
+
+
+
+Set: DeviceInstantaneousBandwidth(self: RfsgArb) = value
+
 """
 
     DigitalEqualizationEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalEqualizationEnabled(self: RfsgArb) -> bool
-
-Set: DigitalEqualizationEnabled(self: RfsgArb) = value
+    """Get: DigitalEqualizationEnabled(self: RfsgArb) -> bool
+
+
+
+Set: DigitalEqualizationEnabled(self: RfsgArb) = value
+
 """
 
     DigitalGain = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalGain(self: RfsgArb) -> float
-
-Set: DigitalGain(self: RfsgArb) = value
+    """Get: DigitalGain(self: RfsgArb) -> float
+
+
+
+Set: DigitalGain(self: RfsgArb) = value
+
 """
 
     DigitalPatternEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalPatternEnabled(self: RfsgArb) -> bool
-
-Set: DigitalPatternEnabled(self: RfsgArb) = value
+    """Get: DigitalPatternEnabled(self: RfsgArb) -> bool
+
+
+
+Set: DigitalPatternEnabled(self: RfsgArb) = value
+
 """
 
     GenerationMode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: GenerationMode(self: RfsgArb) -> RfsgWaveformGenerationMode
-
-Set: GenerationMode(self: RfsgArb) = value
+    """Get: GenerationMode(self: RfsgArb) -> RfsgWaveformGenerationMode
+
+
+
+Set: GenerationMode(self: RfsgArb) = value
+
 """
 
     InterpolationDelay = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InterpolationDelay(self: RfsgArb) -> float
-
-Set: InterpolationDelay(self: RfsgArb) = value
+    """Get: InterpolationDelay(self: RfsgArb) -> float
+
+
+
+Set: InterpolationDelay(self: RfsgArb) = value
+
 """
 
     IQRate = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IQRate(self: RfsgArb) -> float
-
-Set: IQRate(self: RfsgArb) = value
+    """Get: IQRate(self: RfsgArb) -> float
+
+
+
+Set: IQRate(self: RfsgArb) = value
+
 """
 
     IQSwapEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IQSwapEnabled(self: RfsgArb) -> bool
-
-Set: IQSwapEnabled(self: RfsgArb) = value
+    """Get: IQSwapEnabled(self: RfsgArb) -> bool
+
+
+
+Set: IQSwapEnabled(self: RfsgArb) = value
+
 """
 
     IsWaveformRepeatCountFinite = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsWaveformRepeatCountFinite(self: RfsgArb) -> bool
-
-Set: IsWaveformRepeatCountFinite(self: RfsgArb) = value
+    """Get: IsWaveformRepeatCountFinite(self: RfsgArb) -> bool
+
+
+
+Set: IsWaveformRepeatCountFinite(self: RfsgArb) = value
+
 """
 
     MemorySize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: MemorySize(self: RfsgArb) -> Int64
-
+    """Get: MemorySize(self: RfsgArb) -> Int64
+
+
+
 """
 
     OutputPort = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OutputPort(self: RfsgArb) -> RfsgOutputPort
-
-Set: OutputPort(self: RfsgArb) = value
+    """Get: OutputPort(self: RfsgArb) -> RfsgOutputPort
+
+
+
+Set: OutputPort(self: RfsgArb) = value
+
 """
 
     OverflowErrorReporting = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OverflowErrorReporting(self: RfsgArb) -> RfsgOverflowErrorReporting
-
-Set: OverflowErrorReporting(self: RfsgArb) = value
+    """Get: OverflowErrorReporting(self: RfsgArb) -> RfsgOverflowErrorReporting
+
+
+
+Set: OverflowErrorReporting(self: RfsgArb) = value
+
 """
 
     PhaseContinuityEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PhaseContinuityEnabled(self: RfsgArb) -> RfsgPhaseContinuityEnabled
-
-Set: PhaseContinuityEnabled(self: RfsgArb) = value
+    """Get: PhaseContinuityEnabled(self: RfsgArb) -> RfsgPhaseContinuityEnabled
+
+
+
+Set: PhaseContinuityEnabled(self: RfsgArb) = value
+
 """
 
     Power = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Power(self: RfsgArb) -> float
-
+    """Get: Power(self: RfsgArb) -> float
+
+
+
 """
 
     PreFilterGain = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PreFilterGain(self: RfsgArb) -> float
-
-Set: PreFilterGain(self: RfsgArb) = value
+    """Get: PreFilterGain(self: RfsgArb) -> float
+
+
+
+Set: PreFilterGain(self: RfsgArb) = value
+
 """
 
     PulseShaping = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PulseShaping(self: RfsgArb) -> RfsgPulseShaping
-
+    """Get: PulseShaping(self: RfsgArb) -> RfsgPulseShaping
+
+
+
 """
 
     RelativeDelay = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RelativeDelay(self: RfsgArb) -> float
-
-Set: RelativeDelay(self: RfsgArb) = value
+    """Get: RelativeDelay(self: RfsgArb) -> float
+
+
+
+Set: RelativeDelay(self: RfsgArb) = value
+
 """
 
     Scripting = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Scripting(self: RfsgArb) -> RfsgScripting
-
+    """Get: Scripting(self: RfsgArb) -> RfsgScripting
+
+
+
 """
 
     SelectedWaveform = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SelectedWaveform(self: RfsgArb) -> str
-
-Set: SelectedWaveform(self: RfsgArb) = value
+    """Get: SelectedWaveform(self: RfsgArb) -> str
+
+
+
+Set: SelectedWaveform(self: RfsgArb) = value
+
 """
 
     SignalBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalBandwidth(self: RfsgArb) -> float
-
-Set: SignalBandwidth(self: RfsgArb) = value
+    """Get: SignalBandwidth(self: RfsgArb) -> float
+
+
+
+Set: SignalBandwidth(self: RfsgArb) = value
+
 """
 
     WaveformCapabilities = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformCapabilities(self: RfsgArb) -> RfsgWaveformCapabilities
-
+    """Get: WaveformCapabilities(self: RfsgArb) -> RfsgWaveformCapabilities
+
+
+
 """
 
     WaveformRepeatCount = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformRepeatCount(self: RfsgArb) -> int
-
-Set: WaveformRepeatCount(self: RfsgArb) = value
+    """Get: WaveformRepeatCount(self: RfsgArb) -> int
+
+
+
+Set: WaveformRepeatCount(self: RfsgArb) = value
+
 """
 
     WaveformSoftwareScalingFactor = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformSoftwareScalingFactor(self: RfsgArb) -> float
-
-Set: WaveformSoftwareScalingFactor(self: RfsgArb) = value
+    """Get: WaveformSoftwareScalingFactor(self: RfsgArb) -> float
+
+
+
+Set: WaveformSoftwareScalingFactor(self: RfsgArb) = value
+
 """
 
 
@@ -721,31 +872,44 @@ Set: WaveformSoftwareScalingFactor(self: RfsgArb) = value
 class RfsgArbSampleClock(RfsgSubObject):
     # no doc
     OnboardClockMode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OnboardClockMode(self: RfsgArbSampleClock) -> RfsgOnboardSampleClockMode
-
-Set: OnboardClockMode(self: RfsgArbSampleClock) = value
+    """Get: OnboardClockMode(self: RfsgArbSampleClock) -> RfsgOnboardSampleClockMode
+
+
+
+Set: OnboardClockMode(self: RfsgArbSampleClock) = value
+
 """
 
     OscillatorPhaseDacValue = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OscillatorPhaseDacValue(self: RfsgArbSampleClock) -> int
-
-Set: OscillatorPhaseDacValue(self: RfsgArbSampleClock) = value
+    """Get: OscillatorPhaseDacValue(self: RfsgArbSampleClock) -> int
+
+
+
+Set: OscillatorPhaseDacValue(self: RfsgArbSampleClock) = value
+
 """
 
     Rate = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Rate(self: RfsgArbSampleClock) -> float
-
+    """Get: Rate(self: RfsgArbSampleClock) -> float
+
+
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgArbSampleClock) -> RfsgArbSampleClockSource
-
-Set: Source(self: RfsgArbSampleClock) = value
+    """Get: Source(self: RfsgArbSampleClock) -> RfsgArbSampleClockSource
+
+
+
+Set: Source(self: RfsgArbSampleClock) = value
+
 """
 
     Synchronized = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Synchronized(self: RfsgArbSampleClock) -> RfsgSynchronizedSampleClock
-
+    """Get: Synchronized(self: RfsgArbSampleClock) -> RfsgSynchronizedSampleClock
+
+
+
 """
 
 
@@ -754,7 +918,8 @@ class RfsgArbSampleClockSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgArbSampleClockSource, obj: object) -> bool
+        Equals(self: RfsgArbSampleClockSource, obj: object) -> bool
+
         Equals(self: RfsgArbSampleClockSource, source: RfsgArbSampleClockSource) -> bool
         """
         pass
@@ -882,31 +1047,44 @@ class RfsgBasicConfigurationList(RfsgSubObject):
         pass
 
     ActiveList = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ActiveList(self: RfsgBasicConfigurationList) -> str
-
-Set: ActiveList(self: RfsgBasicConfigurationList) = value
+    """Get: ActiveList(self: RfsgBasicConfigurationList) -> str
+
+
+
+Set: ActiveList(self: RfsgBasicConfigurationList) = value
+
 """
 
     ActiveStep = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ActiveStep(self: RfsgBasicConfigurationList) -> Int64
-
-Set: ActiveStep(self: RfsgBasicConfigurationList) = value
+    """Get: ActiveStep(self: RfsgBasicConfigurationList) -> Int64
+
+
+
+Set: ActiveStep(self: RfsgBasicConfigurationList) = value
+
 """
 
     IsDone = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsDone(self: RfsgBasicConfigurationList) -> bool
-
+    """Get: IsDone(self: RfsgBasicConfigurationList) -> bool
+
+
+
 """
 
     Repeat = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Repeat(self: RfsgBasicConfigurationList) -> RfsgBasicConfigurationListRepeat
-
-Set: Repeat(self: RfsgBasicConfigurationList) = value
+    """Get: Repeat(self: RfsgBasicConfigurationList) -> RfsgBasicConfigurationListRepeat
+
+
+
+Set: Repeat(self: RfsgBasicConfigurationList) = value
+
 """
 
     StepInProgress = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: StepInProgress(self: RfsgBasicConfigurationList) -> Int64
-
+    """Get: StepInProgress(self: RfsgBasicConfigurationList) -> Int64
+
+
+
 """
 
 
@@ -954,8 +1132,10 @@ class RfsgBasicConfigurationListRepeat(Enum, IComparable, IFormattable, IConvert
 class RfsgCalibration(RfsgSubObject):
     # no doc
     Self = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Self(self: RfsgCalibration) -> RfsgSelfCalibration
-
+    """Get: Self(self: RfsgCalibration) -> RfsgSelfCalibration
+
+
+
 """
 
 
@@ -987,15 +1167,21 @@ class RfsgChannelBasedDeembedding(RfsgSubObject):
         pass
 
     DeembeddingSelectedTable = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeembeddingSelectedTable(self: RfsgChannelBasedDeembedding) -> str
-
-Set: DeembeddingSelectedTable(self: RfsgChannelBasedDeembedding) = value
+    """Get: DeembeddingSelectedTable(self: RfsgChannelBasedDeembedding) -> str
+
+
+
+Set: DeembeddingSelectedTable(self: RfsgChannelBasedDeembedding) = value
+
 """
 
     DeembeddingType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeembeddingType(self: RfsgChannelBasedDeembedding) -> RfsgDeembeddingType
-
-Set: DeembeddingType(self: RfsgChannelBasedDeembedding) = value
+    """Get: DeembeddingType(self: RfsgChannelBasedDeembedding) -> RfsgDeembeddingType
+
+
+
+Set: DeembeddingType(self: RfsgChannelBasedDeembedding) = value
+
 """
 
 
@@ -1003,8 +1189,10 @@ Set: DeembeddingType(self: RfsgChannelBasedDeembedding) = value
 class RfsgChannelBasedDeviceCharacteristics(RfsgSubObject):
     # no doc
     DeviceTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeviceTemperature(self: RfsgChannelBasedDeviceCharacteristics) -> float
-
+    """Get: DeviceTemperature(self: RfsgChannelBasedDeviceCharacteristics) -> float
+
+
+
 """
 
 
@@ -1012,33 +1200,48 @@ class RfsgChannelBasedDeviceCharacteristics(RfsgSubObject):
 class RfsgChannelBasedIQOutPort(RfsgSubObject):
     # no doc
     CommonModeOffset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: CommonModeOffset(self: RfsgChannelBasedIQOutPort) -> float
-
-Set: CommonModeOffset(self: RfsgChannelBasedIQOutPort) = value
+    """Get: CommonModeOffset(self: RfsgChannelBasedIQOutPort) -> float
+
+
+
+Set: CommonModeOffset(self: RfsgChannelBasedIQOutPort) = value
+
 """
 
     Level = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Level(self: RfsgChannelBasedIQOutPort) -> float
-
-Set: Level(self: RfsgChannelBasedIQOutPort) = value
+    """Get: Level(self: RfsgChannelBasedIQOutPort) -> float
+
+
+
+Set: Level(self: RfsgChannelBasedIQOutPort) = value
+
 """
 
     LoadImpedance = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LoadImpedance(self: RfsgChannelBasedIQOutPort) -> float
-
-Set: LoadImpedance(self: RfsgChannelBasedIQOutPort) = value
+    """Get: LoadImpedance(self: RfsgChannelBasedIQOutPort) -> float
+
+
+
+Set: LoadImpedance(self: RfsgChannelBasedIQOutPort) = value
+
 """
 
     Offset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Offset(self: RfsgChannelBasedIQOutPort) -> float
-
-Set: Offset(self: RfsgChannelBasedIQOutPort) = value
+    """Get: Offset(self: RfsgChannelBasedIQOutPort) -> float
+
+
+
+Set: Offset(self: RfsgChannelBasedIQOutPort) = value
+
 """
 
     TerminalConfiguration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalConfiguration(self: RfsgChannelBasedIQOutPort) -> RfsgTerminalConfiguration
-
-Set: TerminalConfiguration(self: RfsgChannelBasedIQOutPort) = value
+    """Get: TerminalConfiguration(self: RfsgChannelBasedIQOutPort) -> RfsgTerminalConfiguration
+
+
+
+Set: TerminalConfiguration(self: RfsgChannelBasedIQOutPort) = value
+
 """
 
 
@@ -1046,45 +1249,66 @@ Set: TerminalConfiguration(self: RfsgChannelBasedIQOutPort) = value
 class RfsgChannelBasedLO(RfsgSubObject):
     # no doc
     LOFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOFrequency(self: RfsgChannelBasedLO) -> float
-
-Set: LOFrequency(self: RfsgChannelBasedLO) = value
+    """Get: LOFrequency(self: RfsgChannelBasedLO) -> float
+
+
+
+Set: LOFrequency(self: RfsgChannelBasedLO) = value
+
 """
 
     LOInPower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOInPower(self: RfsgChannelBasedLO) -> float
-
-Set: LOInPower(self: RfsgChannelBasedLO) = value
+    """Get: LOInPower(self: RfsgChannelBasedLO) -> float
+
+
+
+Set: LOInPower(self: RfsgChannelBasedLO) = value
+
 """
 
     LoopBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LoopBandwidth(self: RfsgChannelBasedLO) -> RfsgLoopBandwidth
-
-Set: LoopBandwidth(self: RfsgChannelBasedLO) = value
+    """Get: LoopBandwidth(self: RfsgChannelBasedLO) -> RfsgLoopBandwidth
+
+
+
+Set: LoopBandwidth(self: RfsgChannelBasedLO) = value
+
 """
 
     LOOutEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOOutEnabled(self: RfsgChannelBasedLO) -> bool
-
-Set: LOOutEnabled(self: RfsgChannelBasedLO) = value
+    """Get: LOOutEnabled(self: RfsgChannelBasedLO) -> bool
+
+
+
+Set: LOOutEnabled(self: RfsgChannelBasedLO) = value
+
 """
 
     LOOutPower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOOutPower(self: RfsgChannelBasedLO) -> float
-
-Set: LOOutPower(self: RfsgChannelBasedLO) = value
+    """Get: LOOutPower(self: RfsgChannelBasedLO) -> float
+
+
+
+Set: LOOutPower(self: RfsgChannelBasedLO) = value
+
 """
 
     PllFractionalModeEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PllFractionalModeEnabled(self: RfsgChannelBasedLO) -> RfsgLOPllFractionalModeEnabled
-
-Set: PllFractionalModeEnabled(self: RfsgChannelBasedLO) = value
+    """Get: PllFractionalModeEnabled(self: RfsgChannelBasedLO) -> RfsgLOPllFractionalModeEnabled
+
+
+
+Set: PllFractionalModeEnabled(self: RfsgChannelBasedLO) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgChannelBasedLO) -> RfsgLocalOscillatorSource
-
-Set: Source(self: RfsgChannelBasedLO) = value
+    """Get: Source(self: RfsgChannelBasedLO) -> RfsgLocalOscillatorSource
+
+
+
+Set: Source(self: RfsgChannelBasedLO) = value
+
 """
 
 
@@ -1156,25 +1380,35 @@ class RfsgConfigurationListStepTrigger(RfsgSubObject):
         pass
 
     DigitalEdge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalEdge(self: RfsgConfigurationListStepTrigger) -> RfsgDigitalEdgeConfigurationListStepTrigger
-
+    """Get: DigitalEdge(self: RfsgConfigurationListStepTrigger) -> RfsgDigitalEdgeConfigurationListStepTrigger
+
+
+
 """
 
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgConfigurationListStepTrigger) -> RfsgConfigurationListStepTriggerExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgConfigurationListStepTrigger) = value
+    """Get: ExportedOutputTerminal(self: RfsgConfigurationListStepTrigger) -> RfsgConfigurationListStepTriggerExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgConfigurationListStepTrigger) = value
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgConfigurationListStepTrigger) -> str
-
+    """Get: TerminalName(self: RfsgConfigurationListStepTrigger) -> str
+
+
+
 """
 
     TriggerType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TriggerType(self: RfsgConfigurationListStepTrigger) -> RfsgConfigurationListStepTriggerType
-
-Set: TriggerType(self: RfsgConfigurationListStepTrigger) = value
+    """Get: TriggerType(self: RfsgConfigurationListStepTrigger) -> RfsgConfigurationListStepTriggerType
+
+
+
+Set: TriggerType(self: RfsgConfigurationListStepTrigger) = value
+
 """
 
 
@@ -1183,7 +1417,8 @@ class RfsgConfigurationListStepTriggerExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgConfigurationListStepTriggerExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgConfigurationListStepTriggerExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgConfigurationListStepTriggerExportedOutputTerminal, outputTerminal: RfsgConfigurationListStepTriggerExportedOutputTerminal) -> bool
         """
         pass
@@ -1264,14 +1499,19 @@ class RfsgConfigurationListStepTriggerType(Enum, IComparable, IFormattable, ICon
 class RfsgConfigurationSettledEvent(RfsgSubObject):
     # no doc
     OutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OutputTerminal(self: RfsgConfigurationSettledEvent) -> RfsgConfigurationSettledEventExportedOutputTerminal
-
-Set: OutputTerminal(self: RfsgConfigurationSettledEvent) = value
+    """Get: OutputTerminal(self: RfsgConfigurationSettledEvent) -> RfsgConfigurationSettledEventExportedOutputTerminal
+
+
+
+Set: OutputTerminal(self: RfsgConfigurationSettledEvent) = value
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgConfigurationSettledEvent) -> str
-
+    """Get: TerminalName(self: RfsgConfigurationSettledEvent) -> str
+
+
+
 """
 
 
@@ -1280,7 +1520,8 @@ class RfsgConfigurationSettledEventExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgConfigurationSettledEventExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgConfigurationSettledEventExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgConfigurationSettledEventExportedOutputTerminal, outputTerminal: RfsgConfigurationSettledEventExportedOutputTerminal) -> bool
         """
         pass
@@ -1320,36 +1561,51 @@ class RfsgConfigurationSettledEventExportedOutputTerminal(object):
 class RfsgDataTransfer(RfsgSubObject):
     # no doc
     Advanced = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Advanced(self: RfsgDataTransfer) -> RfsgDataTransferAdvanced
-
+    """Get: Advanced(self: RfsgDataTransfer) -> RfsgDataTransferAdvanced
+
+
+
 """
 
     BlockSize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: BlockSize(self: RfsgDataTransfer) -> int
-
-Set: BlockSize(self: RfsgDataTransfer) = value
+    """Get: BlockSize(self: RfsgDataTransfer) -> int
+
+
+
+Set: BlockSize(self: RfsgDataTransfer) = value
+
 """
 
     DirectDma = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DirectDma(self: RfsgDataTransfer) -> RfsgDirectDma
-
+    """Get: DirectDma(self: RfsgDataTransfer) -> RfsgDirectDma
+
+
+
 """
 
     DirectDownloadEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DirectDownloadEnabled(self: RfsgDataTransfer) -> bool
-
-Set: DirectDownloadEnabled(self: RfsgDataTransfer) = value
+    """Get: DirectDownloadEnabled(self: RfsgDataTransfer) -> bool
+
+
+
+Set: DirectDownloadEnabled(self: RfsgDataTransfer) = value
+
 """
 
     MaximumBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: MaximumBandwidth(self: RfsgDataTransfer) -> float
-
-Set: MaximumBandwidth(self: RfsgDataTransfer) = value
+    """Get: MaximumBandwidth(self: RfsgDataTransfer) -> float
+
+
+
+Set: MaximumBandwidth(self: RfsgDataTransfer) = value
+
 """
 
     Streaming = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Streaming(self: RfsgDataTransfer) -> RfsgStreaming
-
+    """Get: Streaming(self: RfsgDataTransfer) -> RfsgStreaming
+
+
+
 """
 
 
@@ -1357,15 +1613,21 @@ Set: MaximumBandwidth(self: RfsgDataTransfer) = value
 class RfsgDataTransferAdvanced(RfsgSubObject):
     # no doc
     MaximumInFlightReadRequests = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: MaximumInFlightReadRequests(self: RfsgDataTransferAdvanced) -> int
-
-Set: MaximumInFlightReadRequests(self: RfsgDataTransferAdvanced) = value
+    """Get: MaximumInFlightReadRequests(self: RfsgDataTransferAdvanced) -> int
+
+
+
+Set: MaximumInFlightReadRequests(self: RfsgDataTransferAdvanced) = value
+
 """
 
     PreferredPacketSize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PreferredPacketSize(self: RfsgDataTransferAdvanced) -> int
-
-Set: PreferredPacketSize(self: RfsgDataTransferAdvanced) = value
+    """Get: PreferredPacketSize(self: RfsgDataTransferAdvanced) -> int
+
+
+
+Set: PreferredPacketSize(self: RfsgDataTransferAdvanced) = value
+
 """
 
 
@@ -1409,15 +1671,21 @@ class RfsgDeembedding(RfsgSubObject):
         pass
 
     DeembeddingSelectedTable = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeembeddingSelectedTable(self: RfsgDeembedding) -> str
-
-Set: DeembeddingSelectedTable(self: RfsgDeembedding) = value
+    """Get: DeembeddingSelectedTable(self: RfsgDeembedding) -> str
+
+
+
+Set: DeembeddingSelectedTable(self: RfsgDeembedding) = value
+
 """
 
     DeembeddingType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeembeddingType(self: RfsgDeembedding) -> RfsgDeembeddingType
-
-Set: DeembeddingType(self: RfsgDeembedding) = value
+    """Get: DeembeddingType(self: RfsgDeembedding) -> RfsgDeembeddingType
+
+
+
+Set: DeembeddingType(self: RfsgDeembedding) = value
+
 """
 
 
@@ -1470,64 +1738,89 @@ class RfsgDeviceCharacteristics(RfsgSubObject):
         pass
 
     AETemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AETemperature(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: AETemperature(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     AwgTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AwgTemperature(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: AwgTemperature(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     DeviceTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DeviceTemperature(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: DeviceTemperature(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     FpgaBitfilePath = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FpgaBitfilePath(self: RfsgDeviceCharacteristics) -> str
-
+    """Get: FpgaBitfilePath(self: RfsgDeviceCharacteristics) -> str
+
+
+
 """
 
     FpgaTargetName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FpgaTargetName(self: RfsgDeviceCharacteristics) -> str
-
+    """Get: FpgaTargetName(self: RfsgDeviceCharacteristics) -> str
+
+
+
 """
 
     FpgaTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FpgaTemperature(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: FpgaTemperature(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     LOTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOTemperature(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: LOTemperature(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     ModulePowerConsumption = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ModulePowerConsumption(self: RfsgDeviceCharacteristics) -> float
-
+    """Get: ModulePowerConsumption(self: RfsgDeviceCharacteristics) -> float
+
+
+
 """
 
     ModuleRevision = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ModuleRevision(self: RfsgDeviceCharacteristics) -> str
-
+    """Get: ModuleRevision(self: RfsgDeviceCharacteristics) -> str
+
+
+
 """
 
     Option = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Option(self: RfsgDeviceCharacteristics) -> RfsgDeviceCharactersticsOptions
-
+    """Get: Option(self: RfsgDeviceCharacteristics) -> RfsgDeviceCharactersticsOptions
+
+
+
 """
 
     SerialNumber = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SerialNumber(self: RfsgDeviceCharacteristics) -> str
-
+    """Get: SerialNumber(self: RfsgDeviceCharacteristics) -> str
+
+
+
 """
 
     TemperatureReadInterval = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TemperatureReadInterval(self: RfsgDeviceCharacteristics) -> float
-
-Set: TemperatureReadInterval(self: RfsgDeviceCharacteristics) = value
+    """Get: TemperatureReadInterval(self: RfsgDeviceCharacteristics) -> float
+
+
+
+Set: TemperatureReadInterval(self: RfsgDeviceCharacteristics) = value
+
 """
 
 
@@ -1535,8 +1828,10 @@ Set: TemperatureReadInterval(self: RfsgDeviceCharacteristics) = value
 class RfsgDeviceCharactersticsOptions(RfsgSubObject):
     # no doc
     FastTuningOption = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FastTuningOption(self: RfsgDeviceCharactersticsOptions) -> bool
-
+    """Get: FastTuningOption(self: RfsgDeviceCharactersticsOptions) -> bool
+
+
+
 """
 
 
@@ -1544,34 +1839,47 @@ class RfsgDeviceCharactersticsOptions(RfsgSubObject):
 class RfsgDeviceEvents(RfsgSubObject):
     # no doc
     ConfigurationSettledEvent = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ConfigurationSettledEvent(self: RfsgDeviceEvents) -> RfsgConfigurationSettledEvent
-
+    """Get: ConfigurationSettledEvent(self: RfsgDeviceEvents) -> RfsgConfigurationSettledEvent
+
+
+
 """
 
     Delay = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Delay(self: RfsgDeviceEvents) -> float
-
-Set: Delay(self: RfsgDeviceEvents) = value
+    """Get: Delay(self: RfsgDeviceEvents) -> float
+
+
+
+Set: Delay(self: RfsgDeviceEvents) = value
+
 """
 
     DoneEvent = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DoneEvent(self: RfsgDeviceEvents) -> RfsgDoneEvent
-
+    """Get: DoneEvent(self: RfsgDeviceEvents) -> RfsgDoneEvent
+
+
+
 """
 
     MarkerEvents = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: MarkerEvents(self: RfsgDeviceEvents) -> RfsgMarkerEventCollection
-
+    """Get: MarkerEvents(self: RfsgDeviceEvents) -> RfsgMarkerEventCollection
+
+
+
 """
 
     StartedEvent = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: StartedEvent(self: RfsgDeviceEvents) -> RfsgStartedEvent
-
+    """Get: StartedEvent(self: RfsgDeviceEvents) -> RfsgStartedEvent
+
+
+
 """
 
     Timer = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Timer(self: RfsgDeviceEvents) -> RfsgTimerEvent
-
+    """Get: Timer(self: RfsgDeviceEvents) -> RfsgTimerEvent
+
+
+
 """
 
 
@@ -1624,15 +1932,21 @@ class RfsgDigitalEdgeConfigurationListStepTrigger(RfsgSubObject):
         pass
 
     Edge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Edge(self: RfsgDigitalEdgeConfigurationListStepTrigger) -> RfsgTriggerEdge
-
-Set: Edge(self: RfsgDigitalEdgeConfigurationListStepTrigger) = value
+    """Get: Edge(self: RfsgDigitalEdgeConfigurationListStepTrigger) -> RfsgTriggerEdge
+
+
+
+Set: Edge(self: RfsgDigitalEdgeConfigurationListStepTrigger) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgDigitalEdgeConfigurationListStepTrigger) -> RfsgDigitalEdgeConfigurationListStepTriggerSource
-
-Set: Source(self: RfsgDigitalEdgeConfigurationListStepTrigger) = value
+    """Get: Source(self: RfsgDigitalEdgeConfigurationListStepTrigger) -> RfsgDigitalEdgeConfigurationListStepTriggerSource
+
+
+
+Set: Source(self: RfsgDigitalEdgeConfigurationListStepTrigger) = value
+
 """
 
 
@@ -1641,7 +1955,8 @@ class RfsgDigitalEdgeConfigurationListStepTriggerSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgDigitalEdgeConfigurationListStepTriggerSource, obj: object) -> bool
+        Equals(self: RfsgDigitalEdgeConfigurationListStepTriggerSource, obj: object) -> bool
+
         Equals(self: RfsgDigitalEdgeConfigurationListStepTriggerSource, source: RfsgDigitalEdgeConfigurationListStepTriggerSource) -> bool
         """
         pass
@@ -1692,15 +2007,21 @@ class RfsgDigitalEdgeScriptTrigger(RfsgSubObject):
         pass
 
     Edge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Edge(self: RfsgDigitalEdgeScriptTrigger) -> RfsgTriggerEdge
-
-Set: Edge(self: RfsgDigitalEdgeScriptTrigger) = value
+    """Get: Edge(self: RfsgDigitalEdgeScriptTrigger) -> RfsgTriggerEdge
+
+
+
+Set: Edge(self: RfsgDigitalEdgeScriptTrigger) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgDigitalEdgeScriptTrigger) -> RfsgDigitalEdgeScriptTriggerSource
-
-Set: Source(self: RfsgDigitalEdgeScriptTrigger) = value
+    """Get: Source(self: RfsgDigitalEdgeScriptTrigger) -> RfsgDigitalEdgeScriptTriggerSource
+
+
+
+Set: Source(self: RfsgDigitalEdgeScriptTrigger) = value
+
 """
 
 
@@ -1709,7 +2030,8 @@ class RfsgDigitalEdgeScriptTriggerSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgDigitalEdgeScriptTriggerSource, obj: object) -> bool
+        Equals(self: RfsgDigitalEdgeScriptTriggerSource, obj: object) -> bool
+
         Equals(self: RfsgDigitalEdgeScriptTriggerSource, source: RfsgDigitalEdgeScriptTriggerSource) -> bool
         """
         pass
@@ -1757,15 +2079,21 @@ class RfsgDigitalEdgeStartTrigger(RfsgSubObject):
         pass
 
     Edge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Edge(self: RfsgDigitalEdgeStartTrigger) -> RfsgTriggerEdge
-
-Set: Edge(self: RfsgDigitalEdgeStartTrigger) = value
+    """Get: Edge(self: RfsgDigitalEdgeStartTrigger) -> RfsgTriggerEdge
+
+
+
+Set: Edge(self: RfsgDigitalEdgeStartTrigger) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgDigitalEdgeStartTrigger) -> RfsgDigitalEdgeStartTriggerSource
-
-Set: Source(self: RfsgDigitalEdgeStartTrigger) = value
+    """Get: Source(self: RfsgDigitalEdgeStartTrigger) -> RfsgDigitalEdgeStartTriggerSource
+
+
+
+Set: Source(self: RfsgDigitalEdgeStartTrigger) = value
+
 """
 
 
@@ -1774,7 +2102,8 @@ class RfsgDigitalEdgeStartTriggerSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgDigitalEdgeStartTriggerSource, obj: object) -> bool
+        Equals(self: RfsgDigitalEdgeStartTriggerSource, obj: object) -> bool
+
         Equals(self: RfsgDigitalEdgeStartTriggerSource, source: RfsgDigitalEdgeStartTriggerSource) -> bool
         """
         pass
@@ -1824,15 +2153,21 @@ class RfsgDigitalLevelScriptTrigger(RfsgSubObject):
         pass
 
     Level = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Level(self: RfsgDigitalLevelScriptTrigger) -> RfsgTriggerLevel
-
-Set: Level(self: RfsgDigitalLevelScriptTrigger) = value
+    """Get: Level(self: RfsgDigitalLevelScriptTrigger) -> RfsgTriggerLevel
+
+
+
+Set: Level(self: RfsgDigitalLevelScriptTrigger) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgDigitalLevelScriptTrigger) -> RfsgDigitalLevelScriptTriggerSource
-
-Set: Source(self: RfsgDigitalLevelScriptTrigger) = value
+    """Get: Source(self: RfsgDigitalLevelScriptTrigger) -> RfsgDigitalLevelScriptTriggerSource
+
+
+
+Set: Source(self: RfsgDigitalLevelScriptTrigger) = value
+
 """
 
 
@@ -1841,7 +2176,8 @@ class RfsgDigitalLevelScriptTriggerSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgDigitalLevelScriptTriggerSource, obj: object) -> bool
+        Equals(self: RfsgDigitalLevelScriptTriggerSource, obj: object) -> bool
+
         Equals(self: RfsgDigitalLevelScriptTriggerSource, source: RfsgDigitalLevelScriptTriggerSource) -> bool
         """
         pass
@@ -1890,39 +2226,57 @@ class RfsgDigitalModulation(RfsgSubObject):
         pass
 
     FskDeviation = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FskDeviation(self: RfsgDigitalModulation) -> float
-
-Set: FskDeviation(self: RfsgDigitalModulation) = value
+    """Get: FskDeviation(self: RfsgDigitalModulation) -> float
+
+
+
+Set: FskDeviation(self: RfsgDigitalModulation) = value
+
 """
 
     ModulationType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ModulationType(self: RfsgDigitalModulation) -> RfsgDigitalModulationType
-
-Set: ModulationType(self: RfsgDigitalModulation) = value
+    """Get: ModulationType(self: RfsgDigitalModulation) -> RfsgDigitalModulationType
+
+
+
+Set: ModulationType(self: RfsgDigitalModulation) = value
+
 """
 
     PrbsOrder = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PrbsOrder(self: RfsgDigitalModulation) -> int
-
-Set: PrbsOrder(self: RfsgDigitalModulation) = value
+    """Get: PrbsOrder(self: RfsgDigitalModulation) -> int
+
+
+
+Set: PrbsOrder(self: RfsgDigitalModulation) = value
+
 """
 
     PrbsSeed = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PrbsSeed(self: RfsgDigitalModulation) -> int
-
-Set: PrbsSeed(self: RfsgDigitalModulation) = value
+    """Get: PrbsSeed(self: RfsgDigitalModulation) -> int
+
+
+
+Set: PrbsSeed(self: RfsgDigitalModulation) = value
+
 """
 
     SymbolRate = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SymbolRate(self: RfsgDigitalModulation) -> float
-
-Set: SymbolRate(self: RfsgDigitalModulation) = value
+    """Get: SymbolRate(self: RfsgDigitalModulation) -> float
+
+
+
+Set: SymbolRate(self: RfsgDigitalModulation) = value
+
 """
 
     WaveformType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformType(self: RfsgDigitalModulation) -> RfsgDigitalModulationWaveformType
-
-Set: WaveformType(self: RfsgDigitalModulation) = value
+    """Get: WaveformType(self: RfsgDigitalModulation) -> RfsgDigitalModulationWaveformType
+
+
+
+Set: WaveformType(self: RfsgDigitalModulation) = value
+
 """
 
 
@@ -2012,21 +2366,30 @@ class RfsgDigitalModulationWaveformType(Enum, IComparable, IFormattable, IConver
 class RfsgDirectDma(RfsgSubObject):
     # no doc
     Enabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Enabled(self: RfsgDirectDma) -> bool
-
-Set: Enabled(self: RfsgDirectDma) = value
+    """Get: Enabled(self: RfsgDirectDma) -> bool
+
+
+
+Set: Enabled(self: RfsgDirectDma) = value
+
 """
 
     WindowAddress = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WindowAddress(self: RfsgDirectDma) -> int
-
-Set: WindowAddress(self: RfsgDirectDma) = value
+    """Get: WindowAddress(self: RfsgDirectDma) -> int
+
+
+
+Set: WindowAddress(self: RfsgDirectDma) = value
+
 """
 
     WindowSize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WindowSize(self: RfsgDirectDma) -> int
-
-Set: WindowSize(self: RfsgDirectDma) = value
+    """Get: WindowSize(self: RfsgDirectDma) -> int
+
+
+
+Set: WindowSize(self: RfsgDirectDma) = value
+
 """
 
 
@@ -2034,14 +2397,19 @@ Set: WindowSize(self: RfsgDirectDma) = value
 class RfsgDoneEvent(RfsgSubObject):
     # no doc
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgDoneEvent) -> RfsgDoneEventExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgDoneEvent) = value
+    """Get: ExportedOutputTerminal(self: RfsgDoneEvent) -> RfsgDoneEventExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgDoneEvent) = value
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgDoneEvent) -> str
-
+    """Get: TerminalName(self: RfsgDoneEvent) -> str
+
+
+
 """
 
 
@@ -2050,7 +2418,8 @@ class RfsgDoneEventExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgDoneEventExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgDoneEventExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgDoneEventExportedOutputTerminal, outputTerminal: RfsgDoneEventExportedOutputTerminal) -> bool
         """
         pass
@@ -2109,58 +2478,80 @@ class RfsgDriverIdentity(RfsgSubObject, IIviDriverIdentity, IIviComponentIdentit
         pass
 
     Description = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Description(self: RfsgDriverIdentity) -> str
-
+    """Get: Description(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     Identifier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Identifier(self: RfsgDriverIdentity) -> str
-
+    """Get: Identifier(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     InstrumentFirmwareRevision = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InstrumentFirmwareRevision(self: RfsgDriverIdentity) -> str
-
+    """Get: InstrumentFirmwareRevision(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     InstrumentManufacturer = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InstrumentManufacturer(self: RfsgDriverIdentity) -> str
-
+    """Get: InstrumentManufacturer(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     InstrumentModel = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InstrumentModel(self: RfsgDriverIdentity) -> str
-
+    """Get: InstrumentModel(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     Revision = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Revision(self: RfsgDriverIdentity) -> str
-
+    """Get: Revision(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
     SpecificationMajorVersion = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SpecificationMajorVersion(self: RfsgDriverIdentity) -> int
-
+    """Get: SpecificationMajorVersion(self: RfsgDriverIdentity) -> int
+
+
+
 """
 
     SpecificationMinorVersion = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SpecificationMinorVersion(self: RfsgDriverIdentity) -> int
-
+    """Get: SpecificationMinorVersion(self: RfsgDriverIdentity) -> int
+
+
+
 """
 
     SpecificDriverMajorVersion = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SpecificDriverMajorVersion(self: RfsgDriverIdentity) -> int
-
+    """Get: SpecificDriverMajorVersion(self: RfsgDriverIdentity) -> int
+
+
+
 """
 
     SpecificDriverMinorVersion = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SpecificDriverMinorVersion(self: RfsgDriverIdentity) -> int
-
+    """Get: SpecificDriverMinorVersion(self: RfsgDriverIdentity) -> int
+
+
+
 """
 
     Vendor = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Vendor(self: RfsgDriverIdentity) -> str
-
+    """Get: Vendor(self: RfsgDriverIdentity) -> str
+
+
+
 """
 
 
@@ -2204,60 +2595,87 @@ class RfsgDriverOperation(RfsgSubObject, IIviDriverOperation, IDisposable, ISupp
         pass
 
     Cache = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Cache(self: RfsgDriverOperation) -> bool
-
-Set: Cache(self: RfsgDriverOperation) = value
+    """Get: Cache(self: RfsgDriverOperation) -> bool
+
+
+
+Set: Cache(self: RfsgDriverOperation) = value
+
 """
 
     DriverSetup = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DriverSetup(self: RfsgDriverOperation) -> str
-
+    """Get: DriverSetup(self: RfsgDriverOperation) -> str
+
+
+
 """
 
     InterchangeCheck = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InterchangeCheck(self: RfsgDriverOperation) -> bool
-
-Set: InterchangeCheck(self: RfsgDriverOperation) = value
+    """Get: InterchangeCheck(self: RfsgDriverOperation) -> bool
+
+
+
+Set: InterchangeCheck(self: RfsgDriverOperation) = value
+
 """
 
     IOResourceDescriptor = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IOResourceDescriptor(self: RfsgDriverOperation) -> str
-
+    """Get: IOResourceDescriptor(self: RfsgDriverOperation) -> str
+
+
+
 """
 
     LogicalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LogicalName(self: RfsgDriverOperation) -> str
-
+    """Get: LogicalName(self: RfsgDriverOperation) -> str
+
+
+
 """
 
     QueryInstrumentStatus = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: QueryInstrumentStatus(self: RfsgDriverOperation) -> bool
-
-Set: QueryInstrumentStatus(self: RfsgDriverOperation) = value
+    """Get: QueryInstrumentStatus(self: RfsgDriverOperation) -> bool
+
+
+
+Set: QueryInstrumentStatus(self: RfsgDriverOperation) = value
+
 """
 
     RangeCheck = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RangeCheck(self: RfsgDriverOperation) -> bool
-
-Set: RangeCheck(self: RfsgDriverOperation) = value
+    """Get: RangeCheck(self: RfsgDriverOperation) -> bool
+
+
+
+Set: RangeCheck(self: RfsgDriverOperation) = value
+
 """
 
     RecordCoercions = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RecordCoercions(self: RfsgDriverOperation) -> bool
-
-Set: RecordCoercions(self: RfsgDriverOperation) = value
+    """Get: RecordCoercions(self: RfsgDriverOperation) -> bool
+
+
+
+Set: RecordCoercions(self: RfsgDriverOperation) = value
+
 """
 
     Simulate = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Simulate(self: RfsgDriverOperation) -> bool
-
-Set: Simulate(self: RfsgDriverOperation) = value
+    """Get: Simulate(self: RfsgDriverOperation) -> bool
+
+
+
+Set: Simulate(self: RfsgDriverOperation) = value
+
 """
 
     SynchronizeCallbacks = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SynchronizeCallbacks(self: RfsgDriverOperation) -> bool
-
-Set: SynchronizeCallbacks(self: RfsgDriverOperation) = value
+    """Get: SynchronizeCallbacks(self: RfsgDriverOperation) -> bool
+
+
+
+Set: SynchronizeCallbacks(self: RfsgDriverOperation) = value
+
 """
 
 
@@ -2280,7 +2698,8 @@ class RfsgDriverUtility(RfsgSubObject, IIviDriverUtility):
 
     def Lock(self, maxTime=None):
         """
-        Lock(self: RfsgDriverUtility) -> RfsgDriverLock
+        Lock(self: RfsgDriverUtility) -> RfsgDriverLock
+
         Lock(self: RfsgDriverUtility, maxTime: PrecisionTimeSpan) -> RfsgDriverLock
         """
         pass
@@ -2369,7 +2788,8 @@ class RfsgErrorQueryResult(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgErrorQueryResult, obj: object) -> bool
+        Equals(self: RfsgErrorQueryResult, obj: object) -> bool
+
         Equals(self: RfsgErrorQueryResult, result: RfsgErrorQueryResult) -> bool
         """
         pass
@@ -2386,13 +2806,17 @@ class RfsgErrorQueryResult(object):
         pass
 
     ErrorCode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ErrorCode(self: RfsgErrorQueryResult) -> int
-
+    """Get: ErrorCode(self: RfsgErrorQueryResult) -> int
+
+
+
 """
 
     ErrorMessage = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ErrorMessage(self: RfsgErrorQueryResult) -> str
-
+    """Get: ErrorMessage(self: RfsgErrorQueryResult) -> str
+
+
+
 """
 
 
@@ -2445,27 +2869,39 @@ class RfsgFrequencyReference(RfsgSubObject):
         pass
 
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgFrequencyReference) = value
+    """Get: ExportedOutputTerminal(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgFrequencyReference) = value
+
 """
 
     PxiChassisClock10Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PxiChassisClock10Source(self: RfsgFrequencyReference) -> RfsgPxiChassisClock10Source
-
-Set: PxiChassisClock10Source(self: RfsgFrequencyReference) = value
+    """Get: PxiChassisClock10Source(self: RfsgFrequencyReference) -> RfsgPxiChassisClock10Source
+
+
+
+Set: PxiChassisClock10Source(self: RfsgFrequencyReference) = value
+
 """
 
     Rate = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Rate(self: RfsgFrequencyReference) -> float
-
-Set: Rate(self: RfsgFrequencyReference) = value
+    """Get: Rate(self: RfsgFrequencyReference) -> float
+
+
+
+Set: Rate(self: RfsgFrequencyReference) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceSource
-
-Set: Source(self: RfsgFrequencyReference) = value
+    """Get: Source(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceSource
+
+
+
+Set: Source(self: RfsgFrequencyReference) = value
+
 """
 
 
@@ -2474,7 +2910,8 @@ class RfsgFrequencyReferenceExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgFrequencyReferenceExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgFrequencyReferenceExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgFrequencyReferenceExportedOutputTerminal, outputTerminal: RfsgFrequencyReferenceExportedOutputTerminal) -> bool
         """
         pass
@@ -2509,7 +2946,8 @@ class RfsgFrequencyReferenceSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgFrequencyReferenceSource, obj: object) -> bool
+        Equals(self: RfsgFrequencyReferenceSource, obj: object) -> bool
+
         Equals(self: RfsgFrequencyReferenceSource, source: RfsgFrequencyReferenceSource) -> bool
         """
         pass
@@ -2583,39 +3021,57 @@ class RfsgGenerationStatus(Enum, IComparable, IFormattable, IConvertible):
 class RfsgIQImpairment(RfsgSubObject):
     # no doc
     Enabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Enabled(self: RfsgIQImpairment) -> bool
-
-Set: Enabled(self: RfsgIQImpairment) = value
+    """Get: Enabled(self: RfsgIQImpairment) -> bool
+
+
+
+Set: Enabled(self: RfsgIQImpairment) = value
+
 """
 
     GainImbalance = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: GainImbalance(self: RfsgIQImpairment) -> float
-
-Set: GainImbalance(self: RfsgIQImpairment) = value
+    """Get: GainImbalance(self: RfsgIQImpairment) -> float
+
+
+
+Set: GainImbalance(self: RfsgIQImpairment) = value
+
 """
 
     IOffset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IOffset(self: RfsgIQImpairment) -> float
-
-Set: IOffset(self: RfsgIQImpairment) = value
+    """Get: IOffset(self: RfsgIQImpairment) -> float
+
+
+
+Set: IOffset(self: RfsgIQImpairment) = value
+
 """
 
     OffsetUnits = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OffsetUnits(self: RfsgIQImpairment) -> RfsgIQOffsetUnits
-
-Set: OffsetUnits(self: RfsgIQImpairment) = value
+    """Get: OffsetUnits(self: RfsgIQImpairment) -> RfsgIQOffsetUnits
+
+
+
+Set: OffsetUnits(self: RfsgIQImpairment) = value
+
 """
 
     QOffset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: QOffset(self: RfsgIQImpairment) -> float
-
-Set: QOffset(self: RfsgIQImpairment) = value
+    """Get: QOffset(self: RfsgIQImpairment) -> float
+
+
+
+Set: QOffset(self: RfsgIQImpairment) = value
+
 """
 
     Skew = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Skew(self: RfsgIQImpairment) -> float
-
-Set: Skew(self: RfsgIQImpairment) = value
+    """Get: Skew(self: RfsgIQImpairment) -> float
+
+
+
+Set: Skew(self: RfsgIQImpairment) = value
+
 """
 
 
@@ -2667,14 +3123,19 @@ class RfsgIQOutPort(RfsgSubObject):
         pass
 
     CarrierFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: CarrierFrequency(self: RfsgIQOutPort) -> float
-
-Set: CarrierFrequency(self: RfsgIQOutPort) = value
+    """Get: CarrierFrequency(self: RfsgIQOutPort) -> float
+
+
+
+Set: CarrierFrequency(self: RfsgIQOutPort) = value
+
 """
 
     Temperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Temperature(self: RfsgIQOutPort) -> float
-
+    """Get: Temperature(self: RfsgIQOutPort) -> float
+
+
+
 """
 
 
@@ -2724,7 +3185,8 @@ class RfsgLocalOscillatorSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgLocalOscillatorSource, obj: object) -> bool
+        Equals(self: RfsgLocalOscillatorSource, obj: object) -> bool
+
         Equals(self: RfsgLocalOscillatorSource, source: RfsgLocalOscillatorSource) -> bool
         """
         pass
@@ -2881,38 +3343,55 @@ class RfsgLOPllFractionalModeEnabled(Enum, IComparable, IFormattable, IConvertib
 class RfsgMarkerEvent(RfsgSubObject):
     # no doc
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgMarkerEvent) -> RfsgMarkerEventExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgMarkerEvent) = value
+    """Get: ExportedOutputTerminal(self: RfsgMarkerEvent) -> RfsgMarkerEventExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgMarkerEvent) = value
+
 """
 
     OutputBehaviour = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OutputBehaviour(self: RfsgMarkerEvent) -> RfsgMarkerEventOutputBehaviour
-
-Set: OutputBehaviour(self: RfsgMarkerEvent) = value
+    """Get: OutputBehaviour(self: RfsgMarkerEvent) -> RfsgMarkerEventOutputBehaviour
+
+
+
+Set: OutputBehaviour(self: RfsgMarkerEvent) = value
+
 """
 
     PulseWidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PulseWidth(self: RfsgMarkerEvent) -> float
-
-Set: PulseWidth(self: RfsgMarkerEvent) = value
+    """Get: PulseWidth(self: RfsgMarkerEvent) -> float
+
+
+
+Set: PulseWidth(self: RfsgMarkerEvent) = value
+
 """
 
     PulseWidthUnits = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PulseWidthUnits(self: RfsgMarkerEvent) -> RfsgMarkerEventPulseWidthUnits
-
-Set: PulseWidthUnits(self: RfsgMarkerEvent) = value
+    """Get: PulseWidthUnits(self: RfsgMarkerEvent) -> RfsgMarkerEventPulseWidthUnits
+
+
+
+Set: PulseWidthUnits(self: RfsgMarkerEvent) = value
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgMarkerEvent) -> str
-
+    """Get: TerminalName(self: RfsgMarkerEvent) -> str
+
+
+
 """
 
     ToggleInitialState = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ToggleInitialState(self: RfsgMarkerEvent) -> RfsgMarkerEventToggleInitialState
-
-Set: ToggleInitialState(self: RfsgMarkerEvent) = value
+    """Get: ToggleInitialState(self: RfsgMarkerEvent) -> RfsgMarkerEventToggleInitialState
+
+
+
+Set: ToggleInitialState(self: RfsgMarkerEvent) = value
+
 """
 
 
@@ -2928,7 +3407,8 @@ class RfsgMarkerEventExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgMarkerEventExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgMarkerEventExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgMarkerEventExportedOutputTerminal, outputTerminal: RfsgMarkerEventExportedOutputTerminal) -> bool
         """
         pass
@@ -3091,13 +3571,17 @@ class RfsgMarkerEventToggleInitialState(Enum, IComparable, IFormattable, IConver
 class RfsgModulation(RfsgSubObject):
     # no doc
     Analog = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Analog(self: RfsgModulation) -> RfsgAnalogModulation
-
+    """Get: Analog(self: RfsgModulation) -> RfsgAnalogModulation
+
+
+
 """
 
     Digital = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Digital(self: RfsgModulation) -> RfsgDigitalModulation
-
+    """Get: Digital(self: RfsgModulation) -> RfsgDigitalModulation
+
+
+
 """
 
 
@@ -3389,21 +3873,30 @@ class RfsgPulseModulationMode(Enum, IComparable, IFormattable, IConvertible):
 class RfsgPulseShaping(RfsgSubObject):
     # no doc
     Filter = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Filter(self: RfsgPulseShaping) -> RfsgFilterType
-
-Set: Filter(self: RfsgPulseShaping) = value
+    """Get: Filter(self: RfsgPulseShaping) -> RfsgFilterType
+
+
+
+Set: Filter(self: RfsgPulseShaping) = value
+
 """
 
     RaisedCosineAlpha = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RaisedCosineAlpha(self: RfsgPulseShaping) -> float
-
-Set: RaisedCosineAlpha(self: RfsgPulseShaping) = value
+    """Get: RaisedCosineAlpha(self: RfsgPulseShaping) -> float
+
+
+
+Set: RaisedCosineAlpha(self: RfsgPulseShaping) = value
+
 """
 
     RootRaisedCosineAlpha = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RootRaisedCosineAlpha(self: RfsgPulseShaping) -> float
-
-Set: RootRaisedCosineAlpha(self: RfsgPulseShaping) = value
+    """Get: RootRaisedCosineAlpha(self: RfsgPulseShaping) -> float
+
+
+
+Set: RootRaisedCosineAlpha(self: RfsgPulseShaping) = value
+
 """
 
 
@@ -3412,7 +3905,8 @@ class RfsgPxiChassisClock10Source(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgPxiChassisClock10Source, obj: object) -> bool
+        Equals(self: RfsgPxiChassisClock10Source, obj: object) -> bool
+
         Equals(self: RfsgPxiChassisClock10Source, source: RfsgPxiChassisClock10Source) -> bool
         """
         pass
@@ -3530,7 +4024,8 @@ class RfsgRevisionQueryResult(object):
     """ RfsgRevisionQueryResult(instrumentRevision: str, firmwareRevision: str) """
     def Equals(self, *__args):
         """
-        Equals(self: RfsgRevisionQueryResult, obj: object) -> bool
+        Equals(self: RfsgRevisionQueryResult, obj: object) -> bool
+
         Equals(self: RfsgRevisionQueryResult, result: RfsgRevisionQueryResult) -> bool
         """
         pass
@@ -3546,7 +4041,8 @@ class RfsgRevisionQueryResult(object):
     @staticmethod # known case of __new__
     def __new__(self, instrumentRevision, firmwareRevision):
         """
-        __new__(cls: type, instrumentRevision: str, firmwareRevision: str)
+        __new__(cls: type, instrumentRevision: str, firmwareRevision: str)
+
         __new__[RfsgRevisionQueryResult]() -> RfsgRevisionQueryResult
         """
         pass
@@ -3555,13 +4051,17 @@ class RfsgRevisionQueryResult(object):
         pass
 
     FirmwareRevision = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FirmwareRevision(self: RfsgRevisionQueryResult) -> str
-
+    """Get: FirmwareRevision(self: RfsgRevisionQueryResult) -> str
+
+
+
 """
 
     InstrumentRevision = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: InstrumentRevision(self: RfsgRevisionQueryResult) -> str
-
+    """Get: InstrumentRevision(self: RfsgRevisionQueryResult) -> str
+
+
+
 """
 
 
@@ -3573,72 +4073,105 @@ class RfsgRF(RfsgSubObject):
         pass
 
     Advanced = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Advanced(self: RfsgRF) -> RfsgRFAdvanced
-
+    """Get: Advanced(self: RfsgRF) -> RfsgRFAdvanced
+
+
+
 """
 
     ExternalGain = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExternalGain(self: RfsgRF) -> float
-
-Set: ExternalGain(self: RfsgRF) = value
+    """Get: ExternalGain(self: RfsgRF) -> float
+
+
+
+Set: ExternalGain(self: RfsgRF) = value
+
 """
 
     Frequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Frequency(self: RfsgRF) -> float
-
-Set: Frequency(self: RfsgRF) = value
+    """Get: Frequency(self: RfsgRF) -> float
+
+
+
+Set: Frequency(self: RfsgRF) = value
+
 """
 
     LocalOscillator = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LocalOscillator(self: RfsgRF) -> RfsgRFLocalOscillator
-
+    """Get: LocalOscillator(self: RfsgRF) -> RfsgRFLocalOscillator
+
+
+
 """
 
     LOOutExportConfigureFromRfsa = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOOutExportConfigureFromRfsa(self: RfsgRF) -> RfsgLOOutExportConfigureFromRfsa
-
-Set: LOOutExportConfigureFromRfsa(self: RfsgRF) = value
+    """Get: LOOutExportConfigureFromRfsa(self: RfsgRF) -> RfsgLOOutExportConfigureFromRfsa
+
+
+
+Set: LOOutExportConfigureFromRfsa(self: RfsgRF) = value
+
 """
 
     OutputEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: OutputEnabled(self: RfsgRF) -> bool
-
-Set: OutputEnabled(self: RfsgRF) = value
+    """Get: OutputEnabled(self: RfsgRF) -> bool
+
+
+
+Set: OutputEnabled(self: RfsgRF) = value
+
 """
 
     PhaseOffset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PhaseOffset(self: RfsgRF) -> float
-
-Set: PhaseOffset(self: RfsgRF) = value
+    """Get: PhaseOffset(self: RfsgRF) -> float
+
+
+
+Set: PhaseOffset(self: RfsgRF) = value
+
 """
 
     PowerLevel = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PowerLevel(self: RfsgRF) -> float
-
-Set: PowerLevel(self: RfsgRF) = value
+    """Get: PowerLevel(self: RfsgRF) -> float
+
+
+
+Set: PowerLevel(self: RfsgRF) = value
+
 """
 
     PowerLevelType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PowerLevelType(self: RfsgRF) -> RfsgRFPowerLevelType
-
-Set: PowerLevelType(self: RfsgRF) = value
+    """Get: PowerLevelType(self: RfsgRF) -> RfsgRFPowerLevelType
+
+
+
+Set: PowerLevelType(self: RfsgRF) = value
+
 """
 
     RFBlankingSource = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RFBlankingSource(self: RfsgRF) -> RfsgRFBlankingSource
-
-Set: RFBlankingSource(self: RfsgRF) = value
+    """Get: RFBlankingSource(self: RfsgRF) -> RfsgRFBlankingSource
+
+
+
+Set: RFBlankingSource(self: RfsgRF) = value
+
 """
 
     RFInLOExportEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: RFInLOExportEnabled(self: RfsgRF) -> RfsgRFInLOExportEnabled
-
-Set: RFInLOExportEnabled(self: RfsgRF) = value
+    """Get: RFInLOExportEnabled(self: RfsgRF) -> RfsgRFInLOExportEnabled
+
+
+
+Set: RFInLOExportEnabled(self: RfsgRF) = value
+
 """
 
     Upconverter = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Upconverter(self: RfsgRF) -> RfsgUpconverter
-
+    """Get: Upconverter(self: RfsgRF) -> RfsgUpconverter
+
+
+
 """
 
 
@@ -3646,140 +4179,208 @@ Set: RFInLOExportEnabled(self: RfsgRF) = value
 class RfsgRFAdvanced(RfsgSubObject):
     # no doc
     AlcControl = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AlcControl(self: RfsgRFAdvanced) -> RfsgAlcControl
-
-Set: AlcControl(self: RfsgRFAdvanced) = value
+    """Get: AlcControl(self: RfsgRFAdvanced) -> RfsgAlcControl
+
+
+
+Set: AlcControl(self: RfsgRFAdvanced) = value
+
 """
 
     AllowOutOfSpecificationUserSettings = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AllowOutOfSpecificationUserSettings(self: RfsgRFAdvanced) -> bool
-
-Set: AllowOutOfSpecificationUserSettings(self: RfsgRFAdvanced) = value
+    """Get: AllowOutOfSpecificationUserSettings(self: RfsgRFAdvanced) -> bool
+
+
+
+Set: AllowOutOfSpecificationUserSettings(self: RfsgRFAdvanced) = value
+
 """
 
     AmplificationPath = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AmplificationPath(self: RfsgRFAdvanced) -> RfsgAmplificationPath
-
-Set: AmplificationPath(self: RfsgRFAdvanced) = value
+    """Get: AmplificationPath(self: RfsgRFAdvanced) -> RfsgAmplificationPath
+
+
+
+Set: AmplificationPath(self: RfsgRFAdvanced) = value
+
 """
 
     AmplitudeSettling = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AmplitudeSettling(self: RfsgRFAdvanced) -> float
-
-Set: AmplitudeSettling(self: RfsgRFAdvanced) = value
+    """Get: AmplitudeSettling(self: RfsgRFAdvanced) -> float
+
+
+
+Set: AmplitudeSettling(self: RfsgRFAdvanced) = value
+
 """
 
     AttenuatorHoldEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AttenuatorHoldEnabled(self: RfsgRFAdvanced) -> bool
-
-Set: AttenuatorHoldEnabled(self: RfsgRFAdvanced) = value
+    """Get: AttenuatorHoldEnabled(self: RfsgRFAdvanced) -> bool
+
+
+
+Set: AttenuatorHoldEnabled(self: RfsgRFAdvanced) = value
+
 """
 
     AttenuatorHoldMaximumPower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AttenuatorHoldMaximumPower(self: RfsgRFAdvanced) -> float
-
-Set: AttenuatorHoldMaximumPower(self: RfsgRFAdvanced) = value
+    """Get: AttenuatorHoldMaximumPower(self: RfsgRFAdvanced) -> float
+
+
+
+Set: AttenuatorHoldMaximumPower(self: RfsgRFAdvanced) = value
+
 """
 
     AttenuatorSetting = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AttenuatorSetting(self: RfsgRFAdvanced) -> float
-
-Set: AttenuatorSetting(self: RfsgRFAdvanced) = value
+    """Get: AttenuatorSetting(self: RfsgRFAdvanced) -> float
+
+
+
+Set: AttenuatorSetting(self: RfsgRFAdvanced) = value
+
 """
 
     AutomaticThermalCorrection = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AutomaticThermalCorrection(self: RfsgRFAdvanced) -> bool
-
-Set: AutomaticThermalCorrection(self: RfsgRFAdvanced) = value
+    """Get: AutomaticThermalCorrection(self: RfsgRFAdvanced) -> bool
+
+
+
+Set: AutomaticThermalCorrection(self: RfsgRFAdvanced) = value
+
 """
 
     AutoPowerSearch = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AutoPowerSearch(self: RfsgRFAdvanced) -> RfsgAutoPowerSearch
-
-Set: AutoPowerSearch(self: RfsgRFAdvanced) = value
+    """Get: AutoPowerSearch(self: RfsgRFAdvanced) -> RfsgAutoPowerSearch
+
+
+
+Set: AutoPowerSearch(self: RfsgRFAdvanced) = value
+
 """
 
     CorrectionTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: CorrectionTemperature(self: RfsgRFAdvanced) -> float
-
-Set: CorrectionTemperature(self: RfsgRFAdvanced) = value
+    """Get: CorrectionTemperature(self: RfsgRFAdvanced) -> float
+
+
+
+Set: CorrectionTemperature(self: RfsgRFAdvanced) = value
+
 """
 
     FrequencySettlingTime = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencySettlingTime(self: RfsgRFAdvanced) -> float
-
-Set: FrequencySettlingTime(self: RfsgRFAdvanced) = value
+    """Get: FrequencySettlingTime(self: RfsgRFAdvanced) -> float
+
+
+
+Set: FrequencySettlingTime(self: RfsgRFAdvanced) = value
+
 """
 
     FrequencySettlingUnits = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencySettlingUnits(self: RfsgRFAdvanced) -> RfsgRFFrequencySettlingUnits
-
-Set: FrequencySettlingUnits(self: RfsgRFAdvanced) = value
+    """Get: FrequencySettlingUnits(self: RfsgRFAdvanced) -> RfsgRFFrequencySettlingUnits
+
+
+
+Set: FrequencySettlingUnits(self: RfsgRFAdvanced) = value
+
 """
 
     FrequencyTolerance = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencyTolerance(self: RfsgRFAdvanced) -> float
-
-Set: FrequencyTolerance(self: RfsgRFAdvanced) = value
+    """Get: FrequencyTolerance(self: RfsgRFAdvanced) -> float
+
+
+
+Set: FrequencyTolerance(self: RfsgRFAdvanced) = value
+
 """
 
     LoopBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LoopBandwidth(self: RfsgRFAdvanced) -> RfsgLoopBandwidth
-
-Set: LoopBandwidth(self: RfsgRFAdvanced) = value
+    """Get: LoopBandwidth(self: RfsgRFAdvanced) -> RfsgLoopBandwidth
+
+
+
+Set: LoopBandwidth(self: RfsgRFAdvanced) = value
+
 """
 
     PeakEnvelopePower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PeakEnvelopePower(self: RfsgRFAdvanced) -> float
-
+    """Get: PeakEnvelopePower(self: RfsgRFAdvanced) -> float
+
+
+
 """
 
     PeakPowerAdjustment = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PeakPowerAdjustment(self: RfsgRFAdvanced) -> float
-
-Set: PeakPowerAdjustment(self: RfsgRFAdvanced) = value
+    """Get: PeakPowerAdjustment(self: RfsgRFAdvanced) -> float
+
+
+
+Set: PeakPowerAdjustment(self: RfsgRFAdvanced) = value
+
 """
 
     PeakPowerAdjustmentInheritance = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PeakPowerAdjustmentInheritance(self: RfsgRFAdvanced) -> RfsgPeakPowerAdjustmentInheritance
-
-Set: PeakPowerAdjustmentInheritance(self: RfsgRFAdvanced) = value
+    """Get: PeakPowerAdjustmentInheritance(self: RfsgRFAdvanced) -> RfsgPeakPowerAdjustmentInheritance
+
+
+
+Set: PeakPowerAdjustmentInheritance(self: RfsgRFAdvanced) = value
+
 """
 
     PulseModulationEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PulseModulationEnabled(self: RfsgRFAdvanced) -> bool
-
-Set: PulseModulationEnabled(self: RfsgRFAdvanced) = value
+    """Get: PulseModulationEnabled(self: RfsgRFAdvanced) -> bool
+
+
+
+Set: PulseModulationEnabled(self: RfsgRFAdvanced) = value
+
 """
 
     PulseModulationMode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PulseModulationMode(self: RfsgRFAdvanced) -> RfsgPulseModulationMode
-
-Set: PulseModulationMode(self: RfsgRFAdvanced) = value
+    """Get: PulseModulationMode(self: RfsgRFAdvanced) -> RfsgPulseModulationMode
+
+
+
+Set: PulseModulationMode(self: RfsgRFAdvanced) = value
+
 """
 
     ReferencePllBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ReferencePllBandwidth(self: RfsgRFAdvanced) -> RfsgReferencePllBandwidth
-
-Set: ReferencePllBandwidth(self: RfsgRFAdvanced) = value
+    """Get: ReferencePllBandwidth(self: RfsgRFAdvanced) -> RfsgReferencePllBandwidth
+
+
+
+Set: ReferencePllBandwidth(self: RfsgRFAdvanced) = value
+
 """
 
     ThermalCorrectionHeadroomRange = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ThermalCorrectionHeadroomRange(self: RfsgRFAdvanced) -> float
-
-Set: ThermalCorrectionHeadroomRange(self: RfsgRFAdvanced) = value
+    """Get: ThermalCorrectionHeadroomRange(self: RfsgRFAdvanced) -> float
+
+
+
+Set: ThermalCorrectionHeadroomRange(self: RfsgRFAdvanced) = value
+
 """
 
     ThermalCorrectionTemperatureResolution = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ThermalCorrectionTemperatureResolution(self: RfsgRFAdvanced) -> float
-
-Set: ThermalCorrectionTemperatureResolution(self: RfsgRFAdvanced) = value
+    """Get: ThermalCorrectionTemperatureResolution(self: RfsgRFAdvanced) -> float
+
+
+
+Set: ThermalCorrectionTemperatureResolution(self: RfsgRFAdvanced) = value
+
 """
 
     YigMainCoilDrive = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: YigMainCoilDrive(self: RfsgRFAdvanced) -> RfsgYigMainCoilDriveType
-
-Set: YigMainCoilDrive(self: RfsgRFAdvanced) = value
+    """Get: YigMainCoilDrive(self: RfsgRFAdvanced) -> RfsgYigMainCoilDriveType
+
+
+
+Set: YigMainCoilDrive(self: RfsgRFAdvanced) = value
+
 """
 
 
@@ -3788,7 +4389,8 @@ class RfsgRFBlankingSource(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgRFBlankingSource, obj: object) -> bool
+        Equals(self: RfsgRFBlankingSource, obj: object) -> bool
+
         Equals(self: RfsgRFBlankingSource, source: RfsgRFBlankingSource) -> bool
         """
         pass
@@ -3909,57 +4511,84 @@ class RfsgRFLocalOscillator(RfsgSubObject):
         pass
 
     FrequencyStepSize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencyStepSize(self: RfsgRFLocalOscillator) -> float
-
-Set: FrequencyStepSize(self: RfsgRFLocalOscillator) = value
+    """Get: FrequencyStepSize(self: RfsgRFLocalOscillator) -> float
+
+
+
+Set: FrequencyStepSize(self: RfsgRFLocalOscillator) = value
+
 """
 
     LOFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOFrequency(self: RfsgRFLocalOscillator) -> float
-
-Set: LOFrequency(self: RfsgRFLocalOscillator) = value
+    """Get: LOFrequency(self: RfsgRFLocalOscillator) -> float
+
+
+
+Set: LOFrequency(self: RfsgRFLocalOscillator) = value
+
 """
 
     LOInPower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOInPower(self: RfsgRFLocalOscillator) -> float
-
-Set: LOInPower(self: RfsgRFLocalOscillator) = value
+    """Get: LOInPower(self: RfsgRFLocalOscillator) -> float
+
+
+
+Set: LOInPower(self: RfsgRFLocalOscillator) = value
+
 """
 
     LoopBandwidth = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LoopBandwidth(self: RfsgRFLocalOscillator) -> RfsgLoopBandwidth
-
-Set: LoopBandwidth(self: RfsgRFLocalOscillator) = value
+    """Get: LoopBandwidth(self: RfsgRFLocalOscillator) -> RfsgLoopBandwidth
+
+
+
+Set: LoopBandwidth(self: RfsgRFLocalOscillator) = value
+
 """
 
     LOOutEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOOutEnabled(self: RfsgRFLocalOscillator) -> bool
-
-Set: LOOutEnabled(self: RfsgRFLocalOscillator) = value
+    """Get: LOOutEnabled(self: RfsgRFLocalOscillator) -> bool
+
+
+
+Set: LOOutEnabled(self: RfsgRFLocalOscillator) = value
+
 """
 
     LOOutPower = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOOutPower(self: RfsgRFLocalOscillator) -> float
-
-Set: LOOutPower(self: RfsgRFLocalOscillator) = value
+    """Get: LOOutPower(self: RfsgRFLocalOscillator) -> float
+
+
+
+Set: LOOutPower(self: RfsgRFLocalOscillator) = value
+
 """
 
     LOVcoFrequencyStepSize = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LOVcoFrequencyStepSize(self: RfsgRFLocalOscillator) -> float
-
-Set: LOVcoFrequencyStepSize(self: RfsgRFLocalOscillator) = value
+    """Get: LOVcoFrequencyStepSize(self: RfsgRFLocalOscillator) -> float
+
+
+
+Set: LOVcoFrequencyStepSize(self: RfsgRFLocalOscillator) = value
+
 """
 
     PllFractionalModeEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PllFractionalModeEnabled(self: RfsgRFLocalOscillator) -> RfsgLOPllFractionalModeEnabled
-
-Set: PllFractionalModeEnabled(self: RfsgRFLocalOscillator) = value
+    """Get: PllFractionalModeEnabled(self: RfsgRFLocalOscillator) -> RfsgLOPllFractionalModeEnabled
+
+
+
+Set: PllFractionalModeEnabled(self: RfsgRFLocalOscillator) = value
+
 """
 
     Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Source(self: RfsgRFLocalOscillator) -> RfsgLocalOscillatorSource
-
-Set: Source(self: RfsgRFLocalOscillator) = value
+    """Get: Source(self: RfsgRFLocalOscillator) -> RfsgLocalOscillatorSource
+
+
+
+Set: Source(self: RfsgRFLocalOscillator) = value
+
 """
 
 
@@ -4055,9 +4684,12 @@ class RfsgScripting(RfsgSubObject):
         pass
 
     SelectedScriptName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SelectedScriptName(self: RfsgScripting) -> str
-
-Set: SelectedScriptName(self: RfsgScripting) = value
+    """Get: SelectedScriptName(self: RfsgScripting) -> str
+
+
+
+Set: SelectedScriptName(self: RfsgScripting) = value
+
 """
 
 
@@ -4077,35 +4709,49 @@ class RfsgScriptTrigger(RfsgSubObject):
         pass
 
     DigitalEdge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalEdge(self: RfsgScriptTrigger) -> RfsgDigitalEdgeScriptTrigger
-
+    """Get: DigitalEdge(self: RfsgScriptTrigger) -> RfsgDigitalEdgeScriptTrigger
+
+
+
 """
 
     DigitalLevel = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalLevel(self: RfsgScriptTrigger) -> RfsgDigitalLevelScriptTrigger
-
+    """Get: DigitalLevel(self: RfsgScriptTrigger) -> RfsgDigitalLevelScriptTrigger
+
+
+
 """
 
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgScriptTrigger) -> RfsgScriptTriggerExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgScriptTrigger) = value
+    """Get: ExportedOutputTerminal(self: RfsgScriptTrigger) -> RfsgScriptTriggerExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgScriptTrigger) = value
+
 """
 
     Synchronized = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Synchronized(self: RfsgScriptTrigger) -> RfsgSynchronizedScriptTrigger
-
+    """Get: Synchronized(self: RfsgScriptTrigger) -> RfsgSynchronizedScriptTrigger
+
+
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgScriptTrigger) -> str
-
+    """Get: TerminalName(self: RfsgScriptTrigger) -> str
+
+
+
 """
 
     TriggerType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TriggerType(self: RfsgScriptTrigger) -> RfsgScriptTriggerType
-
-Set: TriggerType(self: RfsgScriptTrigger) = value
+    """Get: TriggerType(self: RfsgScriptTrigger) -> RfsgScriptTriggerType
+
+
+
+Set: TriggerType(self: RfsgScriptTrigger) = value
+
 """
 
 
@@ -4121,7 +4767,8 @@ class RfsgScriptTriggerExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgScriptTriggerExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgScriptTriggerExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgScriptTriggerExportedOutputTerminal, outputTerminal: RfsgScriptTriggerExportedOutputTerminal) -> bool
         """
         pass
@@ -4230,8 +4877,10 @@ class RfsgSelfCalibration(RfsgSubObject):
         pass
 
     LastSelfCalibrationTemperature = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: LastSelfCalibrationTemperature(self: RfsgSelfCalibration) -> float
-
+    """Get: LastSelfCalibrationTemperature(self: RfsgSelfCalibration) -> float
+
+
+
 """
 
 
@@ -4284,7 +4933,8 @@ class RfsgSelfTestResult(object):
     """ RfsgSelfTestResult(code: int, message: str) """
     def Equals(self, *__args):
         """
-        Equals(self: RfsgSelfTestResult, obj: object) -> bool
+        Equals(self: RfsgSelfTestResult, obj: object) -> bool
+
         Equals(self: RfsgSelfTestResult, result: RfsgSelfTestResult) -> bool
         """
         pass
@@ -4300,7 +4950,8 @@ class RfsgSelfTestResult(object):
     @staticmethod # known case of __new__
     def __new__(self, code, message):
         """
-        __new__(cls: type, code: int, message: str)
+        __new__(cls: type, code: int, message: str)
+
         __new__[RfsgSelfTestResult]() -> RfsgSelfTestResult
         """
         pass
@@ -4309,13 +4960,17 @@ class RfsgSelfTestResult(object):
         pass
 
     Code = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Code(self: RfsgSelfTestResult) -> int
-
+    """Get: Code(self: RfsgSelfTestResult) -> int
+
+
+
 """
 
     Message = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Message(self: RfsgSelfTestResult) -> str
-
+    """Get: Message(self: RfsgSelfTestResult) -> str
+
+
+
 """
 
 
@@ -4323,14 +4978,19 @@ class RfsgSelfTestResult(object):
 class RfsgSignalPath(RfsgSubObject):
     # no doc
     AvailablePorts = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: AvailablePorts(self: RfsgSignalPath) -> str
-
+    """Get: AvailablePorts(self: RfsgSignalPath) -> str
+
+
+
 """
 
     SelectedPorts = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SelectedPorts(self: RfsgSignalPath) -> str
-
-Set: SelectedPorts(self: RfsgSignalPath) = value
+    """Get: SelectedPorts(self: RfsgSignalPath) -> str
+
+
+
+Set: SelectedPorts(self: RfsgSignalPath) = value
+
 """
 
 
@@ -4378,14 +5038,19 @@ class RfsgSParameterOrientation(Enum, IComparable, IFormattable, IConvertible):
 class RfsgStartedEvent(RfsgSubObject):
     # no doc
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgStartedEvent) -> RfsgStartedEventExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgStartedEvent) = value
+    """Get: ExportedOutputTerminal(self: RfsgStartedEvent) -> RfsgStartedEventExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgStartedEvent) = value
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgStartedEvent) -> str
-
+    """Get: TerminalName(self: RfsgStartedEvent) -> str
+
+
+
 """
 
 
@@ -4394,7 +5059,8 @@ class RfsgStartedEventExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgStartedEventExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgStartedEventExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgStartedEventExportedOutputTerminal, outputTerminal: RfsgStartedEventExportedOutputTerminal) -> bool
         """
         pass
@@ -4449,30 +5115,42 @@ class RfsgStartTrigger(RfsgSubObject):
         pass
 
     DigitalEdge = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DigitalEdge(self: RfsgStartTrigger) -> RfsgDigitalEdgeStartTrigger
-
+    """Get: DigitalEdge(self: RfsgStartTrigger) -> RfsgDigitalEdgeStartTrigger
+
+
+
 """
 
     ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ExportedOutputTerminal(self: RfsgStartTrigger) -> RfsgStartTriggerExportedOutputTerminal
-
-Set: ExportedOutputTerminal(self: RfsgStartTrigger) = value
+    """Get: ExportedOutputTerminal(self: RfsgStartTrigger) -> RfsgStartTriggerExportedOutputTerminal
+
+
+
+Set: ExportedOutputTerminal(self: RfsgStartTrigger) = value
+
 """
 
     Synchronized = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Synchronized(self: RfsgStartTrigger) -> RfsgSynchronizedStartTrigger
-
+    """Get: Synchronized(self: RfsgStartTrigger) -> RfsgSynchronizedStartTrigger
+
+
+
 """
 
     TerminalName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TerminalName(self: RfsgStartTrigger) -> str
-
+    """Get: TerminalName(self: RfsgStartTrigger) -> str
+
+
+
 """
 
     TriggerType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: TriggerType(self: RfsgStartTrigger) -> RfsgStartTriggerType
-
-Set: TriggerType(self: RfsgStartTrigger) = value
+    """Get: TriggerType(self: RfsgStartTrigger) -> RfsgStartTriggerType
+
+
+
+Set: TriggerType(self: RfsgStartTrigger) = value
+
 """
 
 
@@ -4481,7 +5159,8 @@ class RfsgStartTriggerExportedOutputTerminal(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgStartTriggerExportedOutputTerminal, obj: object) -> bool
+        Equals(self: RfsgStartTriggerExportedOutputTerminal, obj: object) -> bool
+
         Equals(self: RfsgStartTriggerExportedOutputTerminal, outputTerminal: RfsgStartTriggerExportedOutputTerminal) -> bool
         """
         pass
@@ -4566,26 +5245,37 @@ class RfsgStartTriggerType(Enum, IComparable, IFormattable, IConvertible):
 class RfsgStreaming(RfsgSubObject):
     # no doc
     SpaceAvailableInWaveform = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SpaceAvailableInWaveform(self: RfsgStreaming) -> Int64
-
+    """Get: SpaceAvailableInWaveform(self: RfsgStreaming) -> Int64
+
+
+
 """
 
     StreamingEnabled = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: StreamingEnabled(self: RfsgStreaming) -> bool
-
-Set: StreamingEnabled(self: RfsgStreaming) = value
+    """Get: StreamingEnabled(self: RfsgStreaming) -> bool
+
+
+
+Set: StreamingEnabled(self: RfsgStreaming) = value
+
 """
 
     StreamingWaveformName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: StreamingWaveformName(self: RfsgStreaming) -> str
-
-Set: StreamingWaveformName(self: RfsgStreaming) = value
+    """Get: StreamingWaveformName(self: RfsgStreaming) -> str
+
+
+
+Set: StreamingWaveformName(self: RfsgStreaming) = value
+
 """
 
     WriteTimeout = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WriteTimeout(self: RfsgStreaming) -> float
-
-Set: WriteTimeout(self: RfsgStreaming) = value
+    """Get: WriteTimeout(self: RfsgStreaming) -> float
+
+
+
+Set: WriteTimeout(self: RfsgStreaming) = value
+
 """
 
 
@@ -4593,15 +5283,21 @@ Set: WriteTimeout(self: RfsgStreaming) = value
 class RfsgSynchronizedSampleClock(RfsgSubObject):
     # no doc
     DistributionLine = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DistributionLine(self: RfsgSynchronizedSampleClock) -> RfsgSynchronizedSampleClockDistributionLine
-
-Set: DistributionLine(self: RfsgSynchronizedSampleClock) = value
+    """Get: DistributionLine(self: RfsgSynchronizedSampleClock) -> RfsgSynchronizedSampleClockDistributionLine
+
+
+
+Set: DistributionLine(self: RfsgSynchronizedSampleClock) = value
+
 """
 
     IsMaster = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsMaster(self: RfsgSynchronizedSampleClock) -> bool
-
-Set: IsMaster(self: RfsgSynchronizedSampleClock) = value
+    """Get: IsMaster(self: RfsgSynchronizedSampleClock) -> bool
+
+
+
+Set: IsMaster(self: RfsgSynchronizedSampleClock) = value
+
 """
 
 
@@ -4610,7 +5306,8 @@ class RfsgSynchronizedSampleClockDistributionLine(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgSynchronizedSampleClockDistributionLine, obj: object) -> bool
+        Equals(self: RfsgSynchronizedSampleClockDistributionLine, obj: object) -> bool
+
         Equals(self: RfsgSynchronizedSampleClockDistributionLine, distributionLine: RfsgSynchronizedSampleClockDistributionLine) -> bool
         """
         pass
@@ -4650,15 +5347,21 @@ class RfsgSynchronizedSampleClockDistributionLine(object):
 class RfsgSynchronizedScriptTrigger(RfsgSubObject):
     # no doc
     DistributionLine = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DistributionLine(self: RfsgSynchronizedScriptTrigger) -> RfsgSynchronizedScriptTriggerDistributionLine
-
-Set: DistributionLine(self: RfsgSynchronizedScriptTrigger) = value
+    """Get: DistributionLine(self: RfsgSynchronizedScriptTrigger) -> RfsgSynchronizedScriptTriggerDistributionLine
+
+
+
+Set: DistributionLine(self: RfsgSynchronizedScriptTrigger) = value
+
 """
 
     IsMaster = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsMaster(self: RfsgSynchronizedScriptTrigger) -> bool
-
-Set: IsMaster(self: RfsgSynchronizedScriptTrigger) = value
+    """Get: IsMaster(self: RfsgSynchronizedScriptTrigger) -> bool
+
+
+
+Set: IsMaster(self: RfsgSynchronizedScriptTrigger) = value
+
 """
 
 
@@ -4667,7 +5370,8 @@ class RfsgSynchronizedScriptTriggerDistributionLine(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgSynchronizedScriptTriggerDistributionLine, obj: object) -> bool
+        Equals(self: RfsgSynchronizedScriptTriggerDistributionLine, obj: object) -> bool
+
         Equals(self: RfsgSynchronizedScriptTriggerDistributionLine, distributionLine: RfsgSynchronizedScriptTriggerDistributionLine) -> bool
         """
         pass
@@ -4707,15 +5411,21 @@ class RfsgSynchronizedScriptTriggerDistributionLine(object):
 class RfsgSynchronizedStartTrigger(RfsgSubObject):
     # no doc
     DistributionLine = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: DistributionLine(self: RfsgSynchronizedStartTrigger) -> RfsgSynchronizedStartTriggerDistributionLine
-
-Set: DistributionLine(self: RfsgSynchronizedStartTrigger) = value
+    """Get: DistributionLine(self: RfsgSynchronizedStartTrigger) -> RfsgSynchronizedStartTriggerDistributionLine
+
+
+
+Set: DistributionLine(self: RfsgSynchronizedStartTrigger) = value
+
 """
 
     IsMaster = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsMaster(self: RfsgSynchronizedStartTrigger) -> bool
-
-Set: IsMaster(self: RfsgSynchronizedStartTrigger) = value
+    """Get: IsMaster(self: RfsgSynchronizedStartTrigger) -> bool
+
+
+
+Set: IsMaster(self: RfsgSynchronizedStartTrigger) = value
+
 """
 
 
@@ -4724,7 +5434,8 @@ class RfsgSynchronizedStartTriggerDistributionLine(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgSynchronizedStartTriggerDistributionLine, obj: object) -> bool
+        Equals(self: RfsgSynchronizedStartTriggerDistributionLine, obj: object) -> bool
+
         Equals(self: RfsgSynchronizedStartTriggerDistributionLine, distributionLine: RfsgSynchronizedStartTriggerDistributionLine) -> bool
         """
         pass
@@ -4804,9 +5515,12 @@ class RfsgTerminalConfiguration(Enum, IComparable, IFormattable, IConvertible):
 class RfsgTimerEvent(RfsgSubObject):
     # no doc
     Interval = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Interval(self: RfsgTimerEvent) -> float
-
-Set: Interval(self: RfsgTimerEvent) = value
+    """Get: Interval(self: RfsgTimerEvent) -> float
+
+
+
+Set: Interval(self: RfsgTimerEvent) = value
+
 """
 
 
@@ -4894,18 +5608,24 @@ class RfsgTriggerLevel(Enum, IComparable, IFormattable, IConvertible):
 class RfsgTriggers(RfsgSubObject):
     # no doc
     ConfigurationListStepTrigger = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ConfigurationListStepTrigger(self: RfsgTriggers) -> RfsgConfigurationListStepTrigger
-
+    """Get: ConfigurationListStepTrigger(self: RfsgTriggers) -> RfsgConfigurationListStepTrigger
+
+
+
 """
 
     ScriptTriggers = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ScriptTriggers(self: RfsgTriggers) -> RfsgScriptTriggerCollection
-
+    """Get: ScriptTriggers(self: RfsgTriggers) -> RfsgScriptTriggerCollection
+
+
+
 """
 
     StartTrigger = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: StartTrigger(self: RfsgTriggers) -> RfsgStartTrigger
-
+    """Get: StartTrigger(self: RfsgTriggers) -> RfsgStartTrigger
+
+
+
 """
 
 
@@ -4913,27 +5633,39 @@ class RfsgTriggers(RfsgSubObject):
 class RfsgUpconverter(RfsgSubObject):
     # no doc
     CenterFrequency = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: CenterFrequency(self: RfsgUpconverter) -> float
-
-Set: CenterFrequency(self: RfsgUpconverter) = value
+    """Get: CenterFrequency(self: RfsgUpconverter) -> float
+
+
+
+Set: CenterFrequency(self: RfsgUpconverter) = value
+
 """
 
     FrequencyOffset = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencyOffset(self: RfsgUpconverter) -> float
-
-Set: FrequencyOffset(self: RfsgUpconverter) = value
+    """Get: FrequencyOffset(self: RfsgUpconverter) -> float
+
+
+
+Set: FrequencyOffset(self: RfsgUpconverter) = value
+
 """
 
     FrequencyOffsetMode = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: FrequencyOffsetMode(self: RfsgUpconverter) -> UpconverterFrequencyOffsetMode
-
-Set: FrequencyOffsetMode(self: RfsgUpconverter) = value
+    """Get: FrequencyOffsetMode(self: RfsgUpconverter) -> UpconverterFrequencyOffsetMode
+
+
+
+Set: FrequencyOffsetMode(self: RfsgUpconverter) = value
+
 """
 
     Gain = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Gain(self: RfsgUpconverter) -> float
-
-Set: Gain(self: RfsgUpconverter) = value
+    """Get: Gain(self: RfsgUpconverter) -> float
+
+
+
+Set: Gain(self: RfsgUpconverter) = value
+
 """
 
 
@@ -4942,8 +5674,10 @@ class RfsgWarning(object):
     # no doc
     def Equals(self, *__args):
         """
-        Equals(self: RfsgWarning, obj: object) -> bool
-        Equals(self: RfsgWarning, warning: RfsgWarning) -> bool
+        Equals(self: RfsgWarning, obj: object) -> bool
+
+        Equals(self: RfsgWarning, warning: RfsgWarning) -> bool
+
         Equals(self: RfsgWarning, warning: RfsgWarning, ignoreWarningMessage: bool) -> bool
         """
         pass
@@ -4964,13 +5698,17 @@ class RfsgWarning(object):
         pass
 
     Code = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Code(self: RfsgWarning) -> Guid
-
+    """Get: Code(self: RfsgWarning) -> Guid
+
+
+
 """
 
     Message = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Message(self: RfsgWarning) -> str
-
+    """Get: Message(self: RfsgWarning) -> str
+
+
+
 """
 
 
@@ -5003,18 +5741,24 @@ class RfsgWarning(object):
 class RfsgWarningEventArgs(EventArgs):
     # no doc
     Code = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Code(self: RfsgWarningEventArgs) -> Guid
-
+    """Get: Code(self: RfsgWarningEventArgs) -> Guid
+
+
+
 """
 
     Message = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Message(self: RfsgWarningEventArgs) -> str
-
+    """Get: Message(self: RfsgWarningEventArgs) -> str
+
+
+
 """
 
     Warning = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Warning(self: RfsgWarningEventArgs) -> RfsgWarning
-
+    """Get: Warning(self: RfsgWarningEventArgs) -> RfsgWarning
+
+
+
 """
 
 
@@ -5022,23 +5766,31 @@ class RfsgWarningEventArgs(EventArgs):
 class RfsgWaveformCapabilities(RfsgSubObject):
     # no doc
     MaximumNumberOfWaveforms = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: MaximumNumberOfWaveforms(self: RfsgWaveformCapabilities) -> int
-
+    """Get: MaximumNumberOfWaveforms(self: RfsgWaveformCapabilities) -> int
+
+
+
 """
 
     WaveformQuantum = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformQuantum(self: RfsgWaveformCapabilities) -> int
-
+    """Get: WaveformQuantum(self: RfsgWaveformCapabilities) -> int
+
+
+
 """
 
     WaveformSizeMaximum = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformSizeMaximum(self: RfsgWaveformCapabilities) -> int
-
+    """Get: WaveformSizeMaximum(self: RfsgWaveformCapabilities) -> int
+
+
+
 """
 
     WaveformSizeMinimum = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: WaveformSizeMinimum(self: RfsgWaveformCapabilities) -> int
-
+    """Get: WaveformSizeMinimum(self: RfsgWaveformCapabilities) -> int
+
+
+
 """
 
 
