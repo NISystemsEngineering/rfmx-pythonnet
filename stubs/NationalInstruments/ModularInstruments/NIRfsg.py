@@ -2868,7 +2868,7 @@ class RfsgFrequencyReference(RfsgSubObject):
         """ Configure(self: RfsgFrequencyReference, source: RfsgFrequencyReferenceSource, rate: float) """
         pass
 
-    ExportedOutputTerminal = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+    ExportedOutputTerminal = property(lambda self: RfsgFrequencyReferenceExportedOutputTerminal(), lambda self, v: None, lambda self: None)  # default
     """Get: ExportedOutputTerminal(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceExportedOutputTerminal
 
 
@@ -2877,7 +2877,7 @@ Set: ExportedOutputTerminal(self: RfsgFrequencyReference) = value
 
 """
 
-    PxiChassisClock10Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+    PxiChassisClock10Source = property(lambda self: RfsgPxiChassisClock10Source(), lambda self, v: None, lambda self: None)  # default
     """Get: PxiChassisClock10Source(self: RfsgFrequencyReference) -> RfsgPxiChassisClock10Source
 
 
@@ -2895,7 +2895,7 @@ Set: Rate(self: RfsgFrequencyReference) = value
 
 """
 
-    Source = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+    Source = property(lambda self: RfsgFrequencyReferenceSource(), lambda self, v: None, lambda self: None)  # default
     """Get: Source(self: RfsgFrequencyReference) -> RfsgFrequencyReferenceSource
 
 
