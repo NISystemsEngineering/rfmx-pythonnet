@@ -86,6 +86,10 @@ class niRFSA(object, IDisposable):
         """ ClearError(self: niRFSA) -> int """
         pass
 
+    def ClearSelfCalibrationRange(self):
+        """ ClearSelfCalibrationRange(self: niRFSA) -> int """
+        pass
+
     def Close(self):
         """ Close(self: niRFSA) """
         pass
@@ -273,6 +277,10 @@ class niRFSA(object, IDisposable):
         """
         pass
 
+    def GetAbsoluteDelay(self, channel, value):
+        """ GetAbsoluteDelay(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
     def GetAcquisitionType(self, channel, value):
         """ GetAcquisitionType(self: niRFSA, channel: str) -> (int, int) """
         pass
@@ -295,6 +303,14 @@ class niRFSA(object, IDisposable):
 
     def GetAllowMoreRecordsThanMemory(self, channel, value):
         """ GetAllowMoreRecordsThanMemory(self: niRFSA, channel: str) -> (int, bool) """
+        pass
+
+    def GetAllowOutOfSpecificationUserSettings(self, channel, value):
+        """ GetAllowOutOfSpecificationUserSettings(self: niRFSA, channel: str) -> (int, int) """
+        pass
+
+    def GetAmplitudeSettling(self, channel, value):
+        """ GetAmplitudeSettling(self: niRFSA, channel: str) -> (int, float) """
         pass
 
     def GetArmRefTriggerType(self, channel, value):
@@ -506,6 +522,10 @@ class niRFSA(object, IDisposable):
         """ GetDigitalEdgeArmRefTriggerSource(self: niRFSA, channel: str) -> (int, str) """
         pass
 
+    def GetDigitalEdgeConfigurationListStepTriggerSource(self, channel, value):
+        """ GetDigitalEdgeConfigurationListStepTriggerSource(self: niRFSA, channel: str) -> (int, str) """
+        pass
+
     def GetDigitalEdgeRefTriggerEdge(self, channel, value):
         """ GetDigitalEdgeRefTriggerEdge(self: niRFSA, channel: str) -> (int, int) """
         pass
@@ -520,6 +540,10 @@ class niRFSA(object, IDisposable):
 
     def GetDigitalEdgeStartTriggerSource(self, channel, value):
         """ GetDigitalEdgeStartTriggerSource(self: niRFSA, channel: str) -> (int, str) """
+        pass
+
+    def GetDigitalGain(self, channel, value):
+        """ GetDigitalGain(self: niRFSA, channel: str) -> (int, float) """
         pass
 
     def GetDigitalIfEqualizationEnabled(self, channel, value):
@@ -707,6 +731,10 @@ class niRFSA(object, IDisposable):
         """ GetFpgaTargetName(self: niRFSA, channel: str) -> (int, str) """
         pass
 
+    def GetFpgaTemperature(self, channel, value):
+        """ GetFpgaTemperature(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
     def GetFrequencyResponse(self, Channel_List, Buffer_Size, Frequencies, Magnitude_Response, Phase_Response, Number_of_Frequencies):
         """ GetFrequencyResponse(self: niRFSA, Channel_List: str, Buffer_Size: int, Frequencies: Array[float], Magnitude_Response: Array[float], Phase_Response: Array[float]) -> (int, int) """
         pass
@@ -840,6 +868,10 @@ class niRFSA(object, IDisposable):
         """ GetIqInPortCarrierFrequency(self: niRFSA, channel: str) -> (int, float) """
         pass
 
+    def GetIqInPortCommonMode(self, channel, value):
+        """ GetIqInPortCommonMode(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
     def GetIqInPortTemperature(self, channel, value):
         """ GetIqInPortTemperature(self: niRFSA, channel: str) -> (int, float) """
         pass
@@ -894,6 +926,14 @@ class niRFSA(object, IDisposable):
 
     def GetLoInPower(self, channel, value):
         """ GetLoInPower(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
+    def GetLOOutExportConfigureFromRfsg(self, channel, value):
+        """ GetLOOutExportConfigureFromRfsg(self: niRFSA, channel: str) -> (int, int) """
+        pass
+
+    def GetLoOutPower(self, channel, value):
+        """ GetLoOutPower(self: niRFSA, channel: str) -> (int, float) """
         pass
 
     def GetLoPllFractionalModeEnabled(self, channel, value):
@@ -952,6 +992,10 @@ class niRFSA(object, IDisposable):
         """ GetMixerLevelOffset(self: niRFSA, channel: str) -> (int, float) """
         pass
 
+    def GetModulePowerConsumption(self, channel, value):
+        """ GetModulePowerConsumption(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
     def GetModuleRevision(self, channel, value):
         """ GetModuleRevision(self: niRFSA, channel: str) -> (int, str) """
         pass
@@ -994,6 +1038,10 @@ class niRFSA(object, IDisposable):
 
     def GetOspDataScalingFactor(self, channel, value):
         """ GetOspDataScalingFactor(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
+    def GetOverflowErrorReporting(self, channel, value):
+        """ GetOverflowErrorReporting(self: niRFSA, channel: str) -> (int, int) """
         pass
 
     def GetP2pEnabled(self, channel, value):
@@ -1152,12 +1200,24 @@ class niRFSA(object, IDisposable):
         """ GetRfAttenuationTable(self: niRFSA, channel: str) -> (int, int) """
         pass
 
+    def GetRfConditioningCalToneFrequency(self, channel, value):
+        """ GetRfConditioningCalToneFrequency(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
+    def GetRfConditioningCalToneMode(self, channel, value):
+        """ GetRfConditioningCalToneMode(self: niRFSA, channel: str) -> (int, int) """
+        pass
+
     def GetRfConditioningTemperature(self, channel, value):
         """ GetRfConditioningTemperature(self: niRFSA, channel: str) -> (int, float) """
         pass
 
     def GetRfHighPassFilteringe(self, channel, value):
         """ GetRfHighPassFilteringe(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
+    def GetRFOutLOExportEnabled(self, channel, value):
+        """ GetRFOutLOExportEnabled(self: niRFSA, channel: str) -> (int, int) """
         pass
 
     def GetRfPreampEnabled(self, channel, value):
@@ -1348,6 +1408,10 @@ class niRFSA(object, IDisposable):
         """ GetTerminalName(self: niRFSA, signal: int, signalIdentifier: str, bufferSize: int, terminalName: StringBuilder) -> int """
         pass
 
+    def GetThermalCorrectionTemperatureResolution(self, channel, value):
+        """ GetThermalCorrectionTemperatureResolution(self: niRFSA, channel: str) -> (int, float) """
+        pass
+
     def GetTimerEventInterval(self, channel, value):
         """ GetTimerEventInterval(self: niRFSA, channel: str) -> (int, float) """
         pass
@@ -1400,6 +1464,10 @@ class niRFSA(object, IDisposable):
         """ ReadIQSingleRecordComplexF64(self: niRFSA, Channel_List: str, Timeout: float, Data: Array[niComplexNumber], Data_Array_Size: Int64) -> (int, niRFSA_wfmInfo) """
         pass
 
+    def ReadPowerSpectrumF32(self, Channel_List, Timeout, Power_Spectrum_Data, Data_Array_Size, Spectrum_Info):
+        """ ReadPowerSpectrumF32(self: niRFSA, Channel_List: str, Timeout: float, Power_Spectrum_Data: Array[Single], Data_Array_Size: int) -> (int, niRFSA_spectrumInfo) """
+        pass
+
     def ReadPowerSpectrumF64(self, Channel_List, Timeout, Power_Spectrum_Data, Data_Array_Size, Spectrum_Info):
         """ ReadPowerSpectrumF64(self: niRFSA, Channel_List: str, Timeout: float, Power_Spectrum_Data: Array[float], Data_Array_Size: int) -> (int, niRFSA_spectrumInfo) """
         pass
@@ -1448,6 +1516,10 @@ class niRFSA(object, IDisposable):
         """ SendSoftwareEdgeTrigger(self: niRFSA, Trigger: int, Trigger_Identifier: str) -> int """
         pass
 
+    def SetAbsoluteDelay(self, channel, value):
+        """ SetAbsoluteDelay(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
     def SetAcquisitionType(self, channel, value):
         """ SetAcquisitionType(self: niRFSA, channel: str, value: int) -> int """
         pass
@@ -1466,6 +1538,14 @@ class niRFSA(object, IDisposable):
 
     def SetAllowMoreRecordsThanMemory(self, channel, value):
         """ SetAllowMoreRecordsThanMemory(self: niRFSA, channel: str, value: bool) -> int """
+        pass
+
+    def SetAllowOutOfSpecificationUserSettings(self, channel, value):
+        """ SetAllowOutOfSpecificationUserSettings(self: niRFSA, channel: str, value: int) -> int """
+        pass
+
+    def SetAmplitudeSettling(self, channel, value):
+        """ SetAmplitudeSettling(self: niRFSA, channel: str, value: float) -> int """
         pass
 
     def SetArmRefTriggerType(self, channel, value):
@@ -1655,6 +1735,10 @@ class niRFSA(object, IDisposable):
         """ SetDigitalEdgeArmRefTriggerSource(self: niRFSA, channel: str, value: str) -> int """
         pass
 
+    def SetDigitalEdgeConfigurationListStepTriggerSource(self, channel, value):
+        """ SetDigitalEdgeConfigurationListStepTriggerSource(self: niRFSA, channel: str, value: str) -> int """
+        pass
+
     def SetDigitalEdgeRefTriggerEdge(self, channel, value):
         """ SetDigitalEdgeRefTriggerEdge(self: niRFSA, channel: str, value: int) -> int """
         pass
@@ -1669,6 +1753,10 @@ class niRFSA(object, IDisposable):
 
     def SetDigitalEdgeStartTriggerSource(self, channel, value):
         """ SetDigitalEdgeStartTriggerSource(self: niRFSA, channel: str, value: str) -> int """
+        pass
+
+    def SetDigitalGain(self, channel, value):
+        """ SetDigitalGain(self: niRFSA, channel: str, value: float) -> int """
         pass
 
     def SetDigitalIfEqualizationEnabled(self, channel, value):
@@ -1892,6 +1980,10 @@ class niRFSA(object, IDisposable):
         """ SetIqInPortCarrierFrequency(self: niRFSA, channel: str, value: float) -> int """
         pass
 
+    def SetIqInPortCommonMode(self, channel, value):
+        """ SetIqInPortCommonMode(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
     def SetIqInPortTemperature(self, channel, value):
         """ SetIqInPortTemperature(self: niRFSA, channel: str, value: float) -> int """
         pass
@@ -1944,6 +2036,14 @@ class niRFSA(object, IDisposable):
         """ SetLoInPower(self: niRFSA, channel: str, value: float) -> int """
         pass
 
+    def SetLOOutExportConfigureFromRfsg(self, channel, value):
+        """ SetLOOutExportConfigureFromRfsg(self: niRFSA, channel: str, value: int) -> int """
+        pass
+
+    def SetLoOutPower(self, channel, value):
+        """ SetLoOutPower(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
     def SetLoPllFractionalModeEnabled(self, channel, value):
         """ SetLoPllFractionalModeEnabled(self: niRFSA, channel: str, value: int) -> int """
         pass
@@ -1992,6 +2092,10 @@ class niRFSA(object, IDisposable):
         """ SetMixerLevelOffset(self: niRFSA, channel: str, value: float) -> int """
         pass
 
+    def SetModulePowerConsumption(self, channel, value):
+        """ SetModulePowerConsumption(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
     def SetNoiseSourcePowerEnabled(self, channel, value):
         """ SetNoiseSourcePowerEnabled(self: niRFSA, channel: str, value: int) -> int """
         pass
@@ -2022,6 +2126,10 @@ class niRFSA(object, IDisposable):
 
     def SetOspDataScalingFactor(self, channel, value):
         """ SetOspDataScalingFactor(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
+    def SetOverflowErrorReporting(self, channel, value):
+        """ SetOverflowErrorReporting(self: niRFSA, channel: str, value: int) -> int """
         pass
 
     def SetP2pEnabled(self, channel, value):
@@ -2124,8 +2232,20 @@ class niRFSA(object, IDisposable):
         """ SetRfAttenuationTable(self: niRFSA, channel: str, value: int) -> int """
         pass
 
+    def SetRfConditioningCalToneFrequency(self, channel, value):
+        """ SetRfConditioningCalToneFrequency(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
+    def SetRfConditioningCalToneMode(self, channel, value):
+        """ SetRfConditioningCalToneMode(self: niRFSA, channel: str, value: int) -> int """
+        pass
+
     def SetRfHighPassFiltering(self, channel, value):
         """ SetRfHighPassFiltering(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
+    def SetRFOutLOExportEnabled(self, channel, value):
+        """ SetRFOutLOExportEnabled(self: niRFSA, channel: str, value: int) -> int """
         pass
 
     def SetRfPreampEnabled(self, channel, value):
@@ -2246,6 +2366,10 @@ class niRFSA(object, IDisposable):
         """ SetTemperatureReadInterval(self: niRFSA, channel: str, value: float) -> int """
         pass
 
+    def SetThermalCorrectionTemperatureResolution(self, channel, value):
+        """ SetThermalCorrectionTemperatureResolution(self: niRFSA, channel: str, value: float) -> int """
+        pass
+
     def SetTimerEventInterval(self, channel, value):
         """ SetTimerEventInterval(self: niRFSA, channel: str, value: float) -> int """
         pass
@@ -2260,6 +2384,11 @@ class niRFSA(object, IDisposable):
 
     def UnlockSession(self, callerHasLock):
         """ UnlockSession(self: niRFSA, callerHasLock: bool) -> (int, bool) """
+        pass
+
+    @staticmethod
+    def VstSelfCalibrate(resouceName):
+        """ VstSelfCalibrate(resouceName: str) -> int """
         pass
 
     def __enter__(self, *args): #cannot find CLR method
@@ -2317,6 +2446,7 @@ class niRFSAConstants(object):
     Dbmv = 202
     Dbuv = 203
     DC = 3002
+    DCOffset = 512
     Differential = 2100
     DigitalEdge = 601
     DigitalLevel = 602
@@ -2331,6 +2461,8 @@ class niRFSAConstants(object):
     EndOfRecordEvent = 1203
     EndOfRecordEventStr = 'EndOfRecordEvent'
     EndOrRecordEventStr = 'EndOfRecordEvent'
+    ErrorReportingDisabled = 1302
+    ErrorReportingWarning = 1301
     ExactBlackman = 504
     ExtAlignmentAbort = 3100
     ExtAlignmentCommit = 3101
@@ -2397,6 +2529,8 @@ class niRFSAConstants(object):
     LoInjectionHighSide = 1300
     LoInjectionLowSide = 1301
     LoInStr = 'LO_In'
+    LOOutExportConfigureFromRfsgDisabled = 1901
+    LOOutExportConfigureFromRfsgEnabled = 1900
     LoRefClkStr = 'LORefClk'
     Low = 800
     LowSideLobe = 509
@@ -2423,7 +2557,10 @@ class niRFSAConstants(object):
     PreselectorEnabled = 2602
     PreselectorEnabledWhenInSignalPath = 2601
     PxiClk10Str = 'PXI_Clk10'
+    PxiClkMasterStr = 'PXI_ClkMaster'
     PxiClkStr = 'PXI_Clk'
+    PXIeDStarBStr = 'PXIe_DStarB'
+    PXIeDStarCStr = 'PXIe_DStarC'
     PxiStarStr = 'PXI_STAR'
     PxiTrig0Str = 'PXI_Trig0'
     PxiTrig1Str = 'PXI_Trig1'
@@ -2442,10 +2579,13 @@ class niRFSAConstants(object):
     ReadyForStartEvent = 1200
     RefClock = 1205
     ReferenceTriggerStr = 'ReferenceTrigger'
+    RefIn2Str = 'RefIn2'
     RefInStr = 'RefIn'
     RefOut2Str = 'RefOut2'
     RefOutStr = 'RefOut'
     RefTrigger = 702
+    ResetStepsToOmitNone = 0
+    ResetStepsToOmitRoutes = 1
     RfIn = 2000
     RFPreampAutomatic = 2503
     RFPreampDisabled = 2500
@@ -2469,6 +2609,9 @@ class niRFSAConstants(object):
     RfPreselectorPath9 = 3309
     RfPreselectorPathExternalFilter = 3317
     RfPreselectorPathNone = 3300
+    RfsaRFOutLOExportDisabled = 1901
+    RfsaRFOutLOExportEnabled = 1900
+    RfsaRFOutLOExportUnspecified = 1902
     RisingEdge = 900
     RisingSlope = 1000
     RmsAveraging = 401
@@ -2481,6 +2624,7 @@ class niRFSAConstants(object):
     Rtsi6Str = 'PXI_Trig6'
     Rtsi7Str = 'PXI_Trig7'
     ScalarAveraging = 405
+    SecondaryStr = 'Secondary'
     SelfCalAmplitudeAccuracy = 32
     SelfCalDigitizerSelfCal = 8
     SelfCalGainReference = 2
@@ -2503,6 +2647,7 @@ class niRFSAConstants(object):
     SyncAdvanceTriggerStr = 'Sync_Advance'
     SyncRefTriggerStr = 'Sync_Ref'
     SyncStartTriggerStr = 'Sync_Start'
+    SynthesizerAlignment = 256
     TimerEventStr = 'TimerEvent'
     Uniform = 500
     User = 1206
@@ -2521,7 +2666,7 @@ class niRFSAConstants(object):
 
 
 class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
-    """ enum niRFSAProperties, values: AcquisitionType (1150001), ActiveConfigurationList (1150092), ActiveConfigurationListStep (1150093), AdvanceTriggerTerminalName (1150124), AdvanceTriggerType (1150036), AllowMoreRecordsThanMemory (1150154), ArmRefTriggerType (1150039), Attenuation (1150005), Cache (1050004), CalDigitizerId (1150226), CalibrationCorrection100mhzFilter (1150223), CalibrationCorrection300KhzFilter (1150147), CalibrationCorrection320mhzFilter (1150224), CalibrationCorrection5MhzFilter (1150148), CalibrationCorrection765mhzFilter (1150225), CalibrationCorrectionThroughFilter (1150146), CalIfAttenuationIndex (1150109), CalIfAttenuationTableSelection (1150141), CalIfAttenuationTableSize (1150216), CalIfFilterSelection (1150112), CalLo1Attenuation (1150114), CalLo2Attenuation (1150115), CalLo3Attenuation (1150116), CalLoPathSelection (1150113), CalRfElectronicAttenuationIndex (1150110), CalRfLowbandSignalConditioningPathSelection (1150215), CalRfMechanicalAttenuationIndex (1150111), CalRfPathSelection (1150083), CalToneFrequency (1150140), CalToneMode (1150139), CalTonePowerReferredToRfIn (1150174), CalToneStepAttenuation (1150168), CenterFrequency (1150002), ChannelCount (1050203), ChannelCoupling (1150149), ConfigurationListStepInProgress (1150126), ConfigurationListStepTriggerSource (1150095), ContiguousMultiRecord (1150172), DataTransferBlockSize (1150105), DataTransferMaximumBandwidth (1150104), DdcRefTriggerOverride (1150164), DecimationDelay (1150191), DeviceConfigurationTemperature (1150159), DeviceInstantaneousBandwidth (1150125), DeviceTemperature (1150051), DigitalEdgeAdvanceTriggerSource (1150037), DigitalEdgeArmRefTriggerSource (1150040), DigitalEdgeRefTriggerEdge (1150030), DigitalEdgeRefTriggerSource (1150029), DigitalEdgeStartTriggerEdge (1150026), DigitalEdgeStartTriggerSource (1150025), DigitalIfEqualizationEnabled (1150048), DigitizerDitherEnabled (1150080), DigitizerSampleClockRate (1150228), DigitizerSampleClockTimebaseRate (1150022), DigitizerSampleClockTimebaseSource (1150021), DigitizerTemperature (1150090), DigitizerVerticalRange (1150070), DoneEventTerminalName (1150121), DownconverterCenterFrequency (1150082), DownconverterGain (1150065), DownconverterLoopBandwidth (1150067), DownconvertorCalToneFrequency (1150140), DownconvertorCalToneMode (1150139), DownconvertorFrequencyOffset (1150203), DownconvertorPreselectorEnabled (1150132), DriverSetup (1050007), EnableFractionalResampling (1150071), EndOfRecordEventTerminalName (1150120), ExportedAdvanceTriggerOutputTerminal (1150038), ExportedDigitizerSampleClockOutputTerminal (1150229), ExportedDoneEventOutputTerminal (1150054), ExportedEndOfRecordEventOutputTerminal (1150044), ExportedReadyForAdvanceEventOutputTerminal (1150042), ExportedReadyForRefEventOutputTerminal (1150043), ExportedReadyForStartEventOutputTerminal (1150041), ExportedRefClockOutputTerminal (1150072), ExportedRefTriggerOutputTerminal (1150032), ExportedStartTriggerOutputTerminal (1150027), ExternalGain (1150094), FetchOffset (1150046), FetchRelativeTo (1150045), FftSize (1150050), FftWidth (1150169), FftWindowShapeFactor (1150206), FftWindowSize (1150049), FftWindowType (1150017), FpgaBitFilePath (1150221), FpgaTargetName (1150233), FrequencySettling (1150088), FrequencySettlingUnits (1150087), GroupCapabilities (1050401), If1AttenValue (1150078), If2AttenValue (1150079), IfAttenuation (1150074), IfConditioningDownConversionEnabled (1150161), IfConditioningTemperature (1150210), IfFilter (1150075), IfFilterBandwidth (1150205), IfOutputFrequency (1150086), IfOutputPowerLevel (1150130), IfOutputPowerLevelOffset (1150131), InputIsolationEnabled (1150170), InputPort (1150180), InstrumentFirmwareRevision (1050510), InstrumentManufacturer (1050511), InstrumentModel (1050512), InterchangeCheck (1050021), IoResourceDescriptor (1050304), IqAnalogEdgeRefTrigger (1150092), IqAnalogEdgeRefTriggerHysteresis (1150195), IqAnalogEdgeRefTriggerLevel (1150194), IqAnalogEdgeRefTriggerSlope (1150193), IqAnalogEdgeRefTriggerSource (1150192), IqCarrierFrequency (1150059), IqInPortCarrierrFrequency (1150181), IqInPortTemperature (1150204), IqInportTerminalConfiguration (1150182), IqInPortVerticalRange (1150183), IqPowerEdgeRefTriggerLevel (1150056), IqPowerEdgeRefTriggerSlope (1150057), IqPowerEdgeRefTriggerSource (1150055), IqRate (1150007), Lo2ExportEnabled (1150235), LoExportEnabled (1150134), LoFrequency (1150068), LoFrequencyStepSize (1150188), LogicalName (1050305), LoInjectionSide (1150069), LoInPower (1150186), LoPllFractionalModeEnabled (1150187), LoSource (1150162), LoTemperature (1150089), LowFrequencyByPassEnabled (1150207), LoYigMainCoilDrive (1150135), MaxDeviceInstantaneousBandwidth (1150236), MaxIQRate (1150237), MechanicalAttenuation (1150128), MechanicalAttenuatorEnabled (1150081), MemorySize (1150085), MinimumAcpr (1150142), MinimumReconfigTime (1150165), MixerLevel (1150006), MixerLevelOffset (1150127), ModuleRevision (1150091), NoiseSourcePowerEnabled (1150222), NotchFilterEnabled (1150167), NumberOfRecords (1150011), NumberOfRecordsIsFinite (1150010), NumberOfSamples (1150009), NumberOfSamplesIsFinite (1150008), NumberOfSpectralLines (1150018), OspDataScalingFactor (1150151), P2pEnabled (1150097), P2pEndpointOverflow (1150103), P2pEndpointSize (1150102), P2pFifoEndpointCount (1150098), P2pMostSamplesAvailableInEndpoint (1150101), P2pOnboardMemoryEnabled (1150107), P2pSamplesAvailableInEndpoint (1150100), P2pSamplesTransferred (1150099), PhaseOffset (1150106), PowerSpectrumUnits (1150012), PreselectorEnabled (1150132), PreselectorPresent (1150136), PreselectorTuningDacValue5665 (1150158), PxiChassisClk10Source (1150023), QueryInstrumentStatus (1050003), RangeCheck (1050002), ReadyForAdvanceEventTerminalName (1150118), ReadyForRefEventTerminalName (1150119), ReadyForStartEventTerminalName (1150117), ReconfigurationTriggerSource (1150095), RecordCoercions (1050006), RecordsDone (1150047), RefClockRate (1150020), RefClockSource (1150019), ReferenceLevel (1150004), RefToRefTriggerHoldoff (1150034), RefTriggerDelay (1150060), RefTriggerMinimumQuietTime (1150058), RefTriggerOspDelayEnabled (1150196), RefTriggerPretriggerSamples (1150035), RefTriggerTerminalName (1150123), RefTriggerType (1150028), ResolutionBandwidth (1150013), ResolutionBandwidthType (1150014), RfAttenuationIndex (1150076), RfAttenuationStepSize (1150155), RfAttenuationTable (1150077), RfConditioningTemperature (1150211), RfHighPassFiltering (1150220), RfPreampEnabled (1150129), RfPreampPresent (1150137), RfPreselectorCalToneFrequency (1150209), RfPreselectorCalToneMode (1150208), RfPreselectorFilter (1150166), SerialNumber (1150053), SignalConditioningEnabled (1150160), Simulate (1050005), SmoothSpectrumEnabled (1150219), SpecificDriverClassSpecMajorVersion (1050515), SpecificDriverClassSpecMinorVersion (1050516), SpecificDriverDescription (1050514), SpecificDriverPrefix (1050302), SpecificDriverRevision (1050551), SpecificDriverVendor (1050513), SpectrumAveragingMode (1150016), SpectrumCenterFrequency (1150002), SpectrumNumberOfAverages (1150015), SpectrumOspSamplingRatio (1150144), SpectrumSpan (1150003), StartToRefTriggerHoldoff (1150033), StartTriggerDelay (1150175), StartTriggerTerminalName (1150122), StartTriggerType (1150024), StepGainEnabled (1150157), SubspanOverlap (1150234), SupportedInstrumentModels (1050327), SyncAdvanceTriggerDistLine (1150185), SyncAdvanceTriggerMaster (1150184), SyncRefTriggerDelayEnabled (1150189), SyncRefTriggerDistLine (1150179), SyncRefTriggerMaster (1150178), SyncSampleClockDistLine (1150218), SyncSampleClockMaster (1150217), SyncStartTriggerDistLine (1150177), SyncStartTriggerMaster (1150176), TemperatureReadInterval (1150061), TimerEventInterval (1150096), TimerStartSource (1150173) """
+    """ enum niRFSAProperties, values: AbsoluteDelay (1150266), AcquisitionType (1150001), ActiveConfigurationList (1150092), ActiveConfigurationListStep (1150093), AdvanceTriggerTerminalName (1150124), AdvanceTriggerType (1150036), AllowMoreRecordsThanMemory (1150154), AllowOutOfSpecificationUserSettings (1150256), AmplitudeSettling (1150163), ArmRefTriggerType (1150039), Attenuation (1150005), Cache (1050004), CalDigitizerId (1150226), CalibrationCorrection100mhzFilter (1150223), CalibrationCorrection300KhzFilter (1150147), CalibrationCorrection320mhzFilter (1150224), CalibrationCorrection5MhzFilter (1150148), CalibrationCorrection765mhzFilter (1150225), CalibrationCorrectionThroughFilter (1150146), CalIfAttenuationIndex (1150109), CalIfAttenuationTableSelection (1150141), CalIfAttenuationTableSize (1150216), CalIfFilterSelection (1150112), CalLo1Attenuation (1150114), CalLo2Attenuation (1150115), CalLo3Attenuation (1150116), CalLoPathSelection (1150113), CalRfElectronicAttenuationIndex (1150110), CalRfLowbandSignalConditioningPathSelection (1150215), CalRfMechanicalAttenuationIndex (1150111), CalRfPathSelection (1150083), CalToneFrequency (1150140), CalToneMode (1150139), CalTonePowerReferredToRfIn (1150174), CalToneStepAttenuation (1150168), CenterFrequency (1150002), ChannelCount (1050203), ChannelCoupling (1150149), ConfigurationListStepInProgress (1150126), ConfigurationListStepTriggerSource (1150095), ContiguousMultiRecord (1150172), DataTransferBlockSize (1150105), DataTransferMaximumBandwidth (1150104), DdcRefTriggerOverride (1150164), DecimationDelay (1150191), DeviceConfigurationTemperature (1150159), DeviceInstantaneousBandwidth (1150125), DeviceTemperature (1150051), DigitalEdgeAdvanceTriggerSource (1150037), DigitalEdgeArmRefTriggerSource (1150040), DigitalEdgeConfigurationListStepTriggerSource (1150095), DigitalEdgeRefTriggerEdge (1150030), DigitalEdgeRefTriggerSource (1150029), DigitalEdgeStartTriggerEdge (1150026), DigitalEdgeStartTriggerSource (1150025), DigitalGain (1150301), DigitalIfEqualizationEnabled (1150048), DigitizerDitherEnabled (1150080), DigitizerSampleClockRate (1150228), DigitizerSampleClockTimebaseRate (1150022), DigitizerSampleClockTimebaseSource (1150021), DigitizerTemperature (1150090), DigitizerVerticalRange (1150070), DoneEventTerminalName (1150121), DownconverterCenterFrequency (1150082), DownconverterGain (1150065), DownconverterLoopBandwidth (1150067), DownconvertorCalToneFrequency (1150140), DownconvertorCalToneMode (1150139), DownconvertorFrequencyOffset (1150203), DownconvertorPreselectorEnabled (1150132), DriverSetup (1050007), EnableFractionalResampling (1150071), EndOfRecordEventTerminalName (1150120), ExportedAdvanceTriggerOutputTerminal (1150038), ExportedDigitizerSampleClockOutputTerminal (1150229), ExportedDoneEventOutputTerminal (1150054), ExportedEndOfRecordEventOutputTerminal (1150044), ExportedReadyForAdvanceEventOutputTerminal (1150042), ExportedReadyForRefEventOutputTerminal (1150043), ExportedReadyForStartEventOutputTerminal (1150041), ExportedRefClockOutputTerminal (1150072), ExportedRefTriggerOutputTerminal (1150032), ExportedStartTriggerOutputTerminal (1150027), ExternalGain (1150094), FetchOffset (1150046), FetchRelativeTo (1150045), FftSize (1150050), FftWidth (1150169), FftWindowShapeFactor (1150206), FftWindowSize (1150049), FftWindowType (1150017), FpgaBitFilePath (1150221), FpgaTargetName (1150233), FpgaTemperature (1150254), FrequencySettling (1150088), FrequencySettlingUnits (1150087), GroupCapabilities (1050401), If1AttenValue (1150078), If2AttenValue (1150079), IfAttenuation (1150074), IfConditioningDownConversionEnabled (1150161), IfConditioningTemperature (1150210), IfFilter (1150075), IfFilterBandwidth (1150205), IfOutputFrequency (1150086), IfOutputPowerLevel (1150130), IfOutputPowerLevelOffset (1150131), InputIsolationEnabled (1150170), InputPort (1150180), InstrumentFirmwareRevision (1050510), InstrumentManufacturer (1050511), InstrumentModel (1050512), InterchangeCheck (1050021), IoResourceDescriptor (1050304), IqAnalogEdgeRefTrigger (1150092), IqAnalogEdgeRefTriggerHysteresis (1150195), IqAnalogEdgeRefTriggerLevel (1150194), IqAnalogEdgeRefTriggerSlope (1150193), IqAnalogEdgeRefTriggerSource (1150192), IqCarrierFrequency (1150059), IqInPortCarrierrFrequency (1150181), IqInPortCommonMode (1150269), IqInPortTemperature (1150204), IqInportTerminalConfiguration (1150182), IqInPortVerticalRange (1150183), IqPowerEdgeRefTriggerLevel (1150056), IqPowerEdgeRefTriggerSlope (1150057), IqPowerEdgeRefTriggerSource (1150055), IqRate (1150007), Lo2ExportEnabled (1150235), LoExportEnabled (1150134), LoFrequency (1150068), LoFrequencyStepSize (1150188), LogicalName (1050305), LoInjectionSide (1150069), LoInPower (1150186), LOOutExportConfigureFromRfsg (1150299), LoOutPower (1150246), LoPllFractionalModeEnabled (1150187), LoSource (1150162), LoTemperature (1150089), LowFrequencyByPassEnabled (1150207), LoYigMainCoilDrive (1150135), MaxDeviceInstantaneousBandwidth (1150236), MaxIQRate (1150237), MechanicalAttenuation (1150128), MechanicalAttenuatorEnabled (1150081), MemorySize (1150085), MinimumAcpr (1150142), MinimumReconfigTime (1150165), MixerLevel (1150006), MixerLevelOffset (1150127), ModulePowerConsumption (1150255), ModuleRevision (1150091), NoiseSourcePowerEnabled (1150222), NotchFilterEnabled (1150167), NumberOfRecords (1150011), NumberOfRecordsIsFinite (1150010), NumberOfSamples (1150009), NumberOfSamplesIsFinite (1150008), NumberOfSpectralLines (1150018), OspDataScalingFactor (1150151), OverflowErrorReporting (1150271), P2pEnabled (1150097), P2pEndpointOverflow (1150103), P2pEndpointSize (1150102), P2pFifoEndpointCount (1150098), P2pMostSamplesAvailableInEndpoint (1150101), P2pOnboardMemoryEnabled (1150107), P2pSamplesAvailableInEndpoint (1150100), P2pSamplesTransferred (1150099), PhaseOffset (1150106), PowerSpectrumUnits (1150012), PreselectorEnabled (1150132), PreselectorPresent (1150136), PreselectorTuningDacValue5665 (1150158), PxiChassisClk10Source (1150023), QueryInstrumentStatus (1050003), RangeCheck (1050002), ReadyForAdvanceEventTerminalName (1150118), ReadyForRefEventTerminalName (1150119), ReadyForStartEventTerminalName (1150117), ReconfigurationTriggerSource (1150095), RecordCoercions (1050006), RecordsDone (1150047), RefClockRate (1150020), RefClockSource (1150019), ReferenceLevel (1150004), RefToRefTriggerHoldoff (1150034), RefTriggerDelay (1150060), RefTriggerMinimumQuietTime (1150058), RefTriggerOspDelayEnabled (1150196), RefTriggerPretriggerSamples (1150035), RefTriggerTerminalName (1150123), RefTriggerType (1150028), ResolutionBandwidth (1150013), ResolutionBandwidthType (1150014), RfAttenuationIndex (1150076), RfAttenuationStepSize (1150155), RfAttenuationTable (1150077), RfConditioningCalToneFrequency (1150209), RfConditioningCalToneMode (1150208), RfConditioningTemperature (1150211), RfHighPassFiltering (1150220), RFOutLOExportEnabled (1150298), RfPreampEnabled (1150129), RfPreampPresent (1150137), RfPreselectorCalToneFrequency (1150209), RfPreselectorCalToneMode (1150208), RfPreselectorFilter (1150166), SerialNumber (1150053), SignalConditioningEnabled (1150160), Simulate (1050005), SmoothSpectrumEnabled (1150219), SpecificDriverClassSpecMajorVersion (1050515), SpecificDriverClassSpecMinorVersion (1050516), SpecificDriverDescription (1050514), SpecificDriverPrefix (1050302), SpecificDriverRevision (1050551), SpecificDriverVendor (1050513), SpectrumAveragingMode (1150016), SpectrumCenterFrequency (1150002), SpectrumNumberOfAverages (1150015), SpectrumOspSamplingRatio (1150144), SpectrumSpan (1150003), StartToRefTriggerHoldoff (1150033), StartTriggerDelay (1150175), StartTriggerTerminalName (1150122), StartTriggerType (1150024), StepGainEnabled (1150157), SubspanOverlap (1150234), SupportedInstrumentModels (1050327), SyncAdvanceTriggerDistLine (1150185), SyncAdvanceTriggerMaster (1150184), SyncRefTriggerDelayEnabled (1150189), SyncRefTriggerDistLine (1150179), SyncRefTriggerMaster (1150178), SyncSampleClockDistLine (1150218), SyncSampleClockMaster (1150217), SyncStartTriggerDistLine (1150177), SyncStartTriggerMaster (1150176), TemperatureReadInterval (1150061), ThermalCorrectionTemperatureResolution (1150300), TimerEventInterval (1150096), TimerStartSource (1150173) """
     def __eq__(self, *args): #cannot find CLR method
         """ x.__eq__(y) <==> x==yx.__eq__(y) <==> x==yx.__eq__(y) <==> x==y """
         pass
@@ -2555,12 +2700,15 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     def __str__(self, *args): #cannot find CLR method
         pass
 
+    AbsoluteDelay = None
     AcquisitionType = None
     ActiveConfigurationList = None
     ActiveConfigurationListStep = None
     AdvanceTriggerTerminalName = None
     AdvanceTriggerType = None
     AllowMoreRecordsThanMemory = None
+    AllowOutOfSpecificationUserSettings = None
+    AmplitudeSettling = None
     ArmRefTriggerType = None
     Attenuation = None
     Cache = None
@@ -2602,10 +2750,12 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     DeviceTemperature = None
     DigitalEdgeAdvanceTriggerSource = None
     DigitalEdgeArmRefTriggerSource = None
+    DigitalEdgeConfigurationListStepTriggerSource = None
     DigitalEdgeRefTriggerEdge = None
     DigitalEdgeRefTriggerSource = None
     DigitalEdgeStartTriggerEdge = None
     DigitalEdgeStartTriggerSource = None
+    DigitalGain = None
     DigitalIfEqualizationEnabled = None
     DigitizerDitherEnabled = None
     DigitizerSampleClockRate = None
@@ -2644,6 +2794,7 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     FftWindowType = None
     FpgaBitFilePath = None
     FpgaTargetName = None
+    FpgaTemperature = None
     FrequencySettling = None
     FrequencySettlingUnits = None
     GroupCapabilities = None
@@ -2671,6 +2822,7 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     IqAnalogEdgeRefTriggerSource = None
     IqCarrierFrequency = None
     IqInPortCarrierrFrequency = None
+    IqInPortCommonMode = None
     IqInPortTemperature = None
     IqInportTerminalConfiguration = None
     IqInPortVerticalRange = None
@@ -2685,6 +2837,8 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     LogicalName = None
     LoInjectionSide = None
     LoInPower = None
+    LOOutExportConfigureFromRfsg = None
+    LoOutPower = None
     LoPllFractionalModeEnabled = None
     LoSource = None
     LoTemperature = None
@@ -2699,6 +2853,7 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     MinimumReconfigTime = None
     MixerLevel = None
     MixerLevelOffset = None
+    ModulePowerConsumption = None
     ModuleRevision = None
     NoiseSourcePowerEnabled = None
     NotchFilterEnabled = None
@@ -2708,6 +2863,7 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     NumberOfSamplesIsFinite = None
     NumberOfSpectralLines = None
     OspDataScalingFactor = None
+    OverflowErrorReporting = None
     P2pEnabled = None
     P2pEndpointOverflow = None
     P2pEndpointSize = None
@@ -2745,8 +2901,11 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     RfAttenuationIndex = None
     RfAttenuationStepSize = None
     RfAttenuationTable = None
+    RfConditioningCalToneFrequency = None
+    RfConditioningCalToneMode = None
     RfConditioningTemperature = None
     RfHighPassFiltering = None
+    RFOutLOExportEnabled = None
     RfPreampEnabled = None
     RfPreampPresent = None
     RfPreselectorCalToneFrequency = None
@@ -2784,6 +2943,7 @@ class niRFSAProperties(Enum, IComparable, IFormattable, IConvertible):
     SyncStartTriggerDistLine = None
     SyncStartTriggerMaster = None
     TemperatureReadInterval = None
+    ThermalCorrectionTemperatureResolution = None
     TimerEventInterval = None
     TimerStartSource = None
     value__ = None
@@ -2824,10 +2984,15 @@ class niRFSA_wfmInfo(object):
 class niRFSG(object, IDisposable):
     """
     niRFSG(Resource_Name: str, ID_Query: bool, Reset: bool)
-    niRFSG(Resource_Name: str, ID_Query: bool, Reset: bool, Option_String: str)
+    niRFSG(Resource_Name: str, ID_Query: bool, Reset: bool, Option_String: str)
+    niRFSG(handle: IntPtr)
     """
     def Abort(self):
         """ Abort(self: niRFSG) -> int """
+        pass
+
+    def AlignLODaisyChain5840(self, useExternalLO, externalLO, resourceName, portTypes, startFrequency, stopFrequency):
+        """ AlignLODaisyChain5840(self: niRFSG, useExternalLO: bool, externalLO: str, resourceName: str, portTypes: Array[int], startFrequency: float, stopFrequency: float) -> int """
         pass
 
     def AllocateArbWaveform(self, Name, Size_In_Samples):
@@ -2860,6 +3025,10 @@ class niRFSG(object, IDisposable):
 
     def ClearArbWaveform(self, Name):
         """ ClearArbWaveform(self: niRFSG, Name: str) -> int """
+        pass
+
+    def ClearSelfCalibrationRange(self):
+        """ ClearSelfCalibrationRange(self: niRFSG) -> int """
         pass
 
     def close(self):
@@ -2982,6 +3151,10 @@ class niRFSG(object, IDisposable):
         """ ExportSignal(self: niRFSG, Signal: int, Signal_Identifier: str, Output_Terminal: str) -> int """
         pass
 
+    def GetAbsoluteDelay(self, channel, value):
+        """ GetAbsoluteDelay(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
     def GetActiveConfigurationList(self, channel, value):
         """ GetActiveConfigurationList(self: niRFSG, channel: str) -> (int, str) """
         pass
@@ -2990,16 +3163,56 @@ class niRFSG(object, IDisposable):
         """ GetActiveConfigurationListStep(self: niRFSG, channel: str) -> (int, int) """
         pass
 
+    def GetAeTemperature(self, channel, value):
+        """ GetAeTemperature(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetAlcControl(self, channel, value):
+        """ GetAlcControl(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetAllowOutOfSpecificationUserSettings(self, channel, value):
         """ GetAllowOutOfSpecificationUserSettings(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetAmplitudeSettling(self, channel, value):
+        """ GetAmplitudeSettling(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetAmpPath(self, channel, value):
+        """ GetAmpPath(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetAnalogModulationAmSensitivity(self, channel, value):
+        """ GetAnalogModulationAmSensitivity(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetAnalogModulationFmBand(self, channel, value):
+        """ GetAnalogModulationFmBand(self: niRFSG, channel: str) -> (int, int) """
         pass
 
     def GetAnalogModulationFmDeviation(self, channel, value):
         """ GetAnalogModulationFmDeviation(self: niRFSG, channel: str) -> (int, float) """
         pass
 
+    def GetAnalogModulationFmNarrowbandIntegrator(self, channel, value):
+        """ GetAnalogModulationFmNarrowbandIntegrator(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetAnalogModulationFmSensitivity(self, channel, value):
+        """ GetAnalogModulationFmSensitivity(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
     def GetAnalogModulationPmDeviation(self, channel, value):
         """ GetAnalogModulationPmDeviation(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetAnalogModulationPmMode(self, channel, value):
+        """ GetAnalogModulationPmMode(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetAnalogModulationPmSensitivity(self, channel, value):
+        """ GetAnalogModulationPmSensitivity(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetAnalogModulationType(self, channel, value):
@@ -3016,6 +3229,10 @@ class niRFSG(object, IDisposable):
 
     def GetArbCarrierFrequency(self, channel, value):
         """ GetArbCarrierFrequency(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetArbDigitalGain(self, channel, value):
+        """ GetArbDigitalGain(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetArbFilterRaisedCosineAlpha(self, channel, value):
@@ -3090,20 +3307,32 @@ class niRFSG(object, IDisposable):
         """ GetAttenuatorHoldMaxPower(self: niRFSG, channel: str) -> (int, float) """
         pass
 
+    def GetAttenuatorSetting(self, channel, value):
+        """ GetAttenuatorSetting(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
     def GetAttrArbWaveformRepeatCountIsFinite(self, channel, value):
         """ GetAttrArbWaveformRepeatCountIsFinite(self: niRFSG, channel: str) -> (int, bool) """
+        pass
+
+    def GetAttributeViSession(self, propertyId, repeatedCapabilityOrChannel, val):
+        """ GetAttributeViSession(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, IntPtr) """
         pass
 
     def GetAutomaticThermalCorrection(self, channel, value):
         """ GetAutomaticThermalCorrection(self: niRFSG, channel: str) -> (int, int) """
         pass
 
+    def GetAutoPowerSearch(self, channel, value):
+        """ GetAutoPowerSearch(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetBoolean(self, propertyId, *__args):
         """
+        GetBoolean(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, bool)
         GetBoolean(self: niRFSG, propertyId: niRFSGProperties) -> (int, bool)
         GetBoolean(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> bool
-        GetBoolean(self: niRFSG, propertyId: niRFSGProperties) -> bool
-        GetBoolean(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, bool)
+        GetBoolean(self: niRFSG, propertyId: niRFSGProperties) -> bool
         """
         pass
 
@@ -3119,6 +3348,14 @@ class niRFSG(object, IDisposable):
         """ GetCompensateForFilterGroupDelay(self: niRFSG, channel: str) -> (int, bool) """
         pass
 
+    def GetConfigurationListIsDone(self, channel, value):
+        """ GetConfigurationListIsDone(self: niRFSG, channel: str) -> (int, bool) """
+        pass
+
+    def GetConfigurationListRepeat(self, channel, value):
+        """ GetConfigurationListRepeat(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetConfigurationListStepInProgress(self, channel, value):
         """ GetConfigurationListStepInProgress(self: niRFSG, channel: str) -> (int, Int64) """
         pass
@@ -3129,6 +3366,14 @@ class niRFSG(object, IDisposable):
 
     def GetConfigurationListStepTriggerType(self, channel, value):
         """ GetConfigurationListStepTriggerType(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetConfigurationSettledEventTerminalName(self, channel, value):
+        """ GetConfigurationSettledEventTerminalName(self: niRFSG, channel: str) -> (int, str) """
+        pass
+
+    def GetCorrectionTemperature(self, channel, value):
+        """ GetCorrectionTemperature(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetDataTransferBlockSize(self, channel, value):
@@ -3237,10 +3482,10 @@ class niRFSG(object, IDisposable):
 
     def GetDouble(self, propertyId, *__args):
         """
-        GetDouble(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> float
-        GetDouble(self: niRFSG, propertyId: niRFSGProperties) -> float
         GetDouble(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, float)
-        GetDouble(self: niRFSG, propertyId: niRFSGProperties) -> (int, float)
+        GetDouble(self: niRFSG, propertyId: niRFSGProperties) -> (int, float)
+        GetDouble(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> float
+        GetDouble(self: niRFSG, propertyId: niRFSGProperties) -> float
         """
         pass
 
@@ -3262,6 +3507,10 @@ class niRFSG(object, IDisposable):
 
     def GetExportedConfigurationListStepTriggerOutputTerminal(self, channel, value):
         """ GetExportedConfigurationListStepTriggerOutputTerminal(self: niRFSG, channel: str) -> (int, str) """
+        pass
+
+    def GetExportedConfigurationSettledEventOutputTerminal(self, channel, value):
+        """ GetExportedConfigurationSettledEventOutputTerminal(self: niRFSG, channel: str) -> (int, str) """
         pass
 
     def GetExportedDoneEventOutputTerminal(self, channel, value):
@@ -3312,8 +3561,16 @@ class niRFSG(object, IDisposable):
         """ GetExternalGain(self: niRFSG, channel: str) -> (int, float) """
         pass
 
+    def GetFastTuningOption(self, channel, value):
+        """ GetFastTuningOption(self: niRFSG, channel: str) -> (int, bool) """
+        pass
+
     def GetFpgaBitfilePath(self, channel, value):
         """ GetFpgaBitfilePath(self: niRFSG, channel: str) -> (int, str) """
+        pass
+
+    def GetFpgaTemperature(self, channel, value):
+        """ GetFpgaTemperature(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetFrequency(self, channel, value):
@@ -3443,10 +3700,10 @@ class niRFSG(object, IDisposable):
 
     def GetLong(self, propertyId, *__args):
         """
+        GetLong(self: niRFSG, propertyId: niRFSGProperties) -> (int, Int64)
         GetLong(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> Int64
         GetLong(self: niRFSG, propertyId: niRFSGProperties) -> Int64
-        GetLong(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, Int64)
-        GetLong(self: niRFSG, propertyId: niRFSGProperties) -> (int, Int64)
+        GetLong(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, Int64)
         """
         pass
 
@@ -3456,6 +3713,10 @@ class niRFSG(object, IDisposable):
 
     def GetLoOutEnabled(self, channel, value):
         """ GetLoOutEnabled(self: niRFSG, channel: str) -> (int, bool) """
+        pass
+
+    def GetLOOutExportConfigureFromRfsa(self, channel, value):
+        """ GetLOOutExportConfigureFromRfsa(self: niRFSG, channel: str) -> (int, int) """
         pass
 
     def GetLoOutPower(self, channel, value):
@@ -3474,12 +3735,32 @@ class niRFSG(object, IDisposable):
         """ GetLoTemperature(self: niRFSG, channel: str) -> (int, float) """
         pass
 
+    def GetMarkerEventOutputBehaviour(self, channel, value):
+        """ GetMarkerEventOutputBehaviour(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetMarkerEventPulseWidth(self, channel, value):
+        """ GetMarkerEventPulseWidth(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
+    def GetMarkerEventPulseWidthUnits(self, channel, value):
+        """ GetMarkerEventPulseWidthUnits(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetMarkerEventTerminalName(self, channel, value):
         """ GetMarkerEventTerminalName(self: niRFSG, channel: str) -> (int, str) """
         pass
 
+    def GetMarkerEventToggleInitialState(self, channel, value):
+        """ GetMarkerEventToggleInitialState(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetMemorySize(self, channel, value):
         """ GetMemorySize(self: niRFSG, channel: str) -> (int, Int64) """
+        pass
+
+    def GetModulePowerConsumption(self, channel, value):
+        """ GetModulePowerConsumption(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetModuleRevision(self, channel, value):
@@ -3492,6 +3773,10 @@ class niRFSG(object, IDisposable):
 
     def GetOutputPort(self, channel, value):
         """ GetOutputPort(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
+    def GetOverflowErrorReporting(self, channel, value):
+        """ GetOverflowErrorReporting(self: niRFSG, channel: str) -> (int, int) """
         pass
 
     def GetP2pDataTransferPermissionInterval(self, channel, value):
@@ -3538,6 +3823,10 @@ class niRFSG(object, IDisposable):
         """ GetPeakPowerAdjustment(self: niRFSG, channel: str) -> (int, float) """
         pass
 
+    def GetPeakPowerAdjustmentInheritance(self, channel, value):
+        """ GetPeakPowerAdjustmentInheritance(self: niRFSG, channel: str) -> (int, int) """
+        pass
+
     def GetPhaseContinuityEnabled(self, channel, value):
         """ GetPhaseContinuityEnabled(self: niRFSG, channel: str) -> (int, int) """
         pass
@@ -3556,6 +3845,10 @@ class niRFSG(object, IDisposable):
 
     def GetPulseModulationEnabled(self, channel, value):
         """ GetPulseModulationEnabled(self: niRFSG, channel: str) -> (int, bool) """
+        pass
+
+    def GetPulseModulationMode(self, channel, value):
+        """ GetPulseModulationMode(self: niRFSG, channel: str) -> (int, int) """
         pass
 
     def GetPxiChassisClk10Source(self, channel, value):
@@ -3586,8 +3879,16 @@ class niRFSG(object, IDisposable):
         """ GetRefPllBandwidth(self: niRFSG, channel: str) -> (int, int) """
         pass
 
+    def GetRelativeDelay(self, channel, value):
+        """ GetRelativeDelay(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
     def GetRfBlankingSource(self, channel, value):
         """ GetRfBlankingSource(self: niRFSG, channel: str) -> (int, str) """
+        pass
+
+    def GetRFInLOExportEnabled(self, channel, value):
+        """ GetRFInLOExportEnabled(self: niRFSG, channel: str) -> (int, int) """
         pass
 
     def GetScriptTriggerTerminalName(self, channel, value):
@@ -3683,10 +3984,10 @@ class niRFSG(object, IDisposable):
 
     def GetString(self, propertyId, *__args):
         """
-        GetString(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> str
-        GetString(self: niRFSG, propertyId: niRFSGProperties) -> str
         GetString(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> (int, str)
-        GetString(self: niRFSG, propertyId: niRFSGProperties) -> (int, str)
+        GetString(self: niRFSG, propertyId: niRFSGProperties) -> (int, str)
+        GetString(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str) -> str
+        GetString(self: niRFSG, propertyId: niRFSGProperties) -> str
         """
         pass
 
@@ -3718,8 +4019,16 @@ class niRFSG(object, IDisposable):
         """ GetSyncStartTriggerMaster(self: niRFSG, channel: str) -> (int, bool) """
         pass
 
+    def GetTemperatureReadInterval(self, channel, value):
+        """ GetTemperatureReadInterval(self: niRFSG, channel: str) -> (int, float) """
+        pass
+
     def GetTerminalName(self, Signal, Signal_Identifier, Buffer_Size, Terminal_Name):
         """ GetTerminalName(self: niRFSG, Signal: int, Signal_Identifier: str, Buffer_Size: int, Terminal_Name: StringBuilder) -> int """
+        pass
+
+    def GetThermalCorrectionTemperatureResolution(self, channel, value):
+        """ GetThermalCorrectionTemperatureResolution(self: niRFSG, channel: str) -> (int, float) """
         pass
 
     def GetTimerEventInterval(self, channel, value):
@@ -3810,6 +4119,10 @@ class niRFSG(object, IDisposable):
         """ SendSoftwareEdgeTrigger(self: niRFSG, Trigger: int, Trigger_Identifier: str) -> int """
         pass
 
+    def SetAbsoluteDelay(self, channel, value):
+        """ SetAbsoluteDelay(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
     def SetActiveConfigurationList(self, channel, value):
         """ SetActiveConfigurationList(self: niRFSG, channel: str, value: str) -> int """
         pass
@@ -3818,16 +4131,52 @@ class niRFSG(object, IDisposable):
         """ SetActiveConfigurationListStep(self: niRFSG, channel: str, value: int) -> int """
         pass
 
+    def SetAlcControl(self, channel, value):
+        """ SetAlcControl(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetAllowOutOfSpecificationUserSettings(self, channel, value):
         """ SetAllowOutOfSpecificationUserSettings(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetAmplitudeSettling(self, channel, value):
+        """ SetAmplitudeSettling(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetAmpPath(self, channel, value):
+        """ SetAmpPath(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetAnalogModulationAmSensitivity(self, channel, value):
+        """ SetAnalogModulationAmSensitivity(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetAnalogModulationFmBand(self, channel, value):
+        """ SetAnalogModulationFmBand(self: niRFSG, channel: str, value: int) -> int """
         pass
 
     def SetAnalogModulationFmDeviation(self, channel, value):
         """ SetAnalogModulationFmDeviation(self: niRFSG, channel: str, value: float) -> int """
         pass
 
+    def SetAnalogModulationFmNarrowbandIntegrator(self, channel, value):
+        """ SetAnalogModulationFmNarrowbandIntegrator(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetAnalogModulationFmSensitivity(self, channel, value):
+        """ SetAnalogModulationFmSensitivity(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
     def SetAnalogModulationPmDeviation(self, channel, value):
         """ SetAnalogModulationPmDeviation(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetAnalogModulationPmMode(self, channel, value):
+        """ SetAnalogModulationPmMode(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetAnalogModulationPmSensitivity(self, channel, value):
+        """ SetAnalogModulationPmSensitivity(self: niRFSG, channel: str, value: float) -> int """
         pass
 
     def SetAnalogModulationType(self, channel, value):
@@ -3844,6 +4193,10 @@ class niRFSG(object, IDisposable):
 
     def SetArbCarrierFrequency(self, channel, value):
         """ SetArbCarrierFrequency(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetArbDigitalGain(self, channel, value):
+        """ SetArbDigitalGain(self: niRFSG, channel: str, value: float) -> int """
         pass
 
     def SetArbFilterRaisedCosineAlpha(self, channel, value):
@@ -3874,6 +4227,10 @@ class niRFSG(object, IDisposable):
         """ SetArbSampleClockSource(self: niRFSG, channel: str, value: str) -> int """
         pass
 
+    def SetArbWaveformNextWritePosition(self, name, relativeTo, offset):
+        """ SetArbWaveformNextWritePosition(self: niRFSG, name: str, relativeTo: int, offset: int) -> int """
+        pass
+
     def SetArbWaveformRepeatCount(self, channel, value):
         """ SetArbWaveformRepeatCount(self: niRFSG, channel: str, value: int) -> int """
         pass
@@ -3894,6 +4251,14 @@ class niRFSG(object, IDisposable):
         """ SetAttenuatorHoldMaxPower(self: niRFSG, channel: str, value: float) -> int """
         pass
 
+    def SetAttenuatorSetting(self, channel, value):
+        """ SetAttenuatorSetting(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetAutoPowerSearch(self, channel, value):
+        """ SetAutoPowerSearch(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetBoolean(self, propertyId, *__args):
         """
         SetBoolean(self: niRFSG, propertyId: niRFSGProperties, repeatedCapabilityOrChannel: str, val: bool) -> int
@@ -3909,8 +4274,20 @@ class niRFSG(object, IDisposable):
         """ SetCompensateForFilterGroupDelay(self: niRFSG, channel: str, value: bool) -> int """
         pass
 
+    def SetConfigurationListRepeat(self, channel, value):
+        """ SetConfigurationListRepeat(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetConfigurationListStepTriggerType(self, channel, value):
         """ SetConfigurationListStepTriggerType(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetConfigurationSettledEventTerminalName(self, channel, value):
+        """ SetConfigurationSettledEventTerminalName(self: niRFSG, channel: str, value: str) -> int """
+        pass
+
+    def SetCorrectionTemperature(self, channel, value):
+        """ SetCorrectionTemperature(self: niRFSG, channel: str, value: float) -> int """
         pass
 
     def SetDataTransferBlockSize(self, channel, value):
@@ -4022,6 +4399,10 @@ class niRFSG(object, IDisposable):
 
     def SetExportedConfigurationListStepTriggerOutputTerminal(self, channel, value):
         """ SetExportedConfigurationListStepTriggerOutputTerminal(self: niRFSG, channel: str, value: str) -> int """
+        pass
+
+    def SetExportedConfigurationSettledEventOutputTerminal(self, channel, value):
+        """ SetExportedConfigurationSettledEventOutputTerminal(self: niRFSG, channel: str, value: str) -> int """
         pass
 
     def SetExportedDoneEventOutputTerminal(self, channel, value):
@@ -4166,6 +4547,10 @@ class niRFSG(object, IDisposable):
         """ SetLoOutEnabled(self: niRFSG, channel: str, value: bool) -> int """
         pass
 
+    def SetLOOutExportConfigureFromRfsa(self, channel, value):
+        """ SetLOOutExportConfigureFromRfsa(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetLoPllFractionalModeEnabled(self, channel, value):
         """ SetLoPllFractionalModeEnabled(self: niRFSG, channel: str, value: int) -> int """
         pass
@@ -4174,12 +4559,32 @@ class niRFSG(object, IDisposable):
         """ SetLoSource(self: niRFSG, channel: str, value: str) -> int """
         pass
 
+    def SetMarkerEventOutputBehaviour(self, channel, value):
+        """ SetMarkerEventOutputBehaviour(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetMarkerEventPulseWidth(self, channel, value):
+        """ SetMarkerEventPulseWidth(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetMarkerEventPulseWidthUnits(self, channel, value):
+        """ SetMarkerEventPulseWidthUnits(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetMarkerEventToggleInitialState(self, channel, value):
+        """ SetMarkerEventToggleInitialState(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetOutputEnabled(self, channel, value):
         """ SetOutputEnabled(self: niRFSG, channel: str, value: bool) -> int """
         pass
 
     def SetOutputPort(self, channel, value):
         """ SetOutputPort(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    def SetOverflowErrorReporting(self, channel, value):
+        """ SetOverflowErrorReporting(self: niRFSG, channel: str, value: int) -> int """
         pass
 
     def SetP2pDataTransferPermissionInterval(self, channel, value):
@@ -4206,6 +4611,10 @@ class niRFSG(object, IDisposable):
         """ SetPeakPowerAdjustment(self: niRFSG, channel: str, value: float) -> int """
         pass
 
+    def SetPeakPowerAdjustmentInheritance(self, channel, value):
+        """ SetPeakPowerAdjustmentInheritance(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
     def SetPhaseContinuityEnabled(self, channel, value):
         """ SetPhaseContinuityEnabled(self: niRFSG, channel: str, value: int) -> int """
         pass
@@ -4224,6 +4633,10 @@ class niRFSG(object, IDisposable):
 
     def SetPulseModulationEnabled(self, channel, value):
         """ SetPulseModulationEnabled(self: niRFSG, channel: str, value: bool) -> int """
+        pass
+
+    def SetPulseModulationMode(self, channel, value):
+        """ SetPulseModulationMode(self: niRFSG, channel: str, value: int) -> int """
         pass
 
     def SetPxiChassisClk10Source(self, channel, value):
@@ -4254,8 +4667,16 @@ class niRFSG(object, IDisposable):
         """ SetRefPllBandwidth(self: niRFSG, channel: str, value: int) -> int """
         pass
 
+    def SetRelativeDelay(self, channel, value):
+        """ SetRelativeDelay(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
     def SetRfBlankingSource(self, channel, value):
         """ SetRfBlankingSource(self: niRFSG, channel: str, value: str) -> int """
+        pass
+
+    def SetRFInLOExportEnabled(self, channel, value):
+        """ SetRFInLOExportEnabled(self: niRFSG, channel: str, value: int) -> int """
         pass
 
     def SetScriptTriggerType(self, channel, value):
@@ -4317,6 +4738,14 @@ class niRFSG(object, IDisposable):
         """ SetSyncStartTriggerMaster(self: niRFSG, channel: str, value: bool) -> int """
         pass
 
+    def SetTemperatureReadInterval(self, channel, value):
+        """ SetTemperatureReadInterval(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
+    def SetThermalCorrectionTemperatureResolution(self, channel, value):
+        """ SetThermalCorrectionTemperatureResolution(self: niRFSG, channel: str, value: float) -> int """
+        pass
+
     def SetTimerEventInterval(self, channel, value):
         """ SetTimerEventInterval(self: niRFSG, channel: str, value: float) -> int """
         pass
@@ -4347,6 +4776,11 @@ class niRFSG(object, IDisposable):
 
     def SetYigMainCoilDrive(self, channel, value):
         """ SetYigMainCoilDrive(self: niRFSG, channel: str, value: int) -> int """
+        pass
+
+    @staticmethod
+    def VstSelfCalibrate(resouceName):
+        """ VstSelfCalibrate(resouceName: str) -> int """
         pass
 
     def WaitUntilSettled(self, Max_Time_Milliseconds):
@@ -4397,10 +4831,11 @@ class niRFSG(object, IDisposable):
         pass
 
     @staticmethod # known case of __new__
-    def __new__(self, Resource_Name, ID_Query, Reset, Option_String=None):
+    def __new__(self, *__args):
         """
         __new__(cls: type, Resource_Name: str, ID_Query: bool, Reset: bool)
-        __new__(cls: type, Resource_Name: str, ID_Query: bool, Reset: bool, Option_String: str)
+        __new__(cls: type, Resource_Name: str, ID_Query: bool, Reset: bool, Option_String: str)
+        __new__(cls: type, handle: IntPtr)
         """
         pass
 
@@ -4438,10 +4873,13 @@ class niRFSGConstants(object):
     ConfigurationListRepeatSingle = 1
     ConfigurationListStepTrigger = 6
     ConfigurationSettledEvent = 7
+    CurrentPosition = 8001
     Cw = 1000
     Differential = 15000
     DigitalEdge = 1
+    DigitalHigh = 21001
     DigitalLevel = 8000
+    DigitalLow = 21000
     Disable = 0
     DivideDown = 6001
     DoneEvent = 5
@@ -4450,6 +4888,8 @@ class niRFSGConstants(object):
     DucRaisedCosine = 10002
     DucRootRaisedCosine = 10001
     Enable = 1
+    ErrorReportingDisabled = 1302
+    ErrorReportingWarning = 1301
     ExactMatch = 0
     FallingEdge = 1
     Fast = 1
@@ -4463,6 +4903,8 @@ class niRFSGConstants(object):
     HighResolution = 6000
     IOnly = 14003
     IqOut = 14001
+    LOOutExportConfigureFromRfsaDisabled = 0
+    LOOutExportConfigureFromRfsaEnabled = 1
     LoSourceLoInStr = 'LO_In'
     LoSourceOnboardStr = 'Onboard'
     Low = 0
@@ -4500,11 +4942,17 @@ class niRFSGConstants(object):
     Pfi4Str = 'PFI4'
     Pfi5Str = 'PFI5'
     Pm = 2001
+    PortRFIN = 14500
+    PortRFOut = 14501
     Ppm = 12002
     Prbs = 5000
     Psk = 4002
+    Pulse = 23000
     PxiClk10Str = 'PXI_CLK10'
+    PxiClkMasterStr = 'PXI_ClkMaster'
     PxiClkStr = 'PXI_CLK'
+    PXIeDStarBStr = 'PXIe_DStarB'
+    PXIeDStarCStr = 'PXIe_DStarC'
     PxiStarStr = 'PXI_STAR'
     PxiTrig0Str = 'PXI_Trig0'
     PxiTrig1Str = 'PXI_Trig1'
@@ -4518,9 +4966,13 @@ class niRFSGConstants(object):
     RefClockSourcePxiClk = 1001
     ReferenceOscillatorSourceExternal = 1
     ReferenceOscillatorSourceInternal = 0
+    RefIn2Str = 'RefIn2'
     RefInStr = 'RefIn'
     RefOut2Str = 'RefOut2'
     RefOutStr = 'RefOut'
+    RFInLOExportDisabled = 0
+    RFInLOExportEnabled = 1
+    RFInLOExportUnspecified = -2
     RfOut = 14000
     RisingEdge = 0
     Rtsi0Str = 'RTSI0'
@@ -4531,29 +4983,35 @@ class niRFSGConstants(object):
     Rtsi5Str = 'RTSI5'
     Rtsi6Str = 'RTSI6'
     Rtsi7Str = 'RTSI7'
+    SampleClockPeriods = 22001
     Script = 1002
     ScriptTrigger = 1
     ScriptTrigger0 = 'scriptTrigger0'
     ScriptTrigger1 = 'scriptTrigger1'
     ScriptTrigger2 = 'scriptTrigger2'
     ScriptTrigger3 = 'scriptTrigger3'
+    Secondary = 'Secondary'
+    Seconds = 22000
     SelfCalImageSuppression = 8
     SelfCalLoSelfCal = 1
     SelfCalOmitNone = 0
     SelfCalPowerLevelAccuracy = 2
     SelfCalResidualLoPower = 4
+    SelfCalSynthesizerAlignment = 10
     Sine = 3000
     SingleEnded = 15001
     Slow = 0
     Software = 2
     Square = 3001
     StartedEvent = 4
+    StartOfWaveform = 8000
     StartTrigger = 0
     SyncScriptTriggerStr = 'Sync_Script'
     SyncStartTriggerStr = 'Sync_Start'
     TimeAfterIo = 12001
     TimeAfterLock = 12000
     TimerEventStr = 'TimerEvent'
+    Toggle = 23001
     Triangle = 3002
     TrigInStr = 'TrigIn'
     TrigOutStr = 'TrigOut'
@@ -4568,7 +5026,7 @@ class niRFSGConstants(object):
 
 
 class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
-    """ enum niRFSGProperties, values: ActiveConfigurationList (1150096), ActiveConfigurationListStep (1150097), AeSession (1150183), AeTemperature (1150182), AlcControl (1150195), AlcEnabled (1250003), AllowOutOfSpecificationUserSettings (1150014), AmplitudeSettling (1150137), AmpPath (1150185), AnalogModulationAmSensitivity (1150167), AnalogModulationFmBand (1150191), AnalogModulationFmDeviation (1150035), AnalogModulationFmNarrowbandIntegrator (1150165), AnalogModulationFmSensitivity (1150166), AnalogModulationPmDeviation (1150062), AnalogModulationPmMode (1150192), AnalogModulationPmSensitivity (1150168), AnalogModulationType (1150032), AnalogModulationWaveformFrequency (1150034), AnalogModulationWaveformType (1150033), ArbCarrierFrequency (1150015), ArbFilterFrequency (1250453), ArbFilterRaisedCosineAlpha (1150060), ArbFilterRootRaisedCosineAlpha (1150057), ArbFilterType (1150056), ArbMaxNumberWaveforms (1250454), ArbOnboardSampleClockMode (1150029), ArbOscillatorPhaseDacValue (1150089), ArbPower (1150016), ArbPreFilterGain (1150025), ArbSampleClockRate (1150031), ArbSampleClockSource (1150030), ArbTemperature (1150068), ArbTriggerSource (1250458), ArbWaveformQuantum (1250455), ArbWaveformRepeatCount (1150158), ArbWaveformRepeatCountIsFinite (1150157), ArbWaveformSizeMax (1250457), ArbWaveformSizeMin (1250456), ArbWaveformSoftwareScalingFactor (1150052), AttenuatorHoldEnabled (1150009), AttenuatorHoldMaxPower (1150010), AttenuatorSetting (1150173), AutomaticThermalCorrection (1150008), AutoPowerSearch (1150196), Cache (1050004), ChannelCount (1050203), CompensateForFilterGroupDelay (119740), ConfigurationListIsDone (1150175), ConfigurationListRepeat (1150102), ConfigurationListStepInProgress (1150122), ConfigurationListStepTriggerTerminalName (1150117), ConfigurationListStepTriggerType (1150098), ConfigurationSettledEventTerminalName (1150194), CorrectionTemperature (1150104), DataTransferBlockSize (1150048), DataTransferMaximumBandwidth (1150086), DataTransferMaximumInFlightReads (1150088), DataTransferPreferredPacketSize (1150087), DeviceTemperature (1150017), DigitalEdgeConfigurationListStepTriggerEdge (1150103), DigitalEdgeConfigurationListStepTriggerSource (1150099), DigitalEdgeScriptTriggerEdge (1150021), DigitalEdgeScriptTriggerSource (1150020), DigitalEdgeStartTriggerEdge (1250459), DigitalEdgeStartTriggerSource (1150002), DigitalEqualizationEnabled (1150012), DigitalIfEqualizationEnabled (1150012), DigitalLevelScriptTriggerActiveLevel (1150055), DigitalLevelScriptTriggerSource (1150054), DigitalModulationFskDeviation (1150041), DigitalModulationPrbsOrder (1150039), DigitalModulationPrbsSeed (1150040), DigitalModulationSymbolRate (1150037), DigitalModulationType (1150036), DigitalModulationWaveformType (1150038), DigitalPattern (1150044), DirectDmaEnabled (1150049), DirectDmaWindowAddress (1150050), DirectDmaWindowSize (1150051), DirectDownload (1150042), DoneEventTerminalName (1150113), DriverSetup (1050007), DucFirFilterRaisedCosineAlpha (1150060), DucFirFilterRootRaisedCosineAlpha (1150057), DucFirFilterType (1150056), DucPreFilterGain (1150025), EventsDelay (1150154), ExportedConfigurationListStepTriggerOutputTerminal (1150105), ExportedConfigurationSettledEventOutputTerminal (1150129), ExportedDoneEventOutputTerminal (1150063), ExportedMarkerEventOutputTerminal (1150064), ExportedRefClockOutputTerminal (1150053), ExportedScriptTriggerOutputTerminal (1150022), ExportedStartedEventOutputTerminal (1150065), ExportedStartTriggerOutputTerminal (1150003), ExternalCalibrationRecommendedInterval (1150076), ExternalCalibrationTemperature (1150077), ExternalCalibrationUserDefinedInfo (1150078), ExternalCalibrationUserDefinedInfoMaxSize (1150079), ExternalGain (1150085), FastTuningOption (1150188), FgenSession (1150028), FpgaBitfilePath (1150186), Frequency (1250001), FrequencySettling (1150083), FrequencySettlingUnits (1150082), FrequencyTolerance (1150006), FunctionCapabilities (1050402), GenerationMode (1150018), GroupCapabilities (1050401), IfCarrierFrequency (1150015), IfPower (1150016), InstrumentFirmwareRevision (1050510), InstrumentManufacturer (1050511), InstrumentModel (1050512), InterchangeCheck (1050021), InterpolationDelay (1150153), IOResourceDescriptor (1050304), IqEnabled (1250401), IqGainImbalance (1150072), IqImpairmentEnabled (1150069), IqIOffset (1150070), IqNominalVoltage (1250402), IqOffsetUnits (1150081), IqOutPortCarrierFrequency (1150145), IqOutPortCommonModeOffset (1150148), IqOutPortLevel (1150147), IqOutPortLoadImpedance (1150163), IqOutPortOffset (1150149), IqOutPortTemperature (1150161), IqOutPortTerminalConfiguration (1150146), IqQOffset (1150071), IqRate (1250452), IqSkew (1150073), IqSwapEnabled (1250404), LocalOscillatorOut0Enabled (1150013), LoFrequencyStepSize (1150151), LogicalName (1050305), LoInPower (1150067), LoopBandwidth (1150027), LoOutEnabled (1150013), LoOutPower (1150066), LoPllFractionalModeEnabled (1150152), LoSession (1150074), LoSource (1150150), LoTemperature (1150075), MarkerEventTerminalName (1150115), MemorySize (1150061), ModuleRevision (1150084), OutputEnabled (1250004), OutputPort (1150144), P2pDataTransferPermissionInterval (1150134), P2pDataTransferPermissionitialCredits (1150135), P2pEnabled (1150123), P2pEndpointCount (1150127), P2pEndpointFullnessStartTriggerLevel (1150128), P2pEndpointSize (1150124), P2pMostSpaceAvailableInEndpoint (1150126), P2pSpaceAvailableInEndpoint (1150125), PeakEnvelopePower (1150011), PeakPowerAdjsutmentInheritance (1150141), PeakPowerAdjustment (1150132), PhaseContinuityEnabled (1150005), PhaseOffset (1150024), PowerLevel (1250002), PowerLevelType (1150043), PulseModulationEnabled (1250051), PulseModulationMode (1150190), PxiChassisClk10Source (1150004), QueryInstrumentStatus (1050003), RangeCheck (1050002), RecordCoercions (1050006), RefClockRate (1250322), RefClockSource (1150001), ReferenceOscillatorExternalFrequency (1250322), ReferenceOscillatorSource (1250321), RefPllBandwidth (1150133), RfBlankingSource (1150162), SampleClockRate (1250452), ScriptTriggerTerminalName (1150116), ScriptTriggerType (1150019), SelectedScript (1150023), SelfCalibrationTemperature (1150136), SerialNumber (1150026), SignalBandwidth (1150007), Simulate (1050005), SpecificDriverClassSpecMajorVersion (1050515), SpecificDriverClassSpecMinorVersion (1050516), SpecificDriverDescription (1050514), SpecificDriverPrefix (1050302), SpecificDriverRevision (1050551), SpecificDriverVendor (1050513), Spy (1050022), StartedEventTerminalName (1150112), StartTriggerTerminalName (1150114), StartTriggerType (1250458), StreamingEnabled (1150045), StreamingSpaceAvailableInWaveform (1150047), StreamingWaveformName (1150046), StreamingWriteTimeout (1150140), SupportedInstrumentModels (1050327), SyncSampleClockDistLine (1150181), SyncSampleClockMaster (1150180), SyncScriptTriggerDistLine (1150143), SyncScriptTriggerMaster (1150142), SyncStartTriggerDistLine (1150156), SyncStartTriggerMaster (1150155), ThermalCorrectionEnabled (1150008), TimerEventInterval (1150100), UpconverterCenterFrequency (1154098), UpconverterCenterFrequencyIncrement (1150058), UpconverterCenterFrequencyIncrementAnchor (1150059), UpconverterFrequencyOffset (1150160), UpconverterGain (1154097), UpconverterLoopBandwidth (1150027), UpconverterTemperature (1150017), UseSpecificSimulation (1050023), YigMainCoilDrive (1150118) """
+    """ enum niRFSGProperties, values: ActiveConfigurationList (1150096), ActiveConfigurationListStep (1150097), AeSession (1150183), AeTemperature (1150182), AlcControl (1150195), AlcEnabled (1250003), AllowOutOfSpecificationUserSettings (1150014), AmplitudeSettling (1150137), AmpPath (1150185), AnalogModulationAmSensitivity (1150167), AnalogModulationFmBand (1150191), AnalogModulationFmDeviation (1150035), AnalogModulationFmNarrowbandIntegrator (1150165), AnalogModulationFmSensitivity (1150166), AnalogModulationPmDeviation (1150062), AnalogModulationPmMode (1150192), AnalogModulationPmSensitivity (1150168), AnalogModulationType (1150032), AnalogModulationWaveformFrequency (1150034), AnalogModulationWaveformType (1150033), ArbCarrierFrequency (1150015), ArbDigitalGain (1150204), ArbFilterFrequency (1250453), ArbFilterRaisedCosineAlpha (1150060), ArbFilterRootRaisedCosineAlpha (1150057), ArbFilterType (1150056), ArbMaxNumberWaveforms (1250454), ArbOnboardSampleClockMode (1150029), ArbOscillatorPhaseDacValue (1150089), ArbPower (1150016), ArbPreFilterGain (1150025), ArbSampleClockRate (1150031), ArbSampleClockSource (1150030), ArbTemperature (1150068), ArbTriggerSource (1250458), ArbWaveformQuantum (1250455), ArbWaveformRepeatCount (1150158), ArbWaveformRepeatCountIsFinite (1150157), ArbWaveformSizeMax (1250457), ArbWaveformSizeMin (1250456), ArbWaveformSoftwareScalingFactor (1150052), AttenuatorHoldEnabled (1150009), AttenuatorHoldMaxPower (1150010), AttenuatorSetting (1150173), AttrAbsoluteDelay (1150225), AttrLOOutExportConfigureFromRfsa (1150242), AttrOverflowErrorReporting (1150228), AttrRelativeDelay (1150220), AttrRFInLOExportEnabled (1150243), AttrThermalCorrectionTemperatureResolution (1150244), AutomaticThermalCorrection (1150008), AutoPowerSearch (1150196), Cache (1050004), ChannelCount (1050203), CompensateForFilterGroupDelay (119740), ConfigurationListIsDone (1150175), ConfigurationListRepeat (1150102), ConfigurationListStepInProgress (1150122), ConfigurationListStepTriggerTerminalName (1150117), ConfigurationListStepTriggerType (1150098), ConfigurationSettledEventTerminalName (1150194), CorrectionTemperature (1150104), DataTransferBlockSize (1150048), DataTransferMaximumBandwidth (1150086), DataTransferMaximumInFlightReads (1150088), DataTransferPreferredPacketSize (1150087), DeviceTemperature (1150017), DigitalEdgeConfigurationListStepTriggerEdge (1150103), DigitalEdgeConfigurationListStepTriggerSource (1150099), DigitalEdgeScriptTriggerEdge (1150021), DigitalEdgeScriptTriggerSource (1150020), DigitalEdgeStartTriggerEdge (1250459), DigitalEdgeStartTriggerSource (1150002), DigitalEqualizationEnabled (1150012), DigitalIfEqualizationEnabled (1150012), DigitalLevelScriptTriggerActiveLevel (1150055), DigitalLevelScriptTriggerSource (1150054), DigitalModulationFskDeviation (1150041), DigitalModulationPrbsOrder (1150039), DigitalModulationPrbsSeed (1150040), DigitalModulationSymbolRate (1150037), DigitalModulationType (1150036), DigitalModulationWaveformType (1150038), DigitalPattern (1150044), DirectDmaEnabled (1150049), DirectDmaWindowAddress (1150050), DirectDmaWindowSize (1150051), DirectDownload (1150042), DoneEventTerminalName (1150113), DriverSetup (1050007), DucFirFilterRaisedCosineAlpha (1150060), DucFirFilterRootRaisedCosineAlpha (1150057), DucFirFilterType (1150056), DucPreFilterGain (1150025), EventsDelay (1150154), ExportedConfigurationListStepTriggerOutputTerminal (1150105), ExportedConfigurationSettledEventOutputTerminal (1150129), ExportedDoneEventOutputTerminal (1150063), ExportedMarkerEventOutputTerminal (1150064), ExportedRefClockOutputTerminal (1150053), ExportedScriptTriggerOutputTerminal (1150022), ExportedStartedEventOutputTerminal (1150065), ExportedStartTriggerOutputTerminal (1150003), ExternalCalibrationRecommendedInterval (1150076), ExternalCalibrationTemperature (1150077), ExternalCalibrationUserDefinedInfo (1150078), ExternalCalibrationUserDefinedInfoMaxSize (1150079), ExternalGain (1150085), FastTuningOption (1150188), FgenSession (1150028), FpgaBitfilePath (1150186), FpgaTemperature (1150211), Frequency (1250001), FrequencySettling (1150083), FrequencySettlingUnits (1150082), FrequencyTolerance (1150006), FunctionCapabilities (1050402), GenerationMode (1150018), GroupCapabilities (1050401), IfCarrierFrequency (1150015), IfPower (1150016), InstrumentFirmwareRevision (1050510), InstrumentManufacturer (1050511), InstrumentModel (1050512), InterchangeCheck (1050021), InterpolationDelay (1150153), IOResourceDescriptor (1050304), IqEnabled (1250401), IqGainImbalance (1150072), IqImpairmentEnabled (1150069), IqIOffset (1150070), IqNominalVoltage (1250402), IqOffsetUnits (1150081), IqOutPortCarrierFrequency (1150145), IqOutPortCommonModeOffset (1150148), IqOutPortLevel (1150147), IqOutPortLoadImpedance (1150163), IqOutPortOffset (1150149), IqOutPortTemperature (1150161), IqOutPortTerminalConfiguration (1150146), IqQOffset (1150071), IqRate (1250452), IqSkew (1150073), IqSwapEnabled (1250404), LocalOscillatorOut0Enabled (1150013), LoFrequencyStepSize (1150151), LogicalName (1050305), LoInPower (1150067), LoopBandwidth (1150027), LoOutEnabled (1150013), LoOutPower (1150066), LoPllFractionalModeEnabled (1150152), LoSession (1150074), LoSource (1150150), LoTemperature (1150075), MarkerEventOutputBehaviour (1150206), MarkerEventPulseWidth (1150207), MarkerEventPulseWidthUnits (1150208), MarkerEventTerminalName (1150115), MarkerEventToggleInitialState (1150209), MemorySize (1150061), ModulePowerConsumption (1150210), ModuleRevision (1150084), OutputEnabled (1250004), OutputPort (1150144), P2pDataTransferPermissionInterval (1150134), P2pDataTransferPermissionitialCredits (1150135), P2pEnabled (1150123), P2pEndpointCount (1150127), P2pEndpointFullnessStartTriggerLevel (1150128), P2pEndpointSize (1150124), P2pGenerationFifoSampleQuantum (1150219), P2pIsFiniteGeneration (1150217), P2pMostSpaceAvailableInEndpoint (1150126), P2pNumberOfSamplesToGenerate (1150218), P2pSpaceAvailableInEndpoint (1150125), PeakEnvelopePower (1150011), PeakPowerAdjsutmentInheritance (1150141), PeakPowerAdjustment (1150132), PeakPowerAdjustmentInheritance (1150141), PhaseContinuityEnabled (1150005), PhaseOffset (1150024), PowerLevel (1250002), PowerLevelType (1150043), PulseModulationEnabled (1250051), PulseModulationMode (1150190), PxiChassisClk10Source (1150004), QueryInstrumentStatus (1050003), RangeCheck (1050002), RecordCoercions (1050006), RefClockRate (1250322), RefClockSource (1150001), ReferenceOscillatorExternalFrequency (1250322), ReferenceOscillatorSource (1250321), RefPllBandwidth (1150133), RfBlankingSource (1150162), SampleClockRate (1250452), ScriptTriggerTerminalName (1150116), ScriptTriggerType (1150019), SelectedScript (1150023), SelfCalibrationTemperature (1150136), SerialNumber (1150026), SignalBandwidth (1150007), Simulate (1050005), SpecificDriverClassSpecMajorVersion (1050515), SpecificDriverClassSpecMinorVersion (1050516), SpecificDriverDescription (1050514), SpecificDriverPrefix (1050302), SpecificDriverRevision (1050551), SpecificDriverVendor (1050513), Spy (1050022), StartedEventTerminalName (1150112), StartTriggerTerminalName (1150114), StartTriggerType (1250458), StreamingEnabled (1150045), StreamingSpaceAvailableInWaveform (1150047), StreamingWaveformName (1150046), StreamingWriteTimeout (1150140), SupportedInstrumentModels (1050327), SyncSampleClockDistLine (1150181), SyncSampleClockMaster (1150180), SyncScriptTriggerDistLine (1150143), SyncScriptTriggerMaster (1150142), SyncStartTriggerDistLine (1150156), SyncStartTriggerMaster (1150155), TemperatureReadInterval (1150212), ThermalCorrectionEnabled (1150008), TimerEventInterval (1150100), UpconverterCenterFrequency (1154098), UpconverterCenterFrequencyIncrement (1150058), UpconverterCenterFrequencyIncrementAnchor (1150059), UpconverterFrequencyOffset (1150160), UpconverterGain (1154097), UpconverterLoopBandwidth (1150027), UpconverterTemperature (1150017), UseSpecificSimulation (1050023), YigMainCoilDrive (1150118) """
     def __eq__(self, *args): #cannot find CLR method
         """ x.__eq__(y) <==> x==yx.__eq__(y) <==> x==yx.__eq__(y) <==> x==y """
         pass
@@ -4623,6 +5081,7 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     AnalogModulationWaveformFrequency = None
     AnalogModulationWaveformType = None
     ArbCarrierFrequency = None
+    ArbDigitalGain = None
     ArbFilterFrequency = None
     ArbFilterRaisedCosineAlpha = None
     ArbFilterRootRaisedCosineAlpha = None
@@ -4645,6 +5104,12 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     AttenuatorHoldEnabled = None
     AttenuatorHoldMaxPower = None
     AttenuatorSetting = None
+    AttrAbsoluteDelay = None
+    AttrLOOutExportConfigureFromRfsa = None
+    AttrOverflowErrorReporting = None
+    AttrRelativeDelay = None
+    AttrRFInLOExportEnabled = None
+    AttrThermalCorrectionTemperatureResolution = None
     AutomaticThermalCorrection = None
     AutoPowerSearch = None
     Cache = None
@@ -4706,6 +5171,7 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     FastTuningOption = None
     FgenSession = None
     FpgaBitfilePath = None
+    FpgaTemperature = None
     Frequency = None
     FrequencySettling = None
     FrequencySettlingUnits = None
@@ -4749,8 +5215,13 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     LoSession = None
     LoSource = None
     LoTemperature = None
+    MarkerEventOutputBehaviour = None
+    MarkerEventPulseWidth = None
+    MarkerEventPulseWidthUnits = None
     MarkerEventTerminalName = None
+    MarkerEventToggleInitialState = None
     MemorySize = None
+    ModulePowerConsumption = None
     ModuleRevision = None
     OutputEnabled = None
     OutputPort = None
@@ -4760,11 +5231,15 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     P2pEndpointCount = None
     P2pEndpointFullnessStartTriggerLevel = None
     P2pEndpointSize = None
+    P2pGenerationFifoSampleQuantum = None
+    P2pIsFiniteGeneration = None
     P2pMostSpaceAvailableInEndpoint = None
+    P2pNumberOfSamplesToGenerate = None
     P2pSpaceAvailableInEndpoint = None
     PeakEnvelopePower = None
     PeakPowerAdjsutmentInheritance = None
     PeakPowerAdjustment = None
+    PeakPowerAdjustmentInheritance = None
     PhaseContinuityEnabled = None
     PhaseOffset = None
     PowerLevel = None
@@ -4810,6 +5285,7 @@ class niRFSGProperties(Enum, IComparable, IFormattable, IConvertible):
     SyncScriptTriggerMaster = None
     SyncStartTriggerDistLine = None
     SyncStartTriggerMaster = None
+    TemperatureReadInterval = None
     ThermalCorrectionEnabled = None
     TimerEventInterval = None
     UpconverterCenterFrequency = None
