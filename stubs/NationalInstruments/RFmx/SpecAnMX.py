@@ -421,109 +421,151 @@ class RFmxSpecAnMX(object, ISignalConfiguration, IDisposable):
         """ __repr__(self: object) -> str """
         pass
 
-    Acp = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Acp(self: RFmxSpecAnMX) -> RFmxSpecAnMXAcp
-
+    Acp = property(lambda self: RFmxSpecAnMXAcp(), lambda self, v: None, lambda self: None)  # default
+    """Get: Acp(self: RFmxSpecAnMX) -> RFmxSpecAnMXAcp
+
+
+
 """
 
-    Ampm = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Ampm(self: RFmxSpecAnMX) -> RFmxSpecAnMXAmpm
-
+    Ampm = property(lambda self: RFmxSpecAnMXAmpm(), lambda self, v: None, lambda self: None)  # default
+    """Get: Ampm(self: RFmxSpecAnMX) -> RFmxSpecAnMXAmpm
+
+
+
 """
 
-    Ccdf = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Ccdf(self: RFmxSpecAnMX) -> RFmxSpecAnMXCcdf
-
+    Ccdf = property(lambda self: RFmxSpecAnMXCcdf(), lambda self, v: None, lambda self: None)  # default
+    """Get: Ccdf(self: RFmxSpecAnMX) -> RFmxSpecAnMXCcdf
+
+
+
 """
 
-    Chp = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Chp(self: RFmxSpecAnMX) -> RFmxSpecAnMXChp
-
+    Chp = property(lambda self: RFmxSpecAnMXChp(), lambda self, v: None, lambda self: None)  # default
+    """Get: Chp(self: RFmxSpecAnMX) -> RFmxSpecAnMXChp
+
+
+
 """
 
-    Dpd = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Dpd(self: RFmxSpecAnMX) -> RFmxSpecAnMXDpd
-
+    Dpd = property(lambda self: RFmxSpecAnMXDpd(), lambda self, v: None, lambda self: None)  # default
+    """Get: Dpd(self: RFmxSpecAnMX) -> RFmxSpecAnMXDpd
+
+
+
 """
 
-    Fcnt = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Fcnt(self: RFmxSpecAnMX) -> RFmxSpecAnMXFcnt
-
+    Fcnt = property(lambda self: RFmxSpecAnMXFcnt(), lambda self, v: None, lambda self: None)  # default
+    """Get: Fcnt(self: RFmxSpecAnMX) -> RFmxSpecAnMXFcnt
+
+
+
 """
 
-    Harm = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Harm(self: RFmxSpecAnMX) -> RFmxSpecAnMXHarm
-
+    Harm = property(lambda self: RFmxSpecAnMXHarm(), lambda self, v: None, lambda self: None)  # default
+    """Get: Harm(self: RFmxSpecAnMX) -> RFmxSpecAnMXHarm
+
+
+
 """
 
-    IM = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IM(self: RFmxSpecAnMX) -> RFmxSpecAnMXIM
-
+    IM = property(lambda self: RFmxSpecAnMXIM(), lambda self, v: None, lambda self: None)  # default
+    """Get: IM(self: RFmxSpecAnMX) -> RFmxSpecAnMXIM
+
+
+
 """
 
-    IQ = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IQ(self: RFmxSpecAnMX) -> RFmxSpecAnMXIQ
-
+    IQ = property(lambda self: RFmxSpecAnMXIQ(), lambda self, v: None, lambda self: None)  # default
+    """Get: IQ(self: RFmxSpecAnMX) -> RFmxSpecAnMXIQ
+
+
+
 """
 
     IsDisposed = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsDisposed(self: RFmxSpecAnMX) -> bool
-
+    """Get: IsDisposed(self: RFmxSpecAnMX) -> bool
+
+
+
 """
 
-    Marker = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Marker(self: RFmxSpecAnMX) -> RFmxSpecAnMXMarker
-
+    Marker = property(lambda self: RFmxSpecAnMXMarker(), lambda self, v: None, lambda self: None)  # default
+    """Get: Marker(self: RFmxSpecAnMX) -> RFmxSpecAnMXMarker
+
+
+
 """
 
-    NF = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: NF(self: RFmxSpecAnMX) -> RFmxSpecAnMXNF
-
+    NF = property(lambda self: RFmxSpecAnMXNF(), lambda self, v: None, lambda self: None)  # default
+    """Get: NF(self: RFmxSpecAnMX) -> RFmxSpecAnMXNF
+
+
+
 """
 
-    Obw = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Obw(self: RFmxSpecAnMX) -> RFmxSpecAnMXObw
-
+    Obw = property(lambda self: RFmxSpecAnMXObw(), lambda self, v: None, lambda self: None)  # default
+    """Get: Obw(self: RFmxSpecAnMX) -> RFmxSpecAnMXObw
+
+
+
 """
 
-    Pavt = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Pavt(self: RFmxSpecAnMX) -> RFmxSpecAnMXPavt
-
+    Pavt = property(lambda self: RFmxSpecAnMXPavt(), lambda self, v: None, lambda self: None)  # default
+    """Get: Pavt(self: RFmxSpecAnMX) -> RFmxSpecAnMXPavt
+
+
+
 """
 
-    PhaseNoise = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PhaseNoise(self: RFmxSpecAnMX) -> RFmxSpecAnMXPhaseNoise
-
+    PhaseNoise = property(lambda self: RFmxSpecAnMXPhaseNoise(), lambda self, v: None, lambda self: None)  # default
+    """Get: PhaseNoise(self: RFmxSpecAnMX) -> RFmxSpecAnMXPhaseNoise
+
+
+
 """
 
-    Sem = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Sem(self: RFmxSpecAnMX) -> RFmxSpecAnMXSem
-
+    Sem = property(lambda self: RFmxSpecAnMXSem(), lambda self, v: None, lambda self: None)  # default
+    """Get: Sem(self: RFmxSpecAnMX) -> RFmxSpecAnMXSem
+
+
+
 """
 
     SignalConfigurationName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationName(self: RFmxSpecAnMX) -> str
-
+    """Get: SignalConfigurationName(self: RFmxSpecAnMX) -> str
+
+
+
 """
 
     SignalConfigurationType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationType(self: RFmxSpecAnMX) -> Type
-
+    """Get: SignalConfigurationType(self: RFmxSpecAnMX) -> Type
+
+
+
 """
 
-    Spectrum = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Spectrum(self: RFmxSpecAnMX) -> RFmxSpecAnMXSpectrum
-
+    Spectrum = property(lambda self: RFmxSpecAnMXSpectrum(), lambda self, v: None, lambda self: None)  # default
+    """Get: Spectrum(self: RFmxSpecAnMX) -> RFmxSpecAnMXSpectrum
+
+
+
 """
 
-    Spur = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Spur(self: RFmxSpecAnMX) -> RFmxSpecAnMXSpur
-
+    Spur = property(lambda self: RFmxSpecAnMXSpur(), lambda self, v: None, lambda self: None)  # default
+    """Get: Spur(self: RFmxSpecAnMX) -> RFmxSpecAnMXSpur
+
+
+
 """
 
-    Txp = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Txp(self: RFmxSpecAnMX) -> RFmxSpecAnMXTxp
-
+    Txp = property(lambda self: RFmxSpecAnMXTxp(), lambda self, v: None, lambda self: None)  # default
+    """Get: Txp(self: RFmxSpecAnMX) -> RFmxSpecAnMXTxp
+
+
+
 """
 
 
@@ -533,14 +575,18 @@ class RFmxSpecAnMXSubObject(object):
 
 class RFmxSpecAnMXAcp(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXAcp) -> RFmxSpecAnMXAcpConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXAcpConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXAcp) -> RFmxSpecAnMXAcpConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXAcp) -> RFmxSpecAnMXAcpResults
-
+    Results = property(lambda self: RFmxSpecAnMXAcpResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXAcp) -> RFmxSpecAnMXAcpResults
+
+
+
 """
 
 
@@ -1850,14 +1896,18 @@ class RFmxSpecAnMXAcpSweepTimeAuto(Enum, IComparable, IFormattable, IConvertible
 
 class RFmxSpecAnMXAmpm(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXAmpm) -> RFmxSpecAnMXAmpmConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXAmpmConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXAmpm) -> RFmxSpecAnMXAmpmConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXAmpm) -> RFmxSpecAnMXAmpmResults
-
+    Results = property(lambda self: RFmxSpecAnMXAmpmResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXAmpm) -> RFmxSpecAnMXAmpmResults
+
+
+
 """
 
 
@@ -2848,14 +2898,18 @@ class RFmxSpecAnMXAmpmThresholdType(Enum, IComparable, IFormattable, IConvertibl
 
 class RFmxSpecAnMXCcdf(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXCcdf) -> RFmxSpecAnMXCcdfConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXCcdfConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXCcdf) -> RFmxSpecAnMXCcdfConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXCcdf) -> RFmxSpecAnMXCcdfResults
-
+    Results = property(lambda self: RFmxSpecAnMXCcdfResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXCcdf) -> RFmxSpecAnMXCcdfResults
+
+
+
 """
 
 
@@ -3156,14 +3210,18 @@ class RFmxSpecAnMXCcdfThresholdType(Enum, IComparable, IFormattable, IConvertibl
 
 class RFmxSpecAnMXChp(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXChp) -> RFmxSpecAnMXChpConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXChpConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXChp) -> RFmxSpecAnMXChpConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXChp) -> RFmxSpecAnMXChpResults
-
+    Results = property(lambda self: RFmxSpecAnMXChpResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXChp) -> RFmxSpecAnMXChpResults
+
+
+
 """
 
 
@@ -3941,24 +3999,32 @@ class RFmxSpecAnMXDigitalEdgeTriggerEdge(Enum, IComparable, IFormattable, IConve
 
 class RFmxSpecAnMXDpd(RFmxSpecAnMXSubObject):
     # no doc
-    ApplyDpd = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ApplyDpd(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdApplyDpd
-
+    ApplyDpd = property(lambda self: RFmxSpecAnMXDpdApplyDpd(), lambda self, v: None, lambda self: None)  # default
+    """Get: ApplyDpd(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdApplyDpd
+
+
+
 """
 
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXDpdConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdConfiguration
+
+
+
 """
 
-    PreDpd = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: PreDpd(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdPreDpd
-
+    PreDpd = property(lambda self: RFmxSpecAnMXDpdPreDpd(), lambda self, v: None, lambda self: None)  # default
+    """Get: PreDpd(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdPreDpd
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdResults
-
+    Results = property(lambda self: RFmxSpecAnMXDpdResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXDpd) -> RFmxSpecAnMXDpdResults
+
+
+
 """
 
 
@@ -6041,14 +6107,18 @@ class RFmxSpecAnMXDpdTargetGainType(Enum, IComparable, IFormattable, IConvertibl
 
 class RFmxSpecAnMXFcnt(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXFcnt) -> RFmxSpecAnMXFcntConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXFcntConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXFcnt) -> RFmxSpecAnMXFcntConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXFcnt) -> RFmxSpecAnMXFcntResults
-
+    Results = property(lambda self: RFmxSpecAnMXFcntResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXFcnt) -> RFmxSpecAnMXFcntResults
+
+
+
 """
 
 
@@ -6427,14 +6497,18 @@ class RFmxSpecAnMXFcntThresholdType(Enum, IComparable, IFormattable, IConvertibl
 
 class RFmxSpecAnMXHarm(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXHarm) -> RFmxSpecAnMXHarmConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXHarmConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXHarm) -> RFmxSpecAnMXHarmConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXHarm) -> RFmxSpecAnMXHarmResults
-
+    Results = property(lambda self: RFmxSpecAnMXHarmResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXHarm) -> RFmxSpecAnMXHarmResults
+
+
+
 """
 
 
@@ -6954,14 +7028,18 @@ class RFmxSpecAnMXHarmResults(RFmxSpecAnMXSubObject):
 
 class RFmxSpecAnMXIM(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXIM) -> RFmxSpecAnMXIMConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXIMConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXIM) -> RFmxSpecAnMXIMConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXIM) -> RFmxSpecAnMXIMResults
-
+    Results = property(lambda self: RFmxSpecAnMXIMResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXIM) -> RFmxSpecAnMXIMResults
+
+
+
 """
 
 
@@ -7888,14 +7966,18 @@ class RFmxSpecAnMXIMSweepTimeAuto(Enum, IComparable, IFormattable, IConvertible)
 
 class RFmxSpecAnMXIQ(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXIQ) -> RFmxSpecAnMXIQConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXIQConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXIQ) -> RFmxSpecAnMXIQConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXIQ) -> RFmxSpecAnMXIQResults
-
+    Results = property(lambda self: RFmxSpecAnMXIQResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXIQ) -> RFmxSpecAnMXIQResults
+
+
+
 """
 
 
@@ -8237,14 +8319,18 @@ class RFmxSpecAnMXLimitedConfigurationChange(Enum, IComparable, IFormattable, IC
 
 class RFmxSpecAnMXMarker(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXMarker) -> RFmxSpecAnMXMarkerConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXMarkerConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXMarker) -> RFmxSpecAnMXMarkerConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXMarker) -> RFmxSpecAnMXMarkerResults
-
+    Results = property(lambda self: RFmxSpecAnMXMarkerResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXMarker) -> RFmxSpecAnMXMarkerResults
+
+
+
 """
 
 
@@ -8561,14 +8647,18 @@ class RFmxSpecAnMXMeasurementTypes(Enum, IComparable, IFormattable, IConvertible
 
 class RFmxSpecAnMXNF(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXNF) -> RFmxSpecAnMXNFConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXNFConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXNF) -> RFmxSpecAnMXNFConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXNF) -> RFmxSpecAnMXNFResults
-
+    Results = property(lambda self: RFmxSpecAnMXNFResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXNF) -> RFmxSpecAnMXNFResults
+
+
+
 """
 
 
@@ -9630,14 +9720,18 @@ class RFmxSpecAnMXNFYFactorNoiseSourceLossCompensationEnabled(Enum, IComparable,
 
 class RFmxSpecAnMXObw(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXObw) -> RFmxSpecAnMXObwConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXObwConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXObw) -> RFmxSpecAnMXObwConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXObw) -> RFmxSpecAnMXObwResults
-
+    Results = property(lambda self: RFmxSpecAnMXObwResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXObw) -> RFmxSpecAnMXObwResults
+
+
+
 """
 
 
@@ -10219,14 +10313,18 @@ class RFmxSpecAnMXObwSweepTimeAuto(Enum, IComparable, IFormattable, IConvertible
 
 class RFmxSpecAnMXPavt(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXPavt) -> RFmxSpecAnMXPavtConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXPavtConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXPavt) -> RFmxSpecAnMXPavtConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXPavt) -> RFmxSpecAnMXPavtResults
-
+    Results = property(lambda self: RFmxSpecAnMXPavtResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXPavt) -> RFmxSpecAnMXPavtResults
+
+
+
 """
 
 
@@ -10447,14 +10545,18 @@ class RFmxSpecAnMXPavtResults(RFmxSpecAnMXSubObject):
 
 class RFmxSpecAnMXPhaseNoise(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXPhaseNoise) -> RFmxSpecAnMXPhaseNoiseConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXPhaseNoiseConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXPhaseNoise) -> RFmxSpecAnMXPhaseNoiseConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXPhaseNoise) -> RFmxSpecAnMXPhaseNoiseResults
-
+    Results = property(lambda self: RFmxSpecAnMXPhaseNoiseResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXPhaseNoise) -> RFmxSpecAnMXPhaseNoiseResults
+
+
+
 """
 
 
@@ -11713,14 +11815,18 @@ class RFmxSpecAnMXReferenceLevelUnits(Enum, IComparable, IFormattable, IConverti
 
 class RFmxSpecAnMXSem(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXSem) -> RFmxSpecAnMXSemConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXSemConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXSem) -> RFmxSpecAnMXSemConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXSem) -> RFmxSpecAnMXSemResults
-
+    Results = property(lambda self: RFmxSpecAnMXSemResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXSem) -> RFmxSpecAnMXSemResults
+
+
+
 """
 
 
@@ -13362,14 +13468,18 @@ class RFmxSpecAnMXSemUpperOffsetMeasurementStatus(Enum, IComparable, IFormattabl
 
 class RFmxSpecAnMXSpectrum(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXSpectrum) -> RFmxSpecAnMXSpectrumConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXSpectrumConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXSpectrum) -> RFmxSpecAnMXSpectrumConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXSpectrum) -> RFmxSpecAnMXSpectrumResults
-
+    Results = property(lambda self: RFmxSpecAnMXSpectrumResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXSpectrum) -> RFmxSpecAnMXSpectrumResults
+
+
+
 """
 
 
@@ -14135,14 +14245,18 @@ class RFmxSpecAnMXSpectrumVbwFilterAutoBandwidth(Enum, IComparable, IFormattable
 
 class RFmxSpecAnMXSpur(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXSpur) -> RFmxSpecAnMXSpurConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXSpurConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXSpur) -> RFmxSpecAnMXSpurConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXSpur) -> RFmxSpecAnMXSpurResults
-
+    Results = property(lambda self: RFmxSpecAnMXSpurResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXSpur) -> RFmxSpecAnMXSpurResults
+
+
+
 """
 
 
@@ -15213,14 +15327,18 @@ class RFmxSpecAnMXTriggerType(Enum, IComparable, IFormattable, IConvertible):
 
 class RFmxSpecAnMXTxp(RFmxSpecAnMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxSpecAnMXTxp) -> RFmxSpecAnMXTxpConfiguration
-
+    Configuration = property(lambda self: RFmxSpecAnMXTxpConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxSpecAnMXTxp) -> RFmxSpecAnMXTxpConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxSpecAnMXTxp) -> RFmxSpecAnMXTxpResults
-
+    Results = property(lambda self: RFmxSpecAnMXTxpResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxSpecAnMXTxp) -> RFmxSpecAnMXTxpResults
+
+
+
 """
 
 

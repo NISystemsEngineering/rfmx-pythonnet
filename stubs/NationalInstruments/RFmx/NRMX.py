@@ -575,54 +575,74 @@ class RFmxNRMX(object, ISignalConfiguration, IDisposable):
         """ __repr__(self: object) -> str """
         pass
 
-    Acp = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Acp(self: RFmxNRMX) -> RFmxNRMXAcp
-
+    Acp = property(lambda self: RFmxNRMXAcp(), lambda self, v: None, lambda self: None)  # default
+    """Get: Acp(self: RFmxNRMX) -> RFmxNRMXAcp
+
+
+
 """
 
-    Chp = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Chp(self: RFmxNRMX) -> RFmxNRMXChp
-
+    Chp = property(lambda self: RFmxNRMXChp(), lambda self, v: None, lambda self: None)  # default
+    """Get: Chp(self: RFmxNRMX) -> RFmxNRMXChp
+
+
+
 """
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMX) -> RFmxNRMXComponentCarrier
-
+    ComponentCarrier = property(lambda self: RFmxNRMXComponentCarrier(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMX) -> RFmxNRMXComponentCarrier
+
+
+
 """
 
     IsDisposed = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsDisposed(self: RFmxNRMX) -> bool
-
+    """Get: IsDisposed(self: RFmxNRMX) -> bool
+
+
+
 """
 
-    ModAcc = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ModAcc(self: RFmxNRMX) -> RFmxNRMXModAcc
-
+    ModAcc = property(lambda self: RFmxNRMXModAcc(), lambda self, v: None, lambda self: None)  # default
+    """Get: ModAcc(self: RFmxNRMX) -> RFmxNRMXModAcc
+
+
+
 """
 
-    Obw = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Obw(self: RFmxNRMX) -> RFmxNRMXObw
-
+    Obw = property(lambda self: RFmxNRMXObw(), lambda self, v: None, lambda self: None)  # default
+    """Get: Obw(self: RFmxNRMX) -> RFmxNRMXObw
+
+
+
 """
 
-    Pvt = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Pvt(self: RFmxNRMX) -> RFmxNRMXPvt
-
+    Pvt = property(lambda self: RFmxNRMXPvt(), lambda self, v: None, lambda self: None)  # default
+    """Get: Pvt(self: RFmxNRMX) -> RFmxNRMXPvt
+
+
+
 """
 
-    Sem = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Sem(self: RFmxNRMX) -> RFmxNRMXSem
-
+    Sem = property(lambda self: RFmxNRMXSem(), lambda self, v: None, lambda self: None)  # default
+    """Get: Sem(self: RFmxNRMX) -> RFmxNRMXSem
+
+
+
 """
 
     SignalConfigurationName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationName(self: RFmxNRMX) -> str
-
+    """Get: SignalConfigurationName(self: RFmxNRMX) -> str
+
+
+
 """
 
     SignalConfigurationType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationType(self: RFmxNRMX) -> Type
-
+    """Get: SignalConfigurationType(self: RFmxNRMX) -> Type
+
+
+
 """
 
 
@@ -632,14 +652,18 @@ class RFmxNRMXSubObject(object):
 
 class RFmxNRMXAcp(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXAcp) -> RFmxNRMXAcpConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXAcpConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXAcp) -> RFmxNRMXAcpConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXAcp) -> RFmxNRMXAcpResults
-
+    Results = property(lambda self: RFmxNRMXAcpResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXAcp) -> RFmxNRMXAcpResults
+
+
+
 """
 
 
@@ -1035,9 +1059,11 @@ class RFmxNRMXAcpConfiguration(RFmxNRMXSubObject):
         """ SetSweepTimeInterval(self: RFmxNRMXAcpConfiguration, selectorString: str, value: float) -> int """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXAcpConfiguration) -> RFmxNRMXAcpComponentCarrierConfiguration
-
+    ComponentCarrier = property(lambda self: RFmxNRMXAcpComponentCarrierConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXAcpConfiguration) -> RFmxNRMXAcpComponentCarrierConfiguration
+
+
+
 """
 
 
@@ -1344,9 +1370,11 @@ class RFmxNRMXAcpResults(RFmxNRMXSubObject):
         """ GetUpperOffsetRelativePower(self: RFmxNRMXAcpResults, selectorString: str) -> (int, float) """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXAcpResults) -> RFmxNRMXAcpComponentCarrierResults
-
+    ComponentCarrier = property(lambda self: RFmxNRMXAcpComponentCarrierResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXAcpResults) -> RFmxNRMXAcpComponentCarrierResults
+
+
+
 """
 
 
@@ -1553,14 +1581,18 @@ class RFmxNRMXBandwidthPartCyclicPrefixMode(Enum, IComparable, IFormattable, ICo
 
 class RFmxNRMXChp(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXChp) -> RFmxNRMXChpConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXChpConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXChp) -> RFmxNRMXChpConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXChp) -> RFmxNRMXChpResults
-
+    Results = property(lambda self: RFmxNRMXChpResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXChp) -> RFmxNRMXChpResults
+
+
+
 """
 
 
@@ -1836,9 +1868,11 @@ class RFmxNRMXChpConfiguration(RFmxNRMXSubObject):
         """ SetSweepTimeInterval(self: RFmxNRMXChpConfiguration, selectorString: str, value: float) -> int """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXChpConfiguration) -> RFmxNRMXChpComponentCarrierConfiguration
-
+    ComponentCarrier = property(lambda self: RFmxNRMXChpComponentCarrierConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXChpConfiguration) -> RFmxNRMXChpComponentCarrierConfiguration
+
+
+
 """
 
 
@@ -1992,9 +2026,11 @@ class RFmxNRMXChpResults(RFmxNRMXSubObject):
         """ GetTotalAggregatedPower(self: RFmxNRMXChpResults, selectorString: str) -> (int, float) """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXChpResults) -> RFmxNRMXChpComponentCarrierResults
-
+    ComponentCarrier = property(lambda self: RFmxNRMXChpComponentCarrierResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXChpResults) -> RFmxNRMXChpComponentCarrierResults
+
+
+
 """
 
 
@@ -3523,14 +3559,18 @@ class RFmxNRMXMeasurementTypes(Enum, IComparable, IFormattable, IConvertible):
 
 class RFmxNRMXModAcc(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXModAcc) -> RFmxNRMXModAccConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXModAccConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXModAcc) -> RFmxNRMXModAccConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXModAcc) -> RFmxNRMXModAccResults
-
+    Results = property(lambda self: RFmxNRMXModAccResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXModAcc) -> RFmxNRMXModAccResults
+
+
+
 """
 
 
@@ -4760,14 +4800,18 @@ class RFmxNRMXModTimingTrackingEnabled(Enum, IComparable, IFormattable, IConvert
 
 class RFmxNRMXObw(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXObw) -> RFmxNRMXObwConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXObwConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXObw) -> RFmxNRMXObwConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXObw) -> RFmxNRMXObwResults
-
+    Results = property(lambda self: RFmxNRMXObwResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXObw) -> RFmxNRMXObwResults
+
+
+
 """
 
 
@@ -6531,14 +6575,18 @@ class RFmxNRMXPuschTransformPrecodingEnabled(Enum, IComparable, IFormattable, IC
 
 class RFmxNRMXPvt(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXPvt) -> RFmxNRMXPvtConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXPvtConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXPvt) -> RFmxNRMXPvtConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXPvt) -> RFmxNRMXPvtResults
-
+    Results = property(lambda self: RFmxNRMXPvtResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXPvt) -> RFmxNRMXPvtResults
+
+
+
 """
 
 
@@ -6956,14 +7004,18 @@ class RFmxNRMXSchDetectedModulationType(Enum, IComparable, IFormattable, IConver
 
 class RFmxNRMXSem(RFmxNRMXSubObject):
     # no doc
-    Configuration = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Configuration(self: RFmxNRMXSem) -> RFmxNRMXSemConfiguration
-
+    Configuration = property(lambda self: RFmxNRMXSemConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: Configuration(self: RFmxNRMXSem) -> RFmxNRMXSemConfiguration
+
+
+
 """
 
-    Results = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: Results(self: RFmxNRMXSem) -> RFmxNRMXSemResults
-
+    Results = property(lambda self: RFmxNRMXSemResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: Results(self: RFmxNRMXSem) -> RFmxNRMXSemResults
+
+
+
 """
 
 
@@ -7415,9 +7467,11 @@ class RFmxNRMXSemConfiguration(RFmxNRMXSubObject):
         """ SetUplinkMaskType(self: RFmxNRMXSemConfiguration, selectorString: str, value: RFmxNRMXSemUplinkMaskType) -> int """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXSemConfiguration) -> RFmxNRMXSemComponentCarrierConfiguration
-
+    ComponentCarrier = property(lambda self: RFmxNRMXSemComponentCarrierConfiguration(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXSemConfiguration) -> RFmxNRMXSemComponentCarrierConfiguration
+
+
+
 """
 
 
@@ -7854,9 +7908,11 @@ class RFmxNRMXSemResults(RFmxNRMXSubObject):
         """ GetUpperOffsetRelativePeakPower(self: RFmxNRMXSemResults, selectorString: str) -> (int, float) """
         pass
 
-    ComponentCarrier = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: ComponentCarrier(self: RFmxNRMXSemResults) -> RFmxNRMXSemComponentCarrierResults
-
+    ComponentCarrier = property(lambda self: RFmxNRMXSemComponentCarrierResults(), lambda self, v: None, lambda self: None)  # default
+    """Get: ComponentCarrier(self: RFmxNRMXSemResults) -> RFmxNRMXSemComponentCarrierResults
+
+
+
 """
 
 
