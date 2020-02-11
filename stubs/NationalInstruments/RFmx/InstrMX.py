@@ -1168,6 +1168,23 @@ class RFmxInstrMX(object, IDisposable):
     """Get: NumberOfSignalConfigurations(self: RFmxInstrMX) -> int"""
 
 
+class RFmxSpecAnMXExtension(object):
+    # no doc
+    @staticmethod
+    def GetSpecAnSignalConfiguration(instrSession, signalName=None):
+        """
+        GetSpecAnSignalConfiguration(instrSession: RFmxInstrMX) -> RFmxSpecAnMX
+
+        GetSpecAnSignalConfiguration(instrSession: RFmxInstrMX, signalName: str) -> RFmxSpecAnMX
+        """
+        from .SpecAnMX import RFmxSpecAnMX
+        return RFmxSpecAnMX()
+
+    __all__ = [
+        'GetSpecAnSignalConfiguration',
+    ]
+
+
 class RFmxNRMXExtension(object):
     # no doc
     @staticmethod
