@@ -15,21 +15,18 @@ class ISignalConfiguration:
         pass
 
     SignalConfigurationName = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationName(self: ISignalConfiguration) -> str
-
-"""
+    """Get: SignalConfigurationName(self: ISignalConfiguration) -> str"""
 
     SignalConfigurationType = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: SignalConfigurationType(self: ISignalConfiguration) -> Type
-
-"""
-
+    """Get: SignalConfigurationType(self: ISignalConfiguration) -> Type"""
 
 
 class RFmxException(Exception, ISerializable, _Exception):
     """
-    RFmxException()
-    RFmxException(message: str)
+    RFmxException()
+
+    RFmxException(message: str)
+
     RFmxException(message: str, innerException: Exception)
     """
     def GetObjectData(self, info, context):
@@ -43,9 +40,12 @@ class RFmxException(Exception, ISerializable, _Exception):
     @staticmethod # known case of __new__
     def __new__(self, message=None, innerException=None):
         """
-        __new__(cls: type)
-        __new__(cls: type, message: str)
-        __new__(cls: type, message: str, innerException: Exception)
+        __new__(cls: type)
+
+        __new__(cls: type, message: str)
+
+        __new__(cls: type, message: str, innerException: Exception)
+
         __new__(cls: type, info: SerializationInfo, context: StreamingContext)
         """
         pass
@@ -61,7 +61,8 @@ class RFmxException(Exception, ISerializable, _Exception):
 
 class RFmxInstrMX(object, IDisposable):
     """
-    RFmxInstrMX(instrumentHandle: IntPtr)
+    RFmxInstrMX(instrumentHandle: IntPtr)
+
     RFmxInstrMX(resourceName: str, optionString: str)
     """
     @staticmethod
@@ -378,7 +379,8 @@ class RFmxInstrMX(object, IDisposable):
 
     def GetAvailablePorts(self, *__args):
         """
-        GetAvailablePorts(self: RFmxInstrMX) -> (int, Array[str])
+        GetAvailablePorts(self: RFmxInstrMX) -> (int, Array[str])
+
         GetAvailablePorts(self: RFmxInstrMX, selectorString: str, availablePorts: Array[str]) -> (int, Array[str])
         """
         pass
@@ -703,7 +705,8 @@ class RFmxInstrMX(object, IDisposable):
     @staticmethod
     def GetSession(resourceName, optionString, isNewSession=None):
         """
-        GetSession(resourceName: str, optionString: str) -> RFmxInstrMX
+        GetSession(resourceName: str, optionString: str) -> RFmxInstrMX
+
         GetSession(resourceName: str, optionString: str) -> (RFmxInstrMX, bool)
         """
         pass
@@ -719,7 +722,8 @@ class RFmxInstrMX(object, IDisposable):
 
     def GetSignalConfigurationState(self, signalName, personality, signalState, timeStamp):
         """
-        GetSignalConfigurationState(self: RFmxInstrMX, signalName: str, personality: RFmxInstrMXPersonalities) -> (int, RFmxInstrMXSignalConfigurationState, UInt64)
+        GetSignalConfigurationState(self: RFmxInstrMX, signalName: str, personality: RFmxInstrMXPersonalities) -> (int, RFmxInstrMXSignalConfigurationState, UInt64)
+
         GetSignalConfigurationState(self: RFmxInstrMX, signalName: str, personality: RFmxInstrMXPersonalities) -> (int, RFmxInstrMXSignalConfigurationState, UInt32)
         """
         pass
@@ -1147,7 +1151,8 @@ class RFmxInstrMX(object, IDisposable):
     @staticmethod # known case of __new__
     def __new__(self, *__args):
         """
-        __new__(cls: type, instrumentHandle: IntPtr)
+        __new__(cls: type, instrumentHandle: IntPtr)
+
         __new__(cls: type, resourceName: str, optionString: str)
         """
         pass
@@ -1157,15 +1162,27 @@ class RFmxInstrMX(object, IDisposable):
         pass
 
     IsDisposed = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: IsDisposed(self: RFmxInstrMX) -> bool
-
-"""
+    """Get: IsDisposed(self: RFmxInstrMX) -> bool"""
 
     NumberOfSignalConfigurations = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
-    """Get: NumberOfSignalConfigurations(self: RFmxInstrMX) -> int
-
-"""
+    """Get: NumberOfSignalConfigurations(self: RFmxInstrMX) -> int"""
 
+
+class RFmxNRMXExtension(object):
+    # no doc
+    @staticmethod
+    def GetNRSignalConfiguration(instrSession, signalName=None):
+        """
+        GetNRSignalConfiguration(instrSession: RFmxInstrMX) -> RFmxNRMX
+
+        GetNRSignalConfiguration(instrSession: RFmxInstrMX, signalName: str) -> RFmxNRMX
+        """
+        from .NRMX import RFmxNRMX
+        return RFmxNRMX()
+
+    __all__ = [
+        'GetNRSignalConfiguration',
+    ]
 
 
 class RFmxInstrMXAttributeAuthor(Enum, IComparable, IFormattable, IConvertible):
