@@ -1185,6 +1185,23 @@ class RFmxNRMXExtension(object):
     ]
 
 
+class RFmxLteMXExtension(object):
+    # no doc
+    @staticmethod
+    def GetLteSignalConfiguration(instrSession, signalName=None):
+        """
+        GetLteSignalConfiguration(instrSession: RFmxInstrMX) -> RFmxLteMX
+
+        GetLteSignalConfiguration(instrSession: RFmxInstrMX, signalName: str) -> RFmxLteMX
+        """
+        from .LteMX import RFmxLteMX
+        return RFmxLteMX()
+
+    __all__ = [
+        'GetLteSignalConfiguration',
+    ]
+
+
 class RFmxInstrMXAttributeAuthor(Enum, IComparable, IFormattable, IConvertible):
     """ enum RFmxInstrMXAttributeAuthor, values: System (2), Unwritten (0), User (1) """
     def __eq__(self, *args): #cannot find CLR method
