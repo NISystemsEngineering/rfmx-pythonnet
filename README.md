@@ -1,4 +1,7 @@
 # rfmx-pythonnet
+This repository contains examples for local and remote execution of RFmx in Python.
+Local examples can be found in the [examples](https://github.com/NISystemsEngineering/rfmx-pythonnet/tree/master/examples) folder.
+Remote example can be found in the [rpyc](https://github.com/NISystemsEngineering/rfmx-pythonnet/tree/master/rpyc) folder.
 
 ## Code Auto-completion
 Stubs have been created with [ironstubs](https://github.com/gtalarico/ironpython-stubs) to enable code auto-completion.
