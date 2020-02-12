@@ -13,3 +13,15 @@ To enable this feature, [configure your editor](https://github.com/gtalarico/iro
 If you are using Visual Studio Code, a [settings file](https://github.com/NISystemsEngineering/rfmx-pythonnet/tree/master/.vscode) has already been provided. To use it, clone this repo then open the folder in VS Code. 
 
 Note: The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
+
+## Environment Setup
+### Analysis
+[NI-RFmx](https://www.ni.com/en-us/support/downloads/drivers/download.rfmx.html#333458) - Integrated Instrument Driver & Measurement Software
+
+[NI-RFSA](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsa.html#333730) - Instrument Driver
+
+### Generation
+[NI-RFSG](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsg.html#333282) - Instrument Driver
+
+### Python Modules
+[pythonnet](https://github.com/pythonnet/pythonnet/wiki/Installation)
