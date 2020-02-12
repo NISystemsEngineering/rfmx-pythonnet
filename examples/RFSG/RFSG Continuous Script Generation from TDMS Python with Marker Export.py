@@ -12,8 +12,8 @@ import clr
 import sys
 
 # Location of assemblies
-assy_path = r'C:\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.ModularInstruments.NIRfsg.Fx40\v4.0_19.2.0.49152__dc6ad606294fc298' #1
-assy_path2 = r'C:\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\19.1.0.49152'  #1
+assy_path = r'"C:\Program Files\IVI Foundation\IVI\Microsoft.NET\Framework64\v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 19.1.0' #1
+assy_path2 = r'"C:\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current'  #1
 sys.path.append(assy_path)
 sys.path.append(assy_path2)
 
@@ -33,13 +33,14 @@ import NationalInstruments.ModularInstruments.NIRfsgPlayback
 # RFSG Settings
 
 resourceName = '5840'
-centerFreq = 5.18e9;                                                       # (Hz)
-powerLevel = -10;                                                        # (dBm)
+centerFreq = 5.18e9        # (Hz)
+powerLevel = -10           # (dBm)
+externalAttenuation = 0.0   # (dBm)
 
-frequencyReferenceSource = NationalInstruments.ModularInstruments.NIRfsg.RfsgFrequencyReferenceSource.PxiClock;
-frequencyReferenceFrequency = 10e6;                                     # (Hz)
+frequencyReferenceSource = NationalInstruments.ModularInstruments.NIRfsg.RfsgFrequencyReferenceSource.PxiClock
+frequencyReferenceFrequency = 10e6                                     # (Hz)
 
-wfmFilePath = r'C:\Users\AE-STEG\Desktop\Stegemann Project Code\QCA-Algo\Blanking\Test Wfms\AX 80M MCS11 4038 bytes 32us Idle Nss1.tdms' #2
+wfmFilePath = r'C:\Users\AE-STEG\Desktop\Test Wfms\AX 80M MCS11 4038 bytes 32us Idle Nss1.tdms' #2
 wfmFilePathList = wfmFilePath.split('\\')
 wfmFileName = wfmFilePathList[-1]
 waveformName = 'wlan'
@@ -59,13 +60,14 @@ rfsgHandle = rfsg.GetInstrumentHandle().DangerousGetHandle()
 
 
 rfsg.RF.Configure(centerFreq, powerLevel)
+rfsg.RF.ExternalGain = -externalAttenuation
 rfsg.FrequencyReference.Configure(frequencyReferenceSource, frequencyReferenceFrequency)
 
 rfsg.Arb.GenerationMode = NationalInstruments.ModularInstruments.NIRfsg.RfsgWaveformGenerationMode.Script
 rfsg.RF.PowerLevelType = NationalInstruments.ModularInstruments.NIRfsg.RfsgRFPowerLevelType.PeakPower
 
 #Export Marker Event to PXI Trig line
-rfsg.DeviceEvents.MarkerEvents[0].ExportedOutputTerminal = NationalInstruments.ModularInstruments.NIRfsg.RfsgMarkerEventExportedOutputTerminal.PxiTriggerLine0;
+rfsg.DeviceEvents.MarkerEvents[0].ExportedOutputTerminal = NationalInstruments.ModularInstruments.NIRfsg.RfsgMarkerEventExportedOutputTerminal.PxiTriggerLine0
 
 # -------------------------------------------------------------------------
 # Load TDMS waveform data from file
