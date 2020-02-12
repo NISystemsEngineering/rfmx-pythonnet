@@ -15,13 +15,10 @@ If you are using Visual Studio Code, a [settings file](https://github.com/NISyst
 Note: The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
 
 ## Environment Setup
-### Analysis
-[NI-RFmx](https://www.ni.com/en-us/support/downloads/drivers/download.rfmx.html#333458) - Integrated Instrument Driver & Measurement Software
+[NI-RFmx](https://www.ni.com/en-us/support/downloads/drivers/download.rfmx.html#333458) - Integrated Instrument Driver & Analysis Software
 
-[NI-RFSA](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsa.html#333730) - Instrument Driver
+[NI-RFSA](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsa.html#333730) - Analyzer Instrument Driver
 
-### Generation
-[NI-RFSG](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsg.html#333282) - Instrument Driver
+[NI-RFSG](https://www.ni.com/en-us/support/downloads/drivers/download.ni-rfsg.html#333282) - Generator Instrument Driver
 
-### Python Modules
-[pythonnet](https://github.com/pythonnet/pythonnet/wiki/Installation)
+[pythonnet](https://github.com/pythonnet/pythonnet/wiki/Installation) - Enables usage of .NET assemblies in Python
