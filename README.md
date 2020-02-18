@@ -14,7 +14,7 @@ If you are using Visual Studio Code, a [settings file](https://github.com/NISyst
 
 Notable [known limitations](https://github.com/gtalarico/ironpython-stubs/wiki):
 - Wildcard imports are not supported (`from x import *`)
-- Since method overloads work differently in python, autocomplete options will be something like `func(args)` or similar
+- Since method overloads work differently in python, autocomplete options will look like `func(args)` or something similar
 
 Note: The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
 
