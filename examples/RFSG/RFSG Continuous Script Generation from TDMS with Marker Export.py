@@ -13,21 +13,18 @@ import sys
 
 # Location of assemblies
 assy_path = r'"C:\Program Files\IVI Foundation\IVI\Microsoft.NET\Framework64\v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 19.1.0' #1
-assy_path2 = r'"C:\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current'  #1
+assy_path2 = r'"C:\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current' #2
 sys.path.append(assy_path)
 sys.path.append(assy_path2)
 
 clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx40")
 clr.AddReference("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40")
 
-
 # Import from NationalInstruments.ModularInstruments.NIRfsg.Fx40
-from NationalInstruments.ModularInstruments.NIRfsg import *
+import NationalInstruments.ModularInstruments.NIRfsg as NIRfsg
 
 # Import from NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40
-import NationalInstruments.ModularInstruments.NIRfsgPlayback
-
-
+import NationalInstruments.ModularInstruments.NIRfsgPlayback as NIRfsgPlayback
 
 # -------------------------------------------------------------------------
 # RFSG Settings
@@ -37,7 +34,7 @@ centerFreq = 5.18e9        # (Hz)
 powerLevel = -10           # (dBm)
 externalAttenuation = 0.0   # (dBm)
 
-frequencyReferenceSource = NationalInstruments.ModularInstruments.NIRfsg.RfsgFrequencyReferenceSource.PxiClock
+frequencyReferenceSource = NIRfsg.RfsgFrequencyReferenceSource.PxiClock
 frequencyReferenceFrequency = 10e6                                     # (Hz)
 
 wfmFilePath = r'C:\Users\AE-STEG\Desktop\Test Wfms\AX 80M MCS11 4038 bytes 32us Idle Nss1.tdms' #2
@@ -55,26 +52,24 @@ script = """script s
 # Configure RFSG Session
 
 # Intialize Session
-rfsg = NIRfsg(resourceName, True, True)
+rfsg = NIRfsg.NIRfsg(resourceName, True, True)
 rfsgHandle = rfsg.GetInstrumentHandle().DangerousGetHandle()
-
 
 rfsg.RF.Configure(centerFreq, powerLevel)
 rfsg.RF.ExternalGain = -externalAttenuation
 rfsg.FrequencyReference.Configure(frequencyReferenceSource, frequencyReferenceFrequency)
 
-rfsg.Arb.GenerationMode = NationalInstruments.ModularInstruments.NIRfsg.RfsgWaveformGenerationMode.Script
-rfsg.RF.PowerLevelType = NationalInstruments.ModularInstruments.NIRfsg.RfsgRFPowerLevelType.PeakPower
+rfsg.Arb.GenerationMode = NIRfsg.RfsgWaveformGenerationMode.Script
+rfsg.RF.PowerLevelType = NIRfsg.RfsgRFPowerLevelType.PeakPower
 
-#Export Marker Event to PXI Trig line
-rfsg.DeviceEvents.MarkerEvents[0].ExportedOutputTerminal = NationalInstruments.ModularInstruments.NIRfsg.RfsgMarkerEventExportedOutputTerminal.PxiTriggerLine0
+# Export Marker Event to PXI Trig line
+rfsg.DeviceEvents.MarkerEvents[0].ExportedOutputTerminal = NIRfsg.RfsgMarkerEventExportedOutputTerminal.PxiTriggerLine0
 
 # -------------------------------------------------------------------------
 # Load TDMS waveform data from file
 
-NationalInstruments.ModularInstruments.NIRfsgPlayback.NIRfsgPlayback.ReadAndDownloadWaveformFromFile(rfsgHandle, wfmFilePath, waveformName)
-NationalInstruments.ModularInstruments.NIRfsgPlayback.NIRfsgPlayback.SetScriptToGenerateSingleRfsg(rfsgHandle, script)
-
+NIRfsgPlayback.NIRfsgPlayback.ReadAndDownloadWaveformFromFile(rfsgHandle, wfmFilePath, waveformName)
+NIRfsgPlayback.NIRfsgPlayback.SetScriptToGenerateSingleRfsg(rfsgHandle, script)
 
 # Initiate generation
 rfsg.Initiate()
@@ -93,4 +88,3 @@ rfsg.RF.OutputEnabled = False
 # Close the RFSG NIRfsg session
 
 rfsg.Close()
-
