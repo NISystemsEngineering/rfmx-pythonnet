@@ -12,6 +12,10 @@ To enable this feature, [configure your editor](https://github.com/gtalarico/iro
 
 If you are using Visual Studio Code, a [settings file](https://github.com/NISystemsEngineering/rfmx-pythonnet/tree/master/.vscode) has already been provided. To use it, clone this repo then open the folder in VS Code. 
 
+Notable [known limitations](https://github.com/gtalarico/ironpython-stubs/wiki):
+- Wildcard imports are not supported (`from x import *`)
+- Since method overloads work differently in python, autocomplete options will be something like `func(args)` or similar
+
 Note: The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
 
 ## Environment Setup
