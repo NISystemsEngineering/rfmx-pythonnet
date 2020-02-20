@@ -16,7 +16,7 @@ Notable [known limitations](https://github.com/gtalarico/ironpython-stubs/wiki):
 - Wildcard imports are not supported (`from x import *`)
 - Since method overloads work differently in python, autocomplete options will look like `func(args)` or something similar
 
-Note: The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
+**Note:** The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
 
 ## Environment Setup
 [NI-RFmx](https://www.ni.com/en-us/support/downloads/drivers/download.rfmx.html#333458) - Integrated Instrument Driver & Analysis Software
