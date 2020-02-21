@@ -646,9 +646,10 @@ class RFmxNRMX(object, ISignalConfiguration, IDisposable):
 """
 
 
-
 class RFmxNRMXSubObject(object):
+    pass
     # no doc
+
 
 class RFmxNRMXAcp(RFmxNRMXSubObject):
     # no doc
