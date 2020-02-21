@@ -56,7 +56,7 @@ numberOfUtraOffsets = 0
 instrSession = InstrMX.RFmxInstrMX(resourceName, "")
 
 # Configure RFmx NR acquisition
-nr = NRMX.RFmxNRMXExtension.GetNRSignalConfiguration(instrSession)
+nr = InstrMX.RFmxNRMXExtension.GetNRSignalConfiguration(instrSession)
 instrSession.ConfigureFrequencyReference("", frequencyReferenceSource, frequencyReferenceFrequency)
 nr.SetSelectedPorts("", selectedPorts)
 nr.ConfigureFrequency("", centerFrequency)
