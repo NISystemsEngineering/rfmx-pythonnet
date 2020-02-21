@@ -41,13 +41,12 @@ dc.measure_when = nidcpower.MeasureWhen.AUTOMATICALLY_AFTER_SOURCE_COMPLETE
 command = ""
 while command.lower() != "exit":
     dc.initiate()
-    measurements = dc.fetch_multiple(1, timeout=10.0)
+    voltage_current_measurements = dc.fetch_multiple(1, timeout=10.0)
     dc.abort()
-    voltage_current_measurements = zip(measurements["voltage"], measurements["current"])
-    for voltage, current in voltage_current_measurements:
-        print(str(voltage) + "V, " + str(current) + 'A')
+    for measurement in voltage_current_measurements:
+        print("{:1.3f}".format(measurement.voltage) + "V, " + "{:1.3f}".format(measurement.current * 1000.0) + 'mA')
     command = input("Press enter to take another measurement. Enter 'exit' to close.")
 
 # close
 dc.reset()
-dc.close()
+dc.close()s
