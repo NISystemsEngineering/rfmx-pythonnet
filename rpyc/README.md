@@ -1,24 +1,27 @@
 # Introduction
 This project is an example of using [RPyC](https://rpyc.readthedocs.io/en/latest/) to make measurements in Python by calling into an RPyC server hosting NI software such as NI-RFmx and NI-RFSG.
 
+# Demo Videos
+[Click here to be redirected to YouTube](https://www.youtube.com/playlist?list=PLbtY6u-1ausYmZ_Sl47s6N2L9jWG4_aEm)
+
 # Software
 ## Server
 1. NI Software
-  * NI-RFmx and personalities 3.0 or newer. The [Wireless Test Suite](https://www.ni.com/en-us/support/downloads/software-products/download.rfmx-cellular-bundle.html) installer 2019.01 contains all of these.
-  * RFSA 18.2.1 or greater
-  * RFSG 18.2.1 or greater
+    * NI-RFmx and personalities 3.0 or newer. The [Wireless Test Suite](https://www.ni.com/en-us/support/downloads/software-products/download.rfmx-cellular-bundle.html) installer 2019.01 contains all of these.
+    * RFSA 18.2.1 or greater
+    * RFSG 18.2.1 or greater
 2. Python interpreter
-  * The example was tested and developed using python 3.6
+    * The example was tested and developed using python 3.6
 3. Python modules
-  *  RPyC
-  *  pythonnet: provides clr (Common Language Runtime)
+    * RPyC
+    * pythonnet: provides clr (Common Language Runtime)
 4. Launch the server by running RFmxService.py
 
 ## Client
 1. Python interpreter
-  * The example was tested and developed using python 3.6
+    * The example was tested and developed using python 3.6
 2. Python modules
-  * RPyC
+    * RPyC
 3. Run the examples in the client folder
 
 # Hardware Setup
@@ -58,9 +61,3 @@ The client can program the instrument(s) just like they would if they were writi
 ![](doc/img/pythonvsnet.PNG)
 
 Since the .NET driver is imported into Python, we have full instrument support out of the box for executing test sequences from the client.
-
-# Demo Video 
-A demo video is available on YouTube [here](https://youtu.be/8k9pwcwbPfk).
-
-# Contribute
-* Do you have some examples to contribute? Let us know!
