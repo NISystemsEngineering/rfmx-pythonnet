@@ -18,6 +18,9 @@ Notable [known limitations](https://github.com/gtalarico/ironpython-stubs/wiki):
 
 **Note:** The stubs require some additional modifications in order to expose all auto-complete options. Note that not all options will be available, especially as new versions are released. Always refer to the product documentation for a complete list of functionality.
 
+## Remote Execution with RPyC
+For RPyC related content, please visit the [RPyC subdirectory.](rpyc)
+
 ## Environment Setup
 [NI-RFmx](https://www.ni.com/en-us/support/downloads/drivers/download.rfmx.html#333458) - Integrated Instrument Driver & Analysis Software
 
