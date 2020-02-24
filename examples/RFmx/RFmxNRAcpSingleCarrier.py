@@ -9,14 +9,13 @@ import NationalInstruments.RFmx.InstrMX as InstrMX
 import NationalInstruments.RFmx.NRMX as NRMX
 
 # Initialize VSA Settings
-resourceName = '5831'
-selectedPorts = 'rf1/port0'
+resourceName = '5840'
+selectedPorts = ''
 
-centerFrequency = 28e9                                                 # (Hz)
+centerFrequency = 3.5e9                                                 # (Hz)
 referenceLevel = 0.0                                                   # (dBm)
 externalAttenuation = 0.0                                              # (dB)
 autoLevel = False
-measurementInterval = 0.010                                            # (Seconds)
 
 rfAttenuationAuto = True
 rfAttenuation = 10
@@ -41,10 +40,10 @@ averagingType = NRMX.RFmxNRMXAcpAveragingType.Rms
 timeout = 10.0                                                          # (Seconds)
 
 # Initialize NR Settings
-frequencyRange = NRMX.RFmxNRMXFrequencyRange.Range2
+frequencyRange = NRMX.RFmxNRMXFrequencyRange.Range1
 carrierBandwidth = 100e6
-subcarrierSpacing = 120e3
-linkDirection = NRMX.RFmxNRMXLinkDirection.Downlink
+subcarrierSpacing = 30e3
+linkDirection = NRMX.RFmxNRMXLinkDirection.Uplink
 measurementMethod = NRMX.RFmxNRMXAcpMeasurementMethod.Normal
 noiseCompensationEnabled = False
 
