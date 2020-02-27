@@ -1,6 +1,7 @@
 import clr, sys, os
 
 sys.path.append(os.environ["PROGRAMFILES(X86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
+sys.path.append(os.path.abspath(__file__ + "\\..\\..\\..\\lib"))
 
 clr.AddReference("NationalInstruments.RFmx.InstrMX.Fx40")
 clr.AddReference("NationalInstruments.RFmx.NRMX.Fx40")
@@ -145,8 +146,8 @@ print("Component Carrier IQ Gain Imbalance Mean (dB)  : {0}".format(componentCar
 print("Component Carrier Quadrature Error Mean (deg)  : {0}".format(componentCarrierQuadratureErrorMean))
 
 # Fetch traces
-_, puschDataConstellationTrace = nr.ModAcc.Results.FetchPuschDataConstellationTrace("", timeout, None)
-_, puschDmrsConstellationTrace = nr.ModAcc.Results.FetchPuschDmrsConstellationTrace("", timeout, None)
+_, puschDataConstellation = nr.ModAcc.Results.FetchPuschDataConstellationTrace("", timeout, None)
+_, puschDmrsConstellation = nr.ModAcc.Results.FetchPuschDmrsConstellationTrace("", timeout, None)
 _, rmsEvmPerSubcarrierMean = nr.ModAcc.Results.FetchRmsEvmPerSubcarrierMeanTrace("", timeout, None)
 _, rmsEvmPerSymbolMean = nr.ModAcc.Results.FetchRmsEvmPerSymbolMeanTrace("", timeout, None)
 _, spectralFlatness, spectralFlatnessLowerMask, spectralFlatnessUpperMask = nr.ModAcc.Results.FetchSpectralFlatnessTrace("", timeout, None, None, None)
@@ -155,8 +156,8 @@ _, spectralFlatness, spectralFlatnessLowerMask, spectralFlatnessUpperMask = nr.M
 instrSession.Close()
 
 # Post-process traces
-puschDataConstellationReal, puschDataConstellationImag = traces.decompose_complex_array(puschDataConstellationTrace)
-puschDmrsConstellationReal, puschDmrsConstellationImag = traces.decompose_complex_array(puschDmrsConstellationTrace)
+puschDataConstellation = traces.decompose_complex_array(puschDataConstellation)
+puschDmrsConstellation = traces.decompose_complex_array(puschDmrsConstellation)
 rmsEvmPerSubcarrierMean = traces.decompose_analog_waveform(rmsEvmPerSubcarrierMean)
 rmsEvmPerSymbolMean = traces.decompose_analog_waveform(rmsEvmPerSymbolMean)
 spectralFlatness = traces.decompose_spectrum(spectralFlatness)
@@ -166,13 +167,14 @@ spectralFlatnessUpperMask = traces.decompose_spectrum(spectralFlatnessUpperMask)
 # Plot traces
 fig, axs = pyplot.subplots(2, 2)
 axs[0, 0].set_title("PUSCH Constellation")
-axs[0, 0].plot(puschDmrsConstellationReal, puschDmrsConstellationImag, "ro")
-axs[0, 0].plot(puschDataConstellationReal, puschDataConstellationImag, "bo")
+axs[0, 0].plot(puschDataConstellation[0], puschDataConstellation[1], "ro")
+axs[0, 0].plot(puschDmrsConstellation[0], puschDmrsConstellation[1], "bo")
 axs[0, 1].set_title("RMS EVM per Subcarrier Mean")
-axs[0, 1].plot(rmsEvmPerSubcarrierMean)
+axs[0, 1].plot(rmsEvmPerSubcarrierMean[0], rmsEvmPerSubcarrierMean[1])
 axs[1, 0].set_title("RMS EVM per Symbol Mean")
-axs[1, 0].plot(rmsEvmPerSymbolMean)
-axs[1, 1].plot(spectralFlatness)
-axs[1, 1].plot(spectralFlatnessLowerMask)
-axs[1, 1].plot(spectralFlatnessUpperMask)
+axs[1, 0].plot(rmsEvmPerSymbolMean[0], rmsEvmPerSymbolMean[1])
+axs[1, 1].set_title("Spectral Flatness")
+axs[1, 1].plot(spectralFlatness[0], spectralFlatness[1])
+axs[1, 1].plot(spectralFlatnessLowerMask[0], spectralFlatnessLowerMask[1])
+axs[1, 1].plot(spectralFlatnessUpperMask[0], spectralFlatnessUpperMask[1])
 pyplot.show()
