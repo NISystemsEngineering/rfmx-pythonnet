@@ -16,14 +16,18 @@ def __ramp(start, delta, num_samples):
 
 
 def decompose_complex_array(complex_array):
-    """ Decomposes an NI ComplexSingle[] or ComplexDouble[] into a list of IQ tuples. """
-    # use loop instead of DecomposeArray so we don't have to identify a type
-    real = [0.0] * complex_array.Length
-    imag = [0.0] * complex_array.Length
-    for i in range(complex_array.Length):
-        real[i] = complex_array[i].Real
-        imag[i] = complex_array[i].Imaginary
-    return real, imag
+    """ Decomposes an NI ComplexSingle[] or ComplexDouble[] into a list of complex numbers. """
+    # use list comprehension of DecomposeArray so we don't have to identify a type
+    return [complex(iq.Real, iq.Imaginary) for iq in complex_array]
+
+
+def decompose_complex_waveform(complex_waveform):
+    """ Decomposes an NI ComplexWaveform in a tuple of x and y values. """
+    t0 = complex_waveform.PrecisionTiming.TimeOffset.TotalSeconds
+    dt = complex_waveform.PrecisionTiming.SampleInterval.TotalSeconds
+    x = list(__ramp(t0, dt, complex_waveform.SampleCount))
+    y = decompose_complex_array(complex_waveform.GetRawData())
+    return t0, dt, y
 
 
 def decompose_analog_waveform(analog_waveform: AnalogWaveform):
