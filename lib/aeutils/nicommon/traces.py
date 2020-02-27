@@ -17,23 +17,28 @@ def __ramp(start, delta, num_samples):
 
 def decompose_complex_array(complex_array):
     """ Decomposes an NI ComplexSingle[] or ComplexDouble[] into a list of IQ tuples. """
-    # use list comprehension instead of DecomposeArray so we don't have to identify a type
-    return [(iq.Real, iq.Imaginary) for iq in complex_array]
+    # use loop instead of DecomposeArray so we don't have to identify a type
+    real = [0.0] * complex_array.Length
+    imag = [0.0] * complex_array.Length
+    for i in range(complex_array.Length):
+        real[i] = complex_array[i].Real
+        imag[i] = complex_array[i].Imaginary
+    return real, imag
 
 
 def decompose_analog_waveform(analog_waveform: AnalogWaveform):
     """ Decomposes an NI AnalogWaveform into a tuple of x and y values. """
-    t0 = analog_waveform.PrecisionTiming.TimeOffset
-    dt = analog_waveform.PrecisionTiming.SampleInterval
-    x = __ramp(t0, dt, analog_waveform.SampleCount)
-    y = analog_waveform.GetRawData()
-    return list(zip(x, y))
+    t0 = analog_waveform.PrecisionTiming.TimeOffset.TotalSeconds
+    dt = analog_waveform.PrecisionTiming.SampleInterval.TotalSeconds
+    x = list(__ramp(t0, dt, analog_waveform.SampleCount))
+    y = list(analog_waveform.GetRawData())
+    return x, y
 
 
 def decompose_spectrum(spectrum: Spectrum):
     """ Decomposes an NI Spectrum into a tuple of x and y values. """
     f0 = spectrum.StartFrequency
     df = spectrum.FrequencyIncrement
-    x = __ramp(t0, dt, spectrum.SampleCount)
-    y = spectrum.GetData()
-    return list(zip(x, y))
+    x = list(__ramp(f0, df, spectrum.SampleCount))
+    y = list(spectrum.GetData())
+    return x, y
