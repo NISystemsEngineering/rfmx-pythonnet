@@ -9,7 +9,7 @@ clr.AddReference("NationalInstruments.Common")
 import NationalInstruments.RFmx.InstrMX as InstrMX
 import NationalInstruments.RFmx.NRMX as NRMX
 from matplotlib import pyplot
-from NationalInstruments import ComplexSingle
+from aeutils.nicommon import traces
 
 # Initialize input variables
 resourceName = "VST2_01"
@@ -154,25 +154,14 @@ _, spectralFlatness, spectralFlatnessLowerMask, spectralFlatnessUpperMask = nr.M
 #Close instrument session
 instrSession.Close()
 
-# define reuse functions for traces
-def decompose_complex_array(complex_array):
-    _, real, imag = ComplexSingle.DecomposeArray(puschDataConstellationTrace, None, None)
-    return list(real), list(imag)
-
-def decompose_analog_waveform(analog_waveform):
-    return list(analog_waveform.GetRawData())
-
-def decompose_spectrum(spectrum):
-    return list(spectrum.GetData())
-
 # Post-process traces
-puschDataConstellationReal, puschDataConstellationImag = decompose_complex_array(puschDataConstellationTrace)
-puschDmrsConstellationReal, puschDmrsConstellationImag = decompose_complex_array(puschDmrsConstellationTrace)
-rmsEvmPerSubcarrierMean = decompose_analog_waveform(rmsEvmPerSubcarrierMean)
-rmsEvmPerSymbolMean = decompose_analog_waveform(rmsEvmPerSymbolMean)
-spectralFlatness = decompose_spectrum(spectralFlatness)
-spectralFlatnessLowerMask = decompose_spectrum(spectralFlatnessLowerMask) 
-spectralFlatnessUpperMask = decompose_spectrum(spectralFlatnessUpperMask)
+puschDataConstellationReal, puschDataConstellationImag = traces.decompose_complex_array(puschDataConstellationTrace)
+puschDmrsConstellationReal, puschDmrsConstellationImag = traces.decompose_complex_array(puschDmrsConstellationTrace)
+rmsEvmPerSubcarrierMean = traces.decompose_analog_waveform(rmsEvmPerSubcarrierMean)
+rmsEvmPerSymbolMean = traces.decompose_analog_waveform(rmsEvmPerSymbolMean)
+spectralFlatness = traces.decompose_spectrum(spectralFlatness)
+spectralFlatnessLowerMask = traces.decompose_spectrum(spectralFlatnessLowerMask) 
+spectralFlatnessUpperMask = traces.decompose_spectrum(spectralFlatnessUpperMask)
 
 # Plot traces
 fig, axs = pyplot.subplots(2, 2)
