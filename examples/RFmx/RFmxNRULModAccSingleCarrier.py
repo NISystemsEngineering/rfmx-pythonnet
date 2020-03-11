@@ -19,8 +19,8 @@ selectedPorts = ""
 frequencyReferenceSource = InstrMX.RFmxInstrMXConstants.OnboardClock
 frequencyReferenceFrequency = 10e6
 
-centerFrequency = 1.95e9
-referenceLevel = -20.0
+centerFrequency = 3.5e9
+referenceLevel = 0.0
 externalAttenuation = 0.0
 
 enableTrigger = True
@@ -51,6 +51,7 @@ puschMappingType = NRMX.RFmxNRMXPuschMappingType.TypeA
 puschDmrsTypeAPosition = 2
 puschDmrsDuration = NRMX.RFmxNRMXPuschDmrsDuration.SingleSymbol
 puschDmrsAdditionalPositions = 0
+puschDmrsNumberOfCdmGroups = 1
 
 synchronizationMode = NRMX.RFmxNRMXModAccSynchronizationMode.Slot
 
@@ -107,6 +108,7 @@ nr.ComponentCarrier.SetPuschMappingType("", puschMappingType)
 nr.ComponentCarrier.SetPuschDmrsTypeAPosition("", puschDmrsTypeAPosition)
 nr.ComponentCarrier.SetPuschDmrsDuration("", puschDmrsDuration)
 nr.ComponentCarrier.SetPuschDmrsAdditionalPositions("", puschDmrsAdditionalPositions)
+nr.ComponentCarrier.SetPuschDmrsNumberOfCdmGroups("", puschDmrsNumberOfCdmGroups)
 nr.SelectMeasurements("", NRMX.RFmxNRMXMeasurementTypes.ModAcc, True)
 
 nr.ModAcc.Configuration.SetSynchronizationMode("", synchronizationMode)
