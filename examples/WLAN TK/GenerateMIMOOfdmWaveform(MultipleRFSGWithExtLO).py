@@ -1,4 +1,4 @@
-import clr, os.path, time, re
+import clr, os.path, time, re, math
 from sys import path
 
 path.append(os.path.abspath(__file__ + "\\..\\..\\..\\bin"))
@@ -10,7 +10,7 @@ import NationalInstruments.ModularInstruments.Interop as ModInst
 import System.Runtime.InteropServices as InteropServices
 
 # Generator Parameters
-rfsgResourceNames = ["VST_01", "VST_02"]
+rfsgResourceNames = ["VST1_01", "VST1_02"] # defined in order of transmit channel number, first element is sync master
 rfsgReferenceClockSource = ModInst.niRFSGConstants.PxiClkStr
 carrierFrequency = 5.18e+9
 powerLevels = [-10, -10]
@@ -19,11 +19,11 @@ syncTriggerLines = [0, 1]
 rfBlankingEnabled = False
 
 # LO Distribution Parameters
-LOSource = Toolkits.niWLANGConstants.LOSourceExternal
-externalLOResourceName = "LO_01"
+loDaisyChainConfig = (rfsgResourceNames,) # tuple of lo daisy chains, external LO will be split to first element in each list, else first element in each list is lo master
+LOSource = Toolkits.niWLANGConstants.LOSourceOnboard
+externalLOResourceName = ""
 externalLOReferenceClockSource = ModInst.niRFSAConstants.OnboardClockStr
-rfsgLODaisyChainEnabled = True
-LOExportToExternalDevicesEnabled = False
+LOExportToExternalDevicesEnabled = False # defines whether LO should be exported on last resource in each daisy chain
 
 # Measurement Parameters
 standard = Toolkits.niWLANGConstants.Standard80211AxMimoOfdm
@@ -50,7 +50,7 @@ wlang.SetRFBlankingEnabled(None, rfBlankingEnabled)
 
 # Configure External LO
 externalLOHandle = InteropServices.HandleRef()
-if externalLOResourceName is not None and LOSource == Toolkits.niWLANGConstants.LOSourceExternal:
+if externalLOResourceName and LOSource == Toolkits.niWLANGConstants.LOSourceExternal:
     externalLOSession = ModInst.niRFSG(externalLOResourceName, True, False)
     externalLOSession.ConfigureRefClock(externalLOReferenceClockSource, 10e+6)
     externalLOSession.SetGenerationMode(None, ModInst.niRFSGConstants.Cw)
@@ -64,35 +64,43 @@ for i in range(numTx):
     rfsgSessions[i].ConfigureGenerationMode(ModInst.niRFSGConstants.Script)
     rfsgSessions[i].SetExternalGain(None, -(externalAttenuation[i]))
 
-# Create and Download Waveform
+# Configure Synchronous Generation
 rfsgHandles = [rfsgSession.Handle for rfsgSession in rfsgSessions]
 wlang.ConfigureMultipleDeviceSynchronization(rfsgHandles, numTx, rfsgReferenceClockSource, syncTriggerLines, len(syncTriggerLines))
-wlang.RFSGConfigureFrequencySingleLO(rfsgHandles, LOSource, externalLOHandle, carrierFrequency, rfsgLODaisyChainEnabled, LOExportToExternalDevicesEnabled)
+
+# Distribute LO(s) and Configure for Optimal Performance
+rfsgSessionDict = dict(zip(rfsgResourceNames, rfsgSessions))
+for daisyChain in loDaisyChainConfig:
+    daisyChainSessions = [rfsgSessionDict[resourceName] for resourceName in daisyChain]
+    daisyChainHandles = [rfsgSession.Handle for rfsgSession in daisyChainSessions]
+    wlang.RFSGConfigureFrequencySingleLO(daisyChainHandles, LOSource, externalLOHandle, carrierFrequency, True, LOExportToExternalDevicesEnabled)
+    _, instrumentModel = daisyChainSessions[0].GetInstrumentModel(None, None)
+    match = re.match(r"NI PXIe-58(\d)", instrumentModel)
+    if match: # only 58xx models of VST support power cascading
+        if match.group(1) == '3': # 583x models have multiple lo channels
+            LOChannelName = "lo2"
+        else:
+            LOChannelName = None
+        if externalLOResourceName and LOSource == Toolkits.niWLANAConstants.LOSourceExternal:
+            _, loOutPower = externalLOSession.GetPowerLevel(None, 0.0)
+            loOutPower = loOutPower - 10 * math.log10(len(loDaisyChainConfig)) # approximation of splitter loss
+            daisyChainSessions[0].SetLoInPower(LOChannelName, loOutPower)
+            daisyChainSessions[0].SetDouble(ModInst.niRFSGProperties.LoOutPower, LOChannelName, loOutPower)
+        elif LOSource == Toolkits.niWLANAConstants.LOSourceExternal:
+            print("External LO input power not set for chain " + str(daisyChain))
+        for i in range(numTx - 1):
+            _, loOutPower = daisyChainSessions[i].GetLoOutPower(LOChannelName, 0.0)
+            daisyChainSessions[i + 1].SetLoInPower(LOChannelName, loOutPower) # approximating that cable loss is negligible
+            daisyChainSessions[i + 1].SetDouble(ModInst.niRFSGProperties.LoOutPower, LOChannelName, loOutPower)
+
+# Download Waveforms and Configure Script
 wlang.RFSGCreateAndDownloadMIMOWaveforms(rfsgHandles, None, numTx, "wlan")
 for rfsgHandle, powerLevel in zip(rfsgHandles, powerLevels):
     script = "script GenerateWlan\nrepeat forever\ngenerate wlan\nend repeat\nend script"
     Toolkits.niWLANG.WLANG_RFSGConfigureScript(rfsgHandle, None, script, powerLevel)
 
-# Cascade LO Power Levels for Optimal Performance
-if rfsgLODaisyChainEnabled:
-    _, instrumentModel = rfsgSessions[0].GetInstrumentModel(None, None)
-    if (re.match(r"NI PXIe-583\d", instrumentModel)):
-        LOChannelName = "lo2"
-    else:
-        LOChannelName = None
-    if externalLOResourceName is not None and LOSource == Toolkits.niWLANAConstants.LOSourceExternal:
-        _, loOutPower = externalLOSession.GetPowerLevel(None, 0.0)
-        rfsgSessions[0].SetLoInPower(LOChannelName, loOutPower)
-        rfsgSessions[0].SetDouble(ModInst.niRFSGProperties.LoOutPower, LOChannelName, loOutPower)
-    for i in range(numTx - 1):
-        _, loOutPower = rfsgSessions[i].GetLoOutPower(LOChannelName, 0.0)
-        rfsgSessions[i + 1].SetLoInPower(LOChannelName, loOutPower)
-        _, loInPower = rfsgSessions[i + 1].GetLoInPower(LOChannelName, 0.0)
-else:
-    pass # loss through splitter will need to be considered
-
 # Initiate
-if externalLOResourceName is not None and LOSource == Toolkits.niWLANGConstants.LOSourceExternal:
+if externalLOResourceName and LOSource == Toolkits.niWLANGConstants.LOSourceExternal:
     externalLOSession.Initiate()
 wlang.RFSGMultipleDeviceInitiate(rfsgHandles)
 
@@ -109,7 +117,7 @@ except KeyboardInterrupt:
 
 # Close Sessions
 wlang.Close()
-if externalLOResourceName is not None and LOSource == Toolkits.niWLANAConstants.LOSourceExternal:
+if externalLOResourceName and LOSource == Toolkits.niWLANAConstants.LOSourceExternal:
     externalLOSession.close()
 for rfsgSession in rfsgSessions:
     rfsgSession.close()
