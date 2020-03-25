@@ -4,10 +4,7 @@
 # 3. Expose the assembly via the RFmxService (rpyc)
 
 from sys import path
-import os
-import clr
-import rpyc
-from colorama import init, Fore
+import os, clr, rpyc, colorama
 
 # Add search paths for .NET assemblies to system path
 path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
@@ -19,7 +16,7 @@ for x in os.walk(iviDotNetPath):
     path.append(x[0])
 
 # Prepare terminal for colored printing
-init()
+colorama.init()
 
 # This function allows for dynamic importation of modules since some modules may not be installed
 def ImportDotNetSubmodule(assemblyName, namespace):
@@ -30,13 +27,13 @@ def ImportDotNetSubmodule(assemblyName, namespace):
         submoduleName = namespace.split('.')[-1]
         exec("import " + namespace + " as " + submoduleName)
         submodule = eval(submoduleName)
-        print(namespace + " imported successfully from " + assemblyName + '.')
+        print(colorama.Fore.GREEN + namespace + " imported successfully from " + assemblyName + '.' + colorama.Fore.RESET)
     except FileNotFoundException:
-        print(Fore.YELLOW + assemblyName + " was not found." + Fore.RESET)
+        print(colorama.Fore.YELLOW + assemblyName + " was not found." + colorama.Fore.RESET)
     except Exception as e:
-        print(Fore.RED + "An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
+        print(colorama.Fore.RED + "An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
         print(e)
-        print(Fore.RESET)
+        print(colorama.Fore.RESET)
     return submodule
 
 # Global variables
