@@ -11,27 +11,27 @@ path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\Measuremen
 path.append(os.path.abspath(__file__ + "\\..\\..\\bin"))
 
 # Add in all of the IVI .NET paths for finding additional assemblies
-iviDotNetPath = os.environ["ProgramFiles"] + r"\IVI Foundation\IVI\Microsoft.NET\Framework64"
-for x in os.walk(iviDotNetPath):
+ivi_dotnet_path = os.environ["ProgramFiles"] + r"\IVI Foundation\IVI\Microsoft.NET\Framework64"
+for x in os.walk(ivi_dotnet_path):
     path.append(x[0])
 
 # Prepare terminal for colored printing
 colorama.init()
 
 # This function allows for dynamic importation of modules since some modules may not be installed
-def ImportDotNetSubmodule(assemblyName, namespace):
+def import_dotnet_submodule(assembly_name, namespace):
     from System.IO import FileNotFoundException
     submodule = None
     try:
-        clr.AddReference(assemblyName)
-        submoduleName = namespace.split('.')[-1]
-        exec("import " + namespace + " as " + submoduleName)
-        submodule = eval(submoduleName)
-        print(colorama.Fore.GREEN + namespace + " imported successfully from " + assemblyName + '.' + colorama.Fore.RESET)
+        clr.AddReference(assembly_name)
+        submodule_name = namespace.split('.')[-1]
+        exec("import " + namespace + " as " + submodule_name)
+        submodule = eval(submodule_name)
+        print(colorama.Fore.GREEN + namespace + " imported successfully from " + assembly_name + '.' + colorama.Fore.RESET)
     except FileNotFoundException:
-        print(colorama.Fore.YELLOW + assemblyName + " was not found." + colorama.Fore.RESET)
+        print(colorama.Fore.YELLOW + assembly_name + " was not found." + colorama.Fore.RESET)
     except Exception as e:
-        print(colorama.Fore.RED + "An exception occured loading " + namespace + " from " + assemblyName + ". Module was not loaded.")
+        print(colorama.Fore.RED + "An exception occured loading " + namespace + " from " + assembly_name + ". Module was not loaded.")
         print(e)
         print(colorama.Fore.RESET)
     return submodule
@@ -41,30 +41,30 @@ instr = None
 
 class RFmxService(rpyc.Service):
     # Import common modules
-    exposed_System = ImportDotNetSubmodule("System", "System")
-    exposed_NationalInstruments = ImportDotNetSubmodule("NationalInstruments.Common", "NationalInstruments")
-    exposed_ModularInstruments = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.Common", "NationalInstruments.ModularInstruments")
+    exposed_System = import_dotnet_submodule("System", "System")
+    exposed_NationalInstruments = import_dotnet_submodule("NationalInstruments.Common", "NationalInstruments")
+    exposed_ModularInstruments = import_dotnet_submodule("NationalInstruments.ModularInstruments.Common", "NationalInstruments.ModularInstruments")
 
     # Import RFSG generation modules
-    exposed_NIRfsg = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
-    exposed_NIRfsgPlayback = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
+    exposed_NIRfsg = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
+    exposed_NIRfsgPlayback = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
 
     # Import RFSA acquisition modules
-    exposed_NIRfsa = exposed_NIRfsa = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.NIRfsa.Fx40", "NationalInstruments.ModularInstruments.NIRfsa")
+    exposed_NIRfsa = exposed_NIRfsa = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsa.Fx40", "NationalInstruments.ModularInstruments.NIRfsa")
 
     # Import RFmx measurement modules
-    exposed_InstrMX = ImportDotNetSubmodule("NationalInstruments.RFmx.InstrMX.Fx40", "NationalInstruments.RFmx.InstrMX")
-    exposed_SpecAnMX = ImportDotNetSubmodule("NationalInstruments.RFmx.SpecAnMX.Fx40", "NationalInstruments.RFmx.SpecAnMX")
-    exposed_LteMX = ImportDotNetSubmodule("NationalInstruments.RFmx.LteMX.Fx40", "NationalInstruments.RFmx.LteMX")
-    exposed_NRMX = ImportDotNetSubmodule("NationalInstruments.RFmx.NRMX.Fx40", "NationalInstruments.RFmx.NRMX")
-    exposed_WlanMX = ImportDotNetSubmodule("NationalInstruments.RFmx.WlanMX.Fx40", "NationalInstruments.RFmx.WlanMX")
+    exposed_InstrMX = import_dotnet_submodule("NationalInstruments.RFmx.InstrMX.Fx40", "NationalInstruments.RFmx.InstrMX")
+    exposed_SpecAnMX = import_dotnet_submodule("NationalInstruments.RFmx.SpecAnMX.Fx40", "NationalInstruments.RFmx.SpecAnMX")
+    exposed_LteMX = import_dotnet_submodule("NationalInstruments.RFmx.LteMX.Fx40", "NationalInstruments.RFmx.LteMX")
+    exposed_NRMX = import_dotnet_submodule("NationalInstruments.RFmx.NRMX.Fx40", "NationalInstruments.RFmx.NRMX")
+    exposed_WlanMX = import_dotnet_submodule("NationalInstruments.RFmx.WlanMX.Fx40", "NationalInstruments.RFmx.WlanMX")
 
     # Import measurement toolkit modules
-    exposed_ModularInstrumentsInterop = ImportDotNetSubmodule("NationalInstruments.ModularInstruments.Interop.Fx40", "NationalInstruments.ModularInstruments.Interop")
-    exposed_WlanTK = ImportDotNetSubmodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")
+    exposed_ModularInstrumentsInterop = import_dotnet_submodule("NationalInstruments.ModularInstruments.Interop.Fx40", "NationalInstruments.ModularInstruments.Interop")
+    exposed_WlanTK = import_dotnet_submodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")
 
     # This function helps keep a global reference to an open RFmx session on the server
-    def GetGlobalInstrMX(self, resourceName, optionString):
+    def get_global_instrmx(self, resourceName, optionString):
         global instr
         if instr is not None and not instr.IsDisposed:
             return instr
@@ -72,7 +72,7 @@ class RFmxService(rpyc.Service):
             instr = self.exposed_InstrMX.RFmxInstrMX(resourceName, optionString)
             return instr
 
-    def ComplexWaveform(self, nettype, param):
+    def complex_waveform(self, nettype, param):
         return self.exposed_NationalInstruments.ComplexWaveform[nettype](param)
 
     def exec(self, expression):
