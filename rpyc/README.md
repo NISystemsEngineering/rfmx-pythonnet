@@ -35,7 +35,7 @@ Using Python, we can remotely execute NI instrument drivers running on a Windows
 
 # Supported Clients
   * Windows
-  * Macintosh
+  * MacOS
   * Linux
   * Any others that can run Python and RPyC
 
