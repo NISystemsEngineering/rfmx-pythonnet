@@ -100,7 +100,7 @@ print("done")
 
 # Initialize Analyzer
 print("Initializing analyzer..", end='')
-instr_session = conn.root.get_global_instrmx(analyzer_resource_name, "")
+instr_session = InstrMX.RFmxInstrMX.GetSession(analyzer_resource_name, "")
 instr_session.ResetEntireSession()
 print("done")
 

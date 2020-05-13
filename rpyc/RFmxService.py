@@ -41,10 +41,6 @@ def import_dotnet_submodule(assembly_name, namespace):
     return submodule
 
 
-# Global variables
-instr = None
-
-
 class RFmxService(rpyc.Service):
     # Import common modules
     exposed_System = import_dotnet_submodule("System", "System")
@@ -69,17 +65,8 @@ class RFmxService(rpyc.Service):
     exposed_ModularInstrumentsInterop = import_dotnet_submodule("NationalInstruments.ModularInstruments.Interop.Fx40", "NationalInstruments.ModularInstruments.Interop")
     exposed_WlanTK = import_dotnet_submodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")
 
-    # This function helps keep a global reference to an open RFmx session on the server
-    def get_global_instrmx(self, resourceName, optionString):
-        global instr
-        if instr is not None and not instr.IsDisposed:
-            return instr
-        else:
-            instr = self.exposed_InstrMX.RFmxInstrMX(resourceName, optionString)
-            return instr
-
-    def complex_waveform(self, nettype, param):
-        return self.exposed_NationalInstruments.ComplexWaveform[nettype](param)
+    def complex_waveform(self, net_type, param):
+        return self.exposed_NationalInstruments.ComplexWaveform[net_type](param)
 
     def exec(self, expression):
         exec(expression)
@@ -93,7 +80,7 @@ if __name__ == "__main__":
     port = 18861
     print("Starting RFmxService on port " + str(port) + '.')
     from rpyc.utils.server import ThreadedServer
-    t = ThreadedServer(RFmxService, port = port, protocol_config = {"allow_all_attrs" : True, "allow_setattr": True})
+    t = ThreadedServer(RFmxService, port=port, protocol_config={"allow_all_attrs" : True, "allow_setattr": True})
     try:
         t.start()
     except:

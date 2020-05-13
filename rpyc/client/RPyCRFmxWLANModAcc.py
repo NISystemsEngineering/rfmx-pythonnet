@@ -82,7 +82,7 @@ print("done")
 # Initialize Analyzer
 print("Initializing analyzer..", end = '')
 
-instrSession = conn.root.RFmxRemoteInstrMX(analyzerResourceName, "")
+instrSession = InstrMX.RFmxInstrMX.GetSession(analyzerResourceName, "")
 instrSession.ResetDriver()
 instrSession.ResetEntireSession()
 
