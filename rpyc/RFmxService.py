@@ -22,6 +22,7 @@ for x in os.walk(ivi_dotnet_path):
 # Prepare terminal for colored printing
 colorama.init()
 
+
 # This function allows for dynamic importation of modules since some modules may not be installed
 def import_dotnet_submodule(assembly_name, namespace):
     from System.IO import FileNotFoundException
@@ -39,8 +40,10 @@ def import_dotnet_submodule(assembly_name, namespace):
         print(colorama.Fore.RESET)
     return submodule
 
+
 # Global variables
 instr = None
+
 
 class RFmxService(rpyc.Service):
     # Import common modules
@@ -83,6 +86,7 @@ class RFmxService(rpyc.Service):
 
     def eval(self, expression):
         return eval(expression)
+
 
 # start the server
 if __name__ == "__main__":
