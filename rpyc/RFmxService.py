@@ -3,8 +3,12 @@
 # 2. Import the assembly
 # 3. Expose the assembly via the RFmxService (rpyc)
 
+import clr
+import colorama
+import os
+import rpyc
+import importlib
 from sys import path
-import os, clr, rpyc, colorama
 
 # Add search paths for .NET assemblies to system path
 path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
@@ -24,9 +28,8 @@ def import_dotnet_submodule(assembly_name, namespace):
     submodule = None
     try:
         clr.AddReference(assembly_name)
-        submodule_name = namespace.split('.')[-1]
-        exec("import " + namespace + " as " + submodule_name)
-        submodule = eval(submodule_name)
+        __import__(namespace)
+        submodule = importlib.import_module(namespace)
         print(colorama.Fore.GREEN + namespace + " imported successfully from " + assembly_name + '.' + colorama.Fore.RESET)
     except FileNotFoundException:
         print(colorama.Fore.YELLOW + assembly_name + " was not found." + colorama.Fore.RESET)
