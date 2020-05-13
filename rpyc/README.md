@@ -4,14 +4,24 @@ This project is an example of using [RPyC](https://rpyc.readthedocs.io/en/latest
 # Demo Videos
 [Click here to be redirected to YouTube](https://www.youtube.com/playlist?list=PLbtY6u-1ausYmZ_Sl47s6N2L9jWG4_aEm)
 
-# Software
+# Managing RFmxInstrMX Sessions
+If the client opens an RFmxInstrMX session and terminates without closing it,
+the session will remain alive on the server and subsequent calls to the RFmxInstrMX constructor 
+(using the same resource name) will throw an exception. To obtain a reference to an existing 
+session on the server, use the `RFmxInstrMX.GetSession(string resourceName, string optionString)` 
+static method. This method gets a session, if it exists for the given resource name; else, it returns
+a new one. To close a session that has been obtained multiple times, use the 
+`RFmxInstrMX.ForceClose()` instance method. This method will destroy the session irrespective of how 
+many references have been obtained to it.
+
+# Software Requirements
 ## Server
-1. NI Software
-    * NI-RFmx 3.0 or newer. The [Wireless Test Suite](https://www.ni.com/en-us/support/downloads/software-products/download.rfmx-cellular-bundle.html) installer 2019.01 contains all of these.
-    * NI-RFSA 18.2.1 or greater
-    * NI-RFSG 18.2.1 or greater
+1. NI Drivers
+    * NI-RFmx
+    * NI-RFSA
+    * NI-RFSG
 2. Python interpreter
-    * The examples were tested and developed using python 3.6
+    * The examples were tested and developed using python 3.7
 3. Python modules
     * RPyC
     * pythonnet: provides clr (Common Language Runtime)
@@ -19,7 +29,7 @@ This project is an example of using [RPyC](https://rpyc.readthedocs.io/en/latest
 
 ## Client
 1. Python interpreter
-    * The examples were tested and developed using python 3.6
+    * The examples were tested and developed using python 3.7
 2. Python modules
     * RPyC
 3. Run the examples in the client folder
@@ -40,6 +50,9 @@ Using Python, we can remotely execute NI instrument drivers running on a Windows
   * Any others that can run Python and RPyC
 
 # How it Works
+***The server implementation has changed significantly since this readme was first developed.
+See [RFmxService.py](RFmxService.py) for the most up-to-date source code.***
+
 The server script imports the required libraries/modules for communicating with the instrument(s).
 
 ![](doc/service1.PNG)
