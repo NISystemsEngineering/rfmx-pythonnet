@@ -709,7 +709,7 @@ class RFmxInstrMX(object, IDisposable):
 
         GetSession(resourceName: str, optionString: str) -> (RFmxInstrMX, bool)
         """
-        pass
+        return RFmxInstrMX()
 
     @staticmethod
     def GetSessionFromNIRfsaHandle(niRfsaHandle):
