@@ -42,6 +42,8 @@ def import_dotnet_submodule(assembly_name, namespace):
 
 
 class RFmxService(rpyc.Service):
+    exposed_clr = clr
+
     # Import common modules
     exposed_System = import_dotnet_submodule("System", "System")
     exposed_NationalInstruments = import_dotnet_submodule("NationalInstruments.Common", "NationalInstruments")
