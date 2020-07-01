@@ -14,6 +14,12 @@ a new one. To close a session that has been obtained multiple times, use the
 `RFmxInstrMX.ForceClose()` instance method. This method will destroy the session irrespective of how 
 many references have been obtained to it.
 
+# Adapting Local Examples for Remote Execution
+All of the local examples in the [root/examples](../examples/) directory can be quickly adapted for remote execution.
+Simply replace the local import code with the RPyC connect and import code.
+
+![](doc/local_remote_port.png)
+
 # Software Requirements
 ## Server
 1. NI Drivers
