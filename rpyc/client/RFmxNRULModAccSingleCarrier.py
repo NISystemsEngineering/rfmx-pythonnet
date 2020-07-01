@@ -1,13 +1,13 @@
 # DEMO EXAMPLE: Client side execution of RFmx NR on a remote server
-from pathlib import Path, PureWindowsPath
+from pathlib import PureWindowsPath
 import rpyc
 
 # # # # # User Parameters # # # # # #
-host_name = 'localhost'                # Name or IP address of the RPyC server
+host_name = 'semoore-pxi'                # Name or IP address of the RPyC server
 host_port = 18861                    # Port number of the RPyC server
-generator_resource_name = 'BCN_01'      # Resource name of the Generator on the Host
-analyzer_resource_name = 'BCN_01'       # Resource name of the Analyzer on the Host
-waveform_folder = Path('../waveforms') # Example: waveformFolder = "c:/niremote/waveforms" , '.' denotes same directory as this .py file, if running on the server
+generator_resource_name = 'VST2_01'      # Resource name of the Generator on the Host
+analyzer_resource_name = 'VST2_01'       # Resource name of the Analyzer on the Host
+waveform_folder = 'c://niremote/waveforms/' # Example: waveformFolder = "c:/niremote/waveforms" , '.' denotes same directory as this .py file, if running on the server
 waveform_file_name = 'nr100.tdms'     # Name of the .tdms waveform to play
                                     # Note that in this example all of the waveforms are on the server and need to be pathed as such
 
@@ -29,10 +29,10 @@ print("done")
 
 print("Setting measurement parameters..", end='')
 # # # # # Global settings # # # # #
-center_frequency = 28e9
+center_frequency = 3.5e9
 
 # # # # # Generation settings # # # # #
-rfsg_selected_ports = "rf1/port1"
+rfsg_selected_ports = ""
 rfsg_power_level = -10
 rfsg_external_attenuation = 0
 rfsg_reference_clock_source = NIRfsg.RfsgFrequencyReferenceSource.OnboardClock
@@ -41,7 +41,7 @@ rfsg_script = 'script GenerateWaveform repeat forever generate waveform marker0(
 rfsg_automatic_shared_lo = NIRfsgPlayback.RfsgPlaybackAutomaticSGSASharedLO.Enabled
 
 # # # # # Analysis settings # # # # #
-instr_selected_ports = "rf0/port1"
+instr_selected_ports = ""
 instr_frequency_reference_source = InstrMX.RFmxInstrMXConstants.OnboardClock
 instr_frequency_reference_frequency = 10e6
 instr_automatic_shared_lo = InstrMX.RFmxInstrMXAutomaticSGSASharedLO.Enabled
@@ -111,7 +111,7 @@ rfsg_session.RF.Configure(center_frequency, rfsg_power_level)
 rfsg_session.FrequencyReference.Configure(rfsg_reference_clock_source, 10e6)
 rfsg_session.RF.ExternalGain = -rfsg_external_attenuation
 # The server will be running on Windows and needs a PureWindowsPath to locate the waveform
-NIRfsgPlayback.NIRfsgPlayback.ReadAndDownloadWaveformFromFile(rfsg_handle, str(PureWindowsPath(waveform_folder / waveform_file_name)), rfsg_waveform_name)
+NIRfsgPlayback.NIRfsgPlayback.ReadAndDownloadWaveformFromFile(rfsg_handle, str(PureWindowsPath(waveform_folder, waveform_file_name)), rfsg_waveform_name)
 NIRfsgPlayback.NIRfsgPlayback.StoreAutomaticSGSASharedLO(rfsg_handle, "", rfsg_automatic_shared_lo)
 NIRfsgPlayback.NIRfsgPlayback.SetScriptToGenerateSingleRfsg(rfsg_handle, rfsg_script)
 rfsg_session.DeviceEvents.MarkerEvents[0].ExportedOutputTerminal = NIRfsg.RfsgMarkerEventExportedOutputTerminal.PxiTriggerLine0
