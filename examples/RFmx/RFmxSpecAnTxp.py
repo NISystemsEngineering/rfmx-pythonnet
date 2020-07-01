@@ -9,70 +9,70 @@ import NationalInstruments.RFmx.InstrMX as InstrMX
 import NationalInstruments.RFmx.SpecAnMX as SpecAnMX
 
 # Initialize input variables 
-resourceName = "VST2_01"
-selectedPorts = ""
-centerFrequency = 1.95e+9              # Hz 
-referenceLevel = 0.00                  # dBm 
-externalAttenuation = 0.00             # dB 
+resource_name = "VST2_01"
+selected_ports = ""
+center_frequency = 1.95e+9              # Hz
+reference_level = 0.00                  # dBm
+external_attenuation = 0.00             # dB
 
-measurementInterval = 1e-3             # seconds 
+measurement_interval = 1e-3             # seconds
 rbw = 100e+6                           # Hz 
 timeout = 10                           # seconds 
 
-averagingEnabled = False
-averagingType = SpecAnMX.RFmxSpecAnMXTxpAveragingType.Rms
-averagingCount = 10
+averaging_enabled = False
+averaging_type = SpecAnMX.RFmxSpecAnMXTxpAveragingType.Rms
+averaging_count = 10
 
-frequencySource = InstrMX.RFmxInstrMXConstants.OnboardClock
+frequency_source = InstrMX.RFmxInstrMXConstants.OnboardClock
 frequency = 10e+6                      # Hz 
 
-rbwFilterType = 5 # SpecAnMX.RFmxSpecAnMXTxpRbwFilterType.None
-rrcAlpha = 0.010
+rbw_filter_type = 5 # SpecAnMX.RFmxSpecAnMXTxpRbwFilterType.None
+rrc_alpha = 0.010
 
-vbwAuto = True
+vbw_auto = True
 vbw = 30.0e3                           # Hz 
-vbwToRbwRatio = 3
+vbw_to_rbw_ratio = 3
 
-thresholdEnabled = False
-thresholdType = SpecAnMX.RFmxSpecAnMXTxpThresholdType.Relative
-thresholdLevel = -20.0                 # (dBm or dBm / Hz) 
+threshold_enabled = False
+threshold_type = SpecAnMX.RFmxSpecAnMXTxpThresholdType.Relative
+threshold_level = -20.0                 # (dBm or dBm / Hz)
 
-digitalEdgeEnabled = True
-digitalEdgeSource = "PXI_Trig0"
-triggerDelay = 2e-3                     # seconds 
+digital_edge_enabled = True
+digital_edge_source = "PXI_Trig0"
+trigger_delay = 2e-3                     # seconds
 
 # Create a new RFmx Session 
-instrSession = InstrMX.RFmxInstrMX(resourceName, "")
+instr = InstrMX.RFmxInstrMX(resource_name, "")
 
 # Get SpecAn signal 
-specAn = InstrMX.RFmxSpecAnMXExtension.GetSpecAnSignalConfiguration(instrSession)
+specAn = InstrMX.RFmxSpecAnMXExtension.GetSpecAnSignalConfiguration(instr)
 
 # Configure measurement 
-instrSession.ConfigureFrequencyReference("", frequencySource, frequency)
-specAn.SetSelectedPorts("", selectedPorts)
-specAn.ConfigureFrequency("", centerFrequency)
-specAn.ConfigureReferenceLevel("", referenceLevel)
-specAn.ConfigureExternalAttenuation("", externalAttenuation)
-if digitalEdgeEnabled:
-    specAn.ConfigureDigitalEdgeTrigger("", digitalEdgeSource, SpecAnMX.RFmxSpecAnMXDigitalEdgeTriggerEdge.Rising, triggerDelay, True)
+instr.ConfigureFrequencyReference("", frequency_source, frequency)
+specAn.SetSelectedPorts("", selected_ports)
+specAn.ConfigureFrequency("", center_frequency)
+specAn.ConfigureReferenceLevel("", reference_level)
+specAn.ConfigureExternalAttenuation("", external_attenuation)
+if digital_edge_enabled:
+    specAn.ConfigureDigitalEdgeTrigger("", digital_edge_source, SpecAnMX.RFmxSpecAnMXDigitalEdgeTriggerEdge.Rising, trigger_delay, True)
 else:
     specAn.DisableTrigger("")
 specAn.SelectMeasurements("", SpecAnMX.RFmxSpecAnMXMeasurementTypes.Txp, False)
-specAn.Txp.Configuration.ConfigureMeasurementInterval("", measurementInterval)
-specAn.Txp.Configuration.ConfigureRbwFilter("", rbw, rbwFilterType, rrcAlpha)
-specAn.Txp.Configuration.ConfigureAveraging("", averagingEnabled, averagingCount, averagingType)
-specAn.Txp.Configuration.ConfigureVbwFilter("", vbwAuto, vbw, vbwToRbwRatio)
-specAn.Txp.Configuration.ConfigureThreshold("", thresholdEnabled, thresholdLevel, thresholdType)
+specAn.Txp.Configuration.ConfigureMeasurementInterval("", measurement_interval)
+specAn.Txp.Configuration.ConfigureRbwFilter("", rbw, rbw_filter_type, rrc_alpha)
+specAn.Txp.Configuration.ConfigureAveraging("", averaging_enabled, averaging_count, averaging_type)
+specAn.Txp.Configuration.ConfigureVbwFilter("", vbw_auto, vbw, vbw_to_rbw_ratio)
+specAn.Txp.Configuration.ConfigureThreshold("", threshold_enabled, threshold_level, threshold_type)
 specAn.Initiate("", "")
 
 # Retrieve results
-_, averageMeanPower, peakToAverageRatio, maximumPower, minimumPower = specAn.Txp.Results.FetchMeasurement("", timeout, 0.0, 0.0, 0.0, 0.0)
+_, average_mean_power, peak_to_average_ratio, maximum_power, minimum_power = specAn.Txp.Results.FetchMeasurement("", timeout, 0.0, 0.0, 0.0, 0.0)
 
-print("Average Mean Power    : {:.3f}dBm".format(averageMeanPower))
-print("Peak to Average Ratio : {:.3f}dB".format(peakToAverageRatio))
-print("Maximum Power         : {:.3f}dBm".format(maximumPower))
-print("Minimum Power         : {:.3f}dBm".format(minimumPower))
+print("Average Mean Power    : {:.3f}dBm".format(average_mean_power))
+print("Peak to Average Ratio : {:.3f}dB".format(peak_to_average_ratio))
+print("Maximum Power         : {:.3f}dBm".format(maximum_power))
+print("Minimum Power         : {:.3f}dBm".format(minimum_power))
 
 # Close session
 specAn.Dispose()
-instrSession.Close()
+instr.Close()
