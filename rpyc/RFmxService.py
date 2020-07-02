@@ -86,7 +86,11 @@ if __name__ == "__main__":
     port = 18861
     print("Starting RFmxService on port " + str(port) + '.')
     from rpyc.utils.server import ThreadedServer
-    t = ThreadedServer(RFmxService, port=port, protocol_config={"allow_all_attrs" : True, "allow_setattr": True})
+    t = ThreadedServer(RFmxService, port=port, protocol_config={
+        "allow_all_attrs" : True,
+        "allow_setattr": True,
+        "sync_request_timeout": 60
+    })    
     try:
         t.start()
     except:
