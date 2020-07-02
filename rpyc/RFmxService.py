@@ -12,6 +12,7 @@ from sys import path
 
 # Add search paths for .NET assemblies to system path
 path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
+path.append(os.environ["ProgramFiles"] + r"\National Instruments\RFmxWC\DotNET")
 path.append(os.path.abspath(__file__ + "\\..\\..\\bin"))
 
 # Add in all of the IVI .NET paths for finding additional assemblies
@@ -52,6 +53,7 @@ class RFmxService(rpyc.Service):
     # Import RFSG generation modules
     exposed_NIRfsg = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsg.Fx40", "NationalInstruments.ModularInstruments.NIRfsg")
     exposed_NIRfsgPlayback = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40", "NationalInstruments.ModularInstruments.NIRfsgPlayback")
+    exposed_RFmxWCNR = import_dotnet_submodule("NationalInstruments.RFmx.WC.NR.Fx40", "NationalInstruments.RFmx.WC.NR")
 
     # Import RFSA acquisition modules
     exposed_NIRfsa = import_dotnet_submodule("NationalInstruments.ModularInstruments.NIRfsa.Fx40", "NationalInstruments.ModularInstruments.NIRfsa")
