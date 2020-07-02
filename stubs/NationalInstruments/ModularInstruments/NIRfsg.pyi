@@ -310,6 +310,7 @@ class RfsgAmplificationPath(Enum, IComparable, IFormattable, IConvertible):
 
 
 class RfsgSubObject(object):
+    pass
     # no doc
 
 class RfsgAnalogModulation(RfsgSubObject):
