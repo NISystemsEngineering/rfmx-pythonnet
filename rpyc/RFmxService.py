@@ -11,9 +11,11 @@ import importlib
 from sys import path
 
 # Add search paths for .NET assemblies to system path
-path.append(os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
-path.append(os.environ["ProgramFiles"] + r"\National Instruments\RFmxWC\DotNET")
-path.append(os.path.abspath(__file__ + "\\..\\..\\bin"))
+path.extend([
+    os.environ["ProgramFiles(x86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current",  # RFmx personalities
+    os.environ["ProgramFiles"] + r"\National Instruments\RFmxWC\DotNET",  # waveform creator personalities
+    os.path.abspath(__file__ + "\\..\\..\\bin")  # wrappers for wlan and rfsa/rfsg
+])
 
 # Add in all of the IVI .NET paths for finding additional assemblies
 ivi_dotnet_path = os.environ["ProgramFiles"] + r"\IVI Foundation\IVI\Microsoft.NET\Framework64"
