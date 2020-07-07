@@ -180,6 +180,7 @@ _, acp_noise_comp_enabled = nr.Acp.Configuration.GetNoiseCompensationEnabled("",
 f.write("\nMeasurement\n")
 f.write(f"Selected Port,{selected_port}\n")
 f.write(f"Autolevel Enabled,{rfsa_auto_level_enabled}\n")
+f.write(f"Reference Level Optimization Enabled,{rfsa_optimize_reference_level}\n")
 f.write(f"Reference Level Headroom (dB),{reference_level_headroom}\n")
 f.write("External Attenuation (dB)," + '{:1.3f}\n'.format(external_attenuation))
 f.write(f"Limited Configuration Change,{limited_configuration_change != 0}\n")
