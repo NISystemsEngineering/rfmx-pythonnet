@@ -203,7 +203,7 @@ f.write(f"ACP Noise Comp Enabled,{acp_noise_comp_enabled != 0}\n")
 
 # sweep
 f.write('\nResults\n')
-f.write('Frequency (Hz),Reference Level (dBm),EVM (%),EVM (dB),Channel Power (dBm)')
+f.write('Frequency (Hz),Reference Level (dBm),EVM (%),EVM (dB),Channel Power (dBm)\n')
 rfsg.Initiate()
 for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_attenuations, rfsg_external_attenuations):
     nr.SetCenterFrequency("", frequency)
