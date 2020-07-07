@@ -231,7 +231,7 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
 
         if rfsa_optimize_reference_level:
             evm_percent_list = [evm_percent]
-            reference_level_optimization_sweep = [0.5 * offset for offset in range(1, 10)]
+            reference_level_optimization_sweep = [0.5 * offset for offset in range(1, 21)]  # reduce reference level by as much as 10dB in 0.5dB steps
             for reference_level_optimization_offset in reference_level_optimization_sweep:
                 nr.SetReferenceLevel("", reference_level - reference_level_optimization_offset)
                 nr.Initiate("", "")
