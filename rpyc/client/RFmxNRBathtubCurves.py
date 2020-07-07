@@ -73,6 +73,7 @@ rfsg = NIRfsg.NIRfsg(rfsg_resource_name, True, False)
 # configure generator
 rfsg.SignalPath.SelectedPorts = rfsg_selected_ports
 rfsg.RF.Frequency = frequencies[0]
+rfsg.RF.ExternalGain = -rfsg_external_attenuations[0]
 rfsg_handle = rfsg.GetInstrumentHandle().DangerousGetHandle()
 NIRfsgPlayback.NIRfsgPlayback.ReadAndDownloadWaveformFromFile(rfsg_handle, waveform_file_path, "wfm")
 NIRfsgPlayback.NIRfsgPlayback.StoreWaveformLOOffsetMode(rfsg_handle, "wfm", NIRfsgPlayback.NIRfsgPlaybackLOOffsetMode.Auto)
