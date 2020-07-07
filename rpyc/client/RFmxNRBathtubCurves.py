@@ -47,7 +47,7 @@ rfsa_reference_clock_source = "OnboardClock"
 rfsa_selected_ports = "rf1/port0"
 rfsa_optimize_reference_level = True
 rfsa_auto_level_enabled = True
-rfsa_reference_level_headroom = 0.0  # applied after auto-level and before level optimization
+rfsa_reference_level_headroom = 0.0
 rfsa_external_attenuations = [0.0] * len(frequencies)
 
 # NR measurement
