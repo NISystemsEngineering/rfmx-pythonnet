@@ -230,7 +230,7 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
 
         if rfsa_optimize_reference_level:
             evm_percent_list = [evm_percent]
-            reference_level_optimization_sweep = [-0.5 * offset for offset in range(1, 10)]
+            reference_level_optimization_sweep = [0.5 * offset for offset in range(1, 10)]
             for reference_level_optimization_offset in reference_level_optimization_sweep:
                 nr.SetReferenceLevel("", reference_level - reference_level_optimization_offset)
                 nr.Initiate("", "")
@@ -239,7 +239,7 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
                 _, evm_percent = nr.ModAcc.Results.GetCompositeRmsEvmMean("", 0.0)
             min_index = min(range(len(evm_percent_list)), key=evm_percent_list.__getitem__)
             evm_percent = evm_percent_list[min_index]
-            reference_level = reference_level + reference_level_optimization_sweep[min_index]
+            reference_level = reference_level - reference_level_optimization_sweep[min_index]
 
         evm_dB = 20 * math.log10(evm_percent) - 40.0
         _, channel_power = nr.Chp.Results.GetTotalAggregatedPower("", 0.0)
