@@ -39,6 +39,7 @@ rfsg_resource_name = "BCN_01"
 rfsg_reference_clock_source = "OnboardClock"
 rfsg_selected_ports = "rf0/port0"
 rfsg_power_levels = range(5, -50, -1)
+rfsg_external_attenuations = [0.0] * len(frequencies)
 
 # RF signal analyzer
 rfsa_resource_name = "BCN_01"
@@ -47,7 +48,7 @@ rfsa_selected_ports = "rf1/port0"
 rfsa_optimize_reference_level = True
 rfsa_auto_level_enabled = True
 rfsa_reference_level_headroom = 0.0  # applied after auto-level and before level optimization
-rfsa_external_attenuation = 0.0
+rfsa_external_attenuations = [0.0] * len(frequencies)
 
 # NR measurement
 nr_link_direction = NRMX.RFmxNRMXLinkDirection.Downlink
@@ -99,7 +100,6 @@ nr = InstrMX.RFmxNRMXExtension.GetNRSignalConfiguration(instr)
 nr.SetSelectedPorts("", rfsa_selected_ports)
 nr.ConfigureFrequency("", frequencies[0])
 nr.SetReferenceLevelHeadroom("", rfsa_reference_level_headroom)
-nr.ConfigureExternalAttenuation("", rfsa_external_attenuation)
 nr.SetLinkDirection("", nr_link_direction)
 nr.SetFrequencyRange("", nr_frequency_range)
 nr.SetDownlinkChannelConfigurationMode("", NRMX.RFmxNRMXDownlinkChannelConfigurationMode.UserDefined)
@@ -132,6 +132,7 @@ f.write(f"Instrument Model,{instrument_model}\n")
 f.write(f"LO1 Source,{lo1_source}\n")
 f.write(f"LO2 Source,{lo2_source}\n")
 f.write(f"Downconverter Frequency Offset (Hz),{downconverter_frequency_offset}\n")
+f.write(f"External Attenuations (dB),{', '.join(rfsa_external_attenuations)}\n")
 
 f.write("\nSignal Generator\n")
 f.write(f"Instrument Model,{rfsg.Identity.InstrumentModel}\n")
@@ -139,7 +140,7 @@ f.write(f"Selected Ports,{rfsg.SignalPath.SelectedPorts}\n")
 f.write(f'LO1 Source,{rfsg.RF.LocalOscillator["LO1"].Source}\n')
 f.write(f'LO2 Source,{rfsg.RF.LocalOscillator["LO2"].Source}\n')
 f.write(f"Upconverter Frequency Offset (Hz),{rfsg.RF.Upconverter.FrequencyOffset}\n")
-f.write(f"External Attenuation (dB),{-rfsg.RF.ExternalGain}\n")
+f.write(f"External Attenuations (dB),{', '.join(rfsg_external_attenuations)}\n")
 
 f.write("\nWaveform\n")
 f.write('PAPR (dB),' + '{:1.3f}\n'.format(waveform_papr))
@@ -203,9 +204,11 @@ f.write(f"ACP Noise Comp Enabled,{acp_noise_comp_enabled != 0}\n")
 f.write('\nResults\n')
 f.write('Frequency,EVM (%),EVM (dB),Channel Power (dBm)')
 rfsg.Initiate()
-for frequency in frequencies:
+for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_attenuations, rfsg_external_attenuations):
     nr.SetCenterFrequency("", frequency)
+    nr.SetExternalAttenuation("", rfsa_ext_atten)
     rfsg.RF.Frequency = frequency
+    rfsg.RF.ExternalGain = -rfsg_ext_atten
     rfsg.Utility.WaitUntilSettled(10000)
     rfsg.CheckGenerationStatus()
 
