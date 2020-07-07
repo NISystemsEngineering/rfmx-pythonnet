@@ -231,9 +231,10 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
 
         if rfsa_optimize_reference_level:
             evm_percent_list = [evm_percent]
-            reference_level_optimization_sweep = [0.5 * offset for offset in range(1, 21)]  # reduce reference level by as much as 10dB in 0.5dB steps
-            for reference_level_optimization_offset in reference_level_optimization_sweep:
-                nr.SetReferenceLevel("", reference_level - reference_level_optimization_offset)
+            reference_level_list = [reference_level]
+            reference_level_list.extend([reference_level - 0.5 * offset for offset in range(1, 21)])
+            for reference_level in reference_level_list[1:]:  # already measured at reference level at index 0
+                nr.SetReferenceLevel("", reference_level)
                 nr.Initiate("", "")
                 if nr.WaitForMeasurementComplete("", -1) > 0:  # warnings are positive numbers
                     break
@@ -241,7 +242,7 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
                 evm_percent_list.append(evm_percent)
             min_index = min(range(len(evm_percent_list)), key=evm_percent_list.__getitem__)
             evm_percent = evm_percent_list[min_index]
-            reference_level = reference_level - reference_level_optimization_sweep[min_index]
+            reference_level = reference_level_list[min_index]
 
         evm_dB = 20 * math.log10(evm_percent) - 40.0
         _, channel_power = nr.Chp.Results.GetTotalAggregatedPower("", 0.0)
