@@ -203,7 +203,7 @@ f.write(f"ACP Noise Comp Enabled,{acp_noise_comp_enabled != 0}\n")
 
 # sweep
 f.write('\nResults\n')
-f.write('Frequency,EVM (%),EVM (dB),Channel Power (dBm)')
+f.write('Frequency (Hz),Reference Level (dBm),EVM (%),EVM (dB),Channel Power (dBm)')
 rfsg.Initiate()
 for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_attenuations, rfsg_external_attenuations):
     nr.SetCenterFrequency("", frequency)
@@ -224,12 +224,12 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
             nr.SetReferenceLevel("", power + waveform_papr)
 
         nr.Initiate("", "")
+        _, reference_level = nr.GetReferenceLevel("", 0.0)
         nr.WaitForMeasurementComplete("", -1)
         _, evm_percent = nr.ModAcc.Results.GetCompositeRmsEvmMean("", 0.0)
 
         if rfsa_optimize_reference_level:
             evm_percent_list = [evm_percent]
-            _, reference_level = nr.GetReferenceLevel("", 0.0)
             reference_level_optimization_sweep = [-0.5 * offset for offset in range(1, 10)]
             for reference_level_optimization_offset in reference_level_optimization_sweep:
                 nr.SetReferenceLevel("", reference_level - reference_level_optimization_offset)
@@ -237,14 +237,16 @@ for frequency, rfsa_ext_atten, rfsg_ext_atten in zip(frequencies, rfsa_external_
                 if nr.WaitForMeasurementComplete("", -1) > 0:  # warnings are positive numbers
                     break
                 _, evm_percent = nr.ModAcc.Results.GetCompositeRmsEvmMean("", 0.0)
-            evm_percent = min(evm_percent_list)
+            min_index = min(range(len(evm_percent_list)), key=evm_percent_list.__getitem__)
+            evm_percent = evm_percent_list[min_index]
+            reference_level = reference_level + reference_level_optimization_sweep[min_index]
 
         evm_dB = 20 * math.log10(evm_percent) - 40.0
         _, channel_power = nr.Chp.Results.GetTotalAggregatedPower("", 0.0)
 
-        frequency_result = '{:.0f}'.format(frequency)
-        evm_results = ','.join(['{:.3f}'.format(result) for result in [evm_percent, evm_dB, channel_power]])
-        result_line = ','.join([frequency_result, evm_results])
+        configuration_results = '{:.0f}'.format(frequency) + ',{:.3f}'.format(reference_level)
+        scalar_results = ','.join(['{:.3f}'.format(result) for result in [evm_percent, evm_dB, channel_power]])
+        result_line = ','.join([configuration_results, scalar_results])
         f.write(result_line + '\n')
         print(result_line)
 
