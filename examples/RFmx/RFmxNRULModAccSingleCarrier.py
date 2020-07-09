@@ -1,7 +1,7 @@
 import clr, sys, os
 
 sys.path.append(os.environ["PROGRAMFILES(X86)"] + r"\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current")
-sys.path.append(os.path.abspath(__file__ + "\\..\\..\\..\\lib"))
+sys.path.append(os.path.abspath(__file__ + "\\..\\..\\..\\modules"))
 
 clr.AddReference("NationalInstruments.RFmx.InstrMX.Fx40")
 clr.AddReference("NationalInstruments.RFmx.NRMX.Fx40")
