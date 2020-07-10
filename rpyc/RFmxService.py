@@ -69,15 +69,60 @@ class RFmxService(rpyc.Service):
 
     # Import measurement toolkit modules
     exposed_ModularInstrumentsInterop = import_dotnet_submodule("NationalInstruments.ModularInstruments.Interop.Fx40", "NationalInstruments.ModularInstruments.Interop")
-    exposed_WlanTK = import_dotnet_submodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")
+    exposed_WlanTK = import_dotnet_submodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")     
 
-    def complex_waveform(self, net_type, param):
-        return self.exposed_NationalInstruments.ComplexWaveform[net_type](param)
+    @staticmethod
+    def complex_waveform(net_type, param):
+        return RFmxService.exposed_NationalInstruments.ComplexWaveform[net_type](param)
+    
+    @staticmethod
+    def decompose_trace(trace):
+        """ Convenience function that dispatches on type"""
+        type_full_name = trace.GetType().FullName
+        if type_full_name == 'NationalInstruments.ComplexSingle[]' or type_full_name == 'NationalInstruments.ComplexDouble[]':
+            return RFmxService.decompose_complex_array(trace)
+        elif 'NationalInstruments.AnalogWaveform' in type_full_name:
+            return RFmxService.decompose_analog_waveform(trace)
+        elif 'NationalInstruments.Spectrum' in type_full_name:
+            return RFmxService.decompose_spectrum(trace)
+        raise ValueError('Unknown trace type.') 
+        
+    @staticmethod
+    def decompose_complex_array(complex_array) -> list:
+        """ Decomposes an NI ComplexSingle[] or ComplexDouble[] into a list of complex numbers. """
+        # use list comprehension instead of DecomposeArray so we don't have to identify a type
+        return [complex(iq.Real, iq.Imaginary) for iq in complex_array]
 
-    def exec(self, expression):
+    @staticmethod
+    def decompose_complex_waveform(complex_waveform) -> tuple:
+        """ Decomposes an NI ComplexWaveform into a tuple of t0, dt, and y values. """
+        t0 = complex_waveform.PrecisionTiming.TimeOffset.TotalSeconds
+        dt = complex_waveform.PrecisionTiming.SampleInterval.TotalSeconds
+        y = RFmxService.decompose_complex_array(complex_waveform.GetRawData())
+        return t0, dt, y
+
+    @staticmethod
+    def decompose_analog_waveform(analog_waveform) -> tuple:
+        """ Decomposes an NI AnalogWaveform into a tuple of t0, dt, and y values. """
+        t0 = analog_waveform.PrecisionTiming.TimeOffset.TotalSeconds
+        dt = analog_waveform.PrecisionTiming.SampleInterval.TotalSeconds
+        y = list(analog_waveform.GetRawData())
+        return t0, dt, y
+
+    @staticmethod
+    def decompose_spectrum(spectrum) -> tuple:
+        """ Decomposes an NI Spectrum into a tuple of f0, dt, and y values. """
+        f0 = spectrum.StartFrequency
+        df = spectrum.FrequencyIncrement
+        y = list(spectrum.GetData())
+        return f0, df, y
+
+    @staticmethod
+    def exec(expression):
         exec(expression)
 
-    def eval(self, expression):
+    @staticmethod
+    def eval(expression):
         return eval(expression)
 
 
@@ -89,7 +134,8 @@ if __name__ == "__main__":
     t = ThreadedServer(RFmxService, port=port, protocol_config={
         "allow_all_attrs" : True,
         "allow_setattr": True,
-        "sync_request_timeout": 60
+        "sync_request_timeout": 60,
+        "allow_pickle": True
     })    
     try:
         t.start()
