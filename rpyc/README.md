@@ -20,6 +20,27 @@ Simply replace the local import code with the RPyC connect and import code.
 
 ![](doc/local_remote_port.png)
 
+# Working with Traces
+In RPyC, immutable objects are passed by value and all other objects are passed by reference.
+Iterating through proxy traces on the client (the data lives on the server) can result in very long execution times.
+Put another way, accessing each element in an Iterable results in a new client request to the server.
+The result is a series of boxing (serialization), network traffic, and unboxing for each element in the Iterable.
+
+To eliminate this undesirable overhead, we can serialize and obtain a copy of the remote object via the [obtain utility method](https://rpyc.readthedocs.io/en/latest/api/utils_classic.html#rpyc.utils.classic.obtain).
+
+`rpyc.utils.classic.obtain(proxy)`
+
+In combination with the utility methods provided in the server to decompose .NET traces into Python objects, 
+traces can be easily fetched and returned to the client for quick analysis.
+
+```
+_, constellation = nr.ModAcc.Results.FetchPuschDataConstellationTrace("", 10.0, None)
+constellation = conn.root.decompose_trace(constellation)
+constellation = rpyc.utils.classic.obtain(constellation)
+```
+
+You can read more about RPyC boxing and proxying [here](https://rpyc.readthedocs.io/en/latest/docs/theory.html#implementation).
+
 # Software Requirements
 ## Server
 1. NI Drivers

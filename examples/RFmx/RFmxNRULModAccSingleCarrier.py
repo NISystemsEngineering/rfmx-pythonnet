@@ -10,7 +10,7 @@ clr.AddReference("NationalInstruments.Common")
 import NationalInstruments.RFmx.InstrMX as InstrMX
 import NationalInstruments.RFmx.NRMX as NRMX
 from matplotlib import pyplot
-from aeutils.nicommon import traces
+from rfutils.nicommon import traces
 
 # Initialize input variables
 resourceName = "VST2_01"

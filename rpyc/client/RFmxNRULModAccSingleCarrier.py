@@ -1,6 +1,7 @@
 # DEMO EXAMPLE: Client side execution of RFmx NR on a remote server
 from pathlib import PureWindowsPath
-import rpyc
+import rpyc.utils.classic
+from matplotlib import pyplot
 
 # # # # # User Parameters # # # # # #
 host_name = 'semoore-pxi'                # Name or IP address of the RPyC server
@@ -174,13 +175,15 @@ nr.ModAcc.Configuration.SetMeasurementLength("", nr_measurement_length)
 print("done")
 
 # Initiate and fetch results
-print("Initiating and fetching results..", end='')
+print("Acquiring signal..", end='')
 rfsg_session.Initiate()
 nr.Initiate("", "")
 instr_session.WaitForAcquisitionComplete(10)
 rfsg_session.Abort()
+print('done')
 
 # _ Ignores the first returned value of the function. In this case it is an error code. Errors will still throw exceptions.
+print('Fetching scalar results..', end='')
 _, composite_rms_evm_mean = nr.ModAcc.Results.GetCompositeRmsEvmMean("", 0.0)
 _, composite_peak_evm_maximum = nr.ModAcc.Results.GetCompositePeakEvmMaximum("", 0.0)
 _, composite_peak_evm_slot_index = nr.ModAcc.Results.GetCompositePeakEvmSlotIndex("", 0)
@@ -192,19 +195,10 @@ _, component_carrier_iq_origin_offset_mean = nr.ModAcc.Results.GetComponentCarri
 _, component_carrier_iq_gain_imbalance_mean = nr.ModAcc.Results.GetComponentCarrierIQGainImbalanceMean("", 0.0)
 _, component_carrier_quadrature_error_mean = nr.ModAcc.Results.GetComponentCarrierQuadratureErrorMean("", 0.0)
 _, in_band_emission_margin = nr.ModAcc.Results.GetInBandEmissionMargin("", 0.0)
-
-# These could be visualized using various visualization tools.
-# nr.ModAcc.Results.FetchPuschDataConstellationTrace("", timeout, ref puschDataConstellation)
-# nr.ModAcc.Results.FetchPuschDmrsConstellationTrace("", timeout, ref puschDmrsConstellation)
-# nr.ModAcc.Results.FetchRmsEvmPerSubcarrierMeanTrace("", timeout, ref rmsEvmPerSubcarrierMean)
-# nr.ModAcc.Results.FetchRmsEvmPerSymbolMeanTrace("", timeout, ref rmsEvmPerSymbolMean)
-# nr.ModAcc.Results.FetchSpectralFlatnessTrace("", timeout, ref spectralFlatness,
-# ref spectralFlatnessLowerMask, ref spectralFlatnessUpperMask)
-
-print("done")
+print('done')
 
 # print scalar results
-
+print()
 print("------------------Measurement------------------")
 print("Composite RMS EVM Mean (%)                     : {0}".format(composite_rms_evm_mean))
 print("Composite Peak EVM Maximum (%)                 : {0}".format(composite_peak_evm_maximum))
@@ -215,7 +209,56 @@ print("Component Carrier Frequency Error Mean (Hz)    : {0}".format(component_ca
 print("Component Carrier IQ Origin Offset Mean (dBc)  : {0}".format(component_carrier_iq_origin_offset_mean))
 print("Component Carrier IQ Gain Imbalance Mean (dB)  : {0}".format(component_carrier_iq_gain_imbalance_mean))
 print("Component Carrier Quadrature Error Mean (deg)  : {0}".format(component_carrier_quadrature_error_mean))
+print()
 
-#Close instrument session
+# Fetch traces
+print('Fetching traces..', end='')
+_, pusch_data_constellation_trace = nr.ModAcc.Results.FetchPuschDataConstellationTrace("", 10.0, None)
+pusch_data_constellation_trace = conn.root.decompose_trace(pusch_data_constellation_trace)
+pusch_data_constellation_trace = rpyc.utils.classic.obtain(pusch_data_constellation_trace)
+
+_, pusch_dmrs_constellation = nr.ModAcc.Results.FetchPuschDmrsConstellationTrace("", 10.0, None)
+pusch_dmrs_constellation = conn.root.decompose_trace(pusch_dmrs_constellation)
+pusch_dmrs_constellation = rpyc.utils.classic.obtain(pusch_dmrs_constellation)
+
+_, rms_evm_per_subcarrier_mean = nr.ModAcc.Results.FetchRmsEvmPerSubcarrierMeanTrace("", 10.0, None)
+rms_evm_per_subcarrier_mean = conn.root.decompose_trace(rms_evm_per_subcarrier_mean)
+rms_evm_per_subcarrier_mean = rpyc.utils.classic.obtain(rms_evm_per_subcarrier_mean)
+
+_, rms_evm_per_symbol_mean = nr.ModAcc.Results.FetchRmsEvmPerSymbolMeanTrace("", 10.0, None)
+rms_evm_per_symbol_mean = conn.root.decompose_trace(rms_evm_per_symbol_mean)
+rms_evm_per_symbol_mean = rpyc.utils.classic.obtain(rms_evm_per_symbol_mean)
+
+_, spectral_flatness, spectral_flatness_lower_mask, spectral_flatness_upper_mask = \
+    nr.ModAcc.Results.FetchSpectralFlatnessTrace("", 10.0, None, None, None)
+spectral_flatness = conn.root.decompose_trace(spectral_flatness)
+spectral_flatness = rpyc.utils.classic.obtain(spectral_flatness)
+spectral_flatness_lower_mask = conn.root.decompose_trace(spectral_flatness_lower_mask)
+spectral_flatness_lower_mask = rpyc.utils.classic.obtain(spectral_flatness_lower_mask)
+spectral_flatness_upper_mask = conn.root.decompose_trace(spectral_flatness_upper_mask)
+spectral_flatness_upper_mask = rpyc.utils.classic.obtain(spectral_flatness_upper_mask)
+print('done')
+
+
+# plot results
+def ramp(t0, dt, samples):
+    return [t0 + dt * n for n in range(samples)]
+
+
+fig, axs = pyplot.subplots(2, 2)
+axs[0, 0].plot([iq.real for iq in pusch_dmrs_constellation], [iq.imag for iq in pusch_dmrs_constellation], 'r.')
+axs[0, 0].plot([iq.real for iq in pusch_data_constellation_trace], [iq.imag for iq in pusch_data_constellation_trace], 'g.')
+axs[0, 0].set_title('Constellation')
+axs[0, 1].plot(ramp(*rms_evm_per_subcarrier_mean[0:2], len(rms_evm_per_subcarrier_mean[2])), rms_evm_per_subcarrier_mean[2])
+axs[0, 1].set_title('RMS EVM / Subcarrier')
+axs[1, 0].plot(ramp(*rms_evm_per_symbol_mean[0:2], len(rms_evm_per_symbol_mean[2])), rms_evm_per_symbol_mean[2])
+axs[1, 0].set_title('RMS EVM / Symbol')
+axs[1, 1].plot(ramp(*spectral_flatness[0:2], len(spectral_flatness[2])), spectral_flatness[2])
+axs[1, 1].plot(ramp(*spectral_flatness_lower_mask[0:2], len(spectral_flatness_lower_mask[2])), spectral_flatness_lower_mask[2])
+axs[1, 1].plot(ramp(*spectral_flatness_upper_mask[0:2], len(spectral_flatness_upper_mask[2])), spectral_flatness_upper_mask[2])
+axs[1, 1].set_title('Spectral Flatness')
+pyplot.show()
+
+# Close instrument sessions
 instr_session.Close()
 rfsg_session.Close()
