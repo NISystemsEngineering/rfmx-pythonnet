@@ -28,3 +28,5 @@ flags = ['-donotKeepRfws', '-singlePrecision']  # optional flags
 cmd.extend(flags)  # add flags to command
 os.system(f'"{" ".join(cmd)}"')
 os.remove(tf.name)
+# if a waveform is not created, an error might have occurred
+# go to %temp% (typically C:\Users\<USER>\AppData\Local\Temp) and sort by modified date to find a log file
