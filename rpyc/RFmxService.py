@@ -72,6 +72,10 @@ class RFmxService(rpyc.Service):
     exposed_WlanTK = import_dotnet_submodule("NationalInstruments.RFToolkits.Interop.Fx40", "NationalInstruments.RFToolkits.Interop")     
 
     @staticmethod
+    def import_module(name, package=None):
+        return importlib.import_module(name, package)
+
+    @staticmethod
     def complex_waveform(net_type, param):
         return RFmxService.exposed_NationalInstruments.ComplexWaveform[net_type](param)
     
