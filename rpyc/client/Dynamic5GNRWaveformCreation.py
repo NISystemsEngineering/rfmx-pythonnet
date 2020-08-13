@@ -1,9 +1,15 @@
 """
-Example for dynamically generating 5GNR waveforms with the RFmx Waveform Creator Batch Waveform Utility
+Example for remote dynamic generation of 5GNR waveforms with the RFmx Waveform Creator Batch Waveform Utility
 """
 
-import tempfile
-import os
+import rpyc
+
+# connect and import libraries
+host_name = 'semoore-pxi'
+host_port = 18861
+conn = rpyc.connect(host_name, host_port)
+os = conn.root.import_module('os')
+tempfile = conn.root.import_module('tempfile')
 
 # path to the BatchWaveformCreator exe
 wc_dir = os.path.join(os.environ['ProgramFiles'], 'National Instruments', 'RFmxWaveformCreator', 'BatchWaveformCreationUtility')
