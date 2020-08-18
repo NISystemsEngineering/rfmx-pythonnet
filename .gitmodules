@@ -1,0 +1,3 @@
+[submodule "batchwave"]
+	path = batchwave
+	url = https://github.com/NISystemsEngineering/batchwave.git
