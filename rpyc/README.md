@@ -65,6 +65,17 @@ You can read more about RPyC boxing and proxying [here](https://rpyc.readthedocs
 * All hardware is to be installed on the server.
 * The examples require a vector signal generator and a vector signal analyzer.  The examples were tested and developed using an NI PXIe-5840 VST.
 
+# Batchwave
+The [batchwave](https://github.com/NISystemsEngineering/batchwave) submodule enables dynamic waveform creation from a 
+remote client. You must initialize this submodule for the [batchwave remote shipping example](https://github.com/NISystemsEngineering/batchwave/blob/master/examples/nr_generate_remote_waveform.py)
+to work out-of-the-box.
+
+`git submodule update --init`
+
+To update the batchwave source to latest:
+
+`git submodule update --remote`
+
 # Value Statement
 Using Python, we can remotely execute NI instrument drivers running on a Windows system (PXIe controller for example) from a client that supports Python.
 
