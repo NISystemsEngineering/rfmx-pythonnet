@@ -1,12 +1,3 @@
-import clr, sys, os
-
-sys.path.insert(1,r"C:\Users\LocalAdmin\Documents\stchan\PythonNET_RFmxXC\bin")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx45")
-clr.AddReference("NationalInstruments")
-
-
-import NationalInstruments.ModularInstruments.NIRfsg as Rfsg
-from NationalInstruments import *
 import time
 
 overflow = False
