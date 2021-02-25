@@ -1,21 +1,5 @@
 import clr, sys, os
 
-dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
-dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsa 20.0.0'
-assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
-
-sys.path.append(assy_path)
-
-dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
-dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 20.0.0'
-assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
-print(".NET Library: " + dotNetClassLibrary)
-
-sys.path.append(assy_path)
-
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsa.Fx40")
-clr.AddReference("NationalInstruments.Common")
-from NationalInstruments import *
 import Support.SignalAnalyzer as sa
 import Support.SignalGenerator as sg
 
