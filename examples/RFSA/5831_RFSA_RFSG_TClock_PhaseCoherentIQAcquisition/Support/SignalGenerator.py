@@ -1,15 +1,21 @@
 import clr, sys, os
 
-sys.path.insert(1,r"C:\Users\LocalAdmin\Documents\stchan\PythonNET_RFmxXC\bin")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx45")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40")
-clr.AddReference("NationalInstruments.ModularInstruments.TClock.Fx45")
-clr.AddReference("NationalInstruments")
-clr.AddReference("NationalInstruments.Common")
+dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
+dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 20.0.0'
+dotNetTClockLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.TClock 3.2.0'
+assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
+assy_path2 = os.path.join(dotNetFWDirectory, dotNetTClockLibrary)
 
-import System
+sys.path.append(assy_path)
+sys.path.append(assy_path2)
+
+
+clr.AddReference("NationalInstruments.ModularInstruments.TClock.Fx40")
+clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx40")
+clr.AddReference("NationalInstruments.Common")
+clr.AddReference("NationalInstruments.ModularInstruments.Common")
+
 import NationalInstruments.ModularInstruments.NIRfsg as Rfsg
-import NationalInstruments.ModularInstruments.NIRfsgPlayback as RfsgPlayback
 from NationalInstruments import *
 import NationalInstruments.ModularInstruments.SystemServices.TimingServices as TClck
 

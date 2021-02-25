@@ -1,21 +1,5 @@
 import clr, sys, os
 
-sys.path.insert(1,r"C:\Users\LocalAdmin\Documents\GitHub\stchan-sandbox\BarcelonaSweepSGPhase_ContinuousSA\bin")
-clr.AddReference("NationalInstruments.RFmx.InstrMX.Fx40")
-clr.AddReference("NationalInstruments.RFmx.NRMX.Fx40")
-clr.AddReference("NationalInstruments.RFmx.SpecanMX.Fx40")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx45")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40")
-clr.AddReference("NationalInstruments.RFmx.CrossCorrelation.Fx45")
-clr.AddReference("NationalInstruments.ModularInstruments.TClock.Fx45")
-clr.AddReference("NationalInstruments")
-
-import NationalInstruments.RFmx.InstrMX as InstrMX
-import NationalInstruments.RFmx.NRMX as NRMX
-import NationalInstruments.ModularInstruments.NIRfsg as Rfsg
-import NationalInstruments.ModularInstruments.NIRfsgPlayback as RfsgPlayback
-import NationalInstruments.RFmx.SpecAnMX as SpecanMX
-from NationalInstruments import *
 import Support.SignalAnalyzer as sa
 import Support.SignalGenerator as sg
 
