@@ -1,20 +1,20 @@
 import clr, sys, os
 
-sys.path.insert(1,r"C:\Users\LocalAdmin\Documents\GitHub\stchan-sandbox\BarcelonaSweepSGPhase_ContinuousSA\bin")
-clr.AddReference("NationalInstruments.RFmx.InstrMX.Fx40")
-clr.AddReference("NationalInstruments.RFmx.NRMX.Fx40")
-clr.AddReference("NationalInstruments.RFmx.SpecanMX.Fx40")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsg.Fx45")
-clr.AddReference("NationalInstruments.ModularInstruments.NIRfsgPlayback.Fx40")
-clr.AddReference("NationalInstruments.RFmx.CrossCorrelation.Fx45")
-clr.AddReference("NationalInstruments.ModularInstruments.TClock.Fx45")
-clr.AddReference("NationalInstruments")
+dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
+dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsa 20.0.0'
+assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
 
-import NationalInstruments.RFmx.InstrMX as InstrMX
-import NationalInstruments.RFmx.NRMX as NRMX
-import NationalInstruments.ModularInstruments.NIRfsg as Rfsg
-import NationalInstruments.ModularInstruments.NIRfsgPlayback as RfsgPlayback
-import NationalInstruments.RFmx.SpecAnMX as SpecanMX
+sys.path.append(assy_path)
+
+dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
+dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsg 20.0.0'
+assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
+print(".NET Library: " + dotNetClassLibrary)
+
+sys.path.append(assy_path)
+
+clr.AddReference("NationalInstruments.ModularInstruments.NIRfsa.Fx40")
+clr.AddReference("NationalInstruments.Common")
 from NationalInstruments import *
 import Support.SignalAnalyzer as sa
 import Support.SignalGenerator as sg

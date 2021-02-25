@@ -1,18 +1,19 @@
 import clr, sys, os
 
-bin_path = r"C:\Users\LocalAdmin\Documents\GitHub\stchan-sandbox\BarcelonaSweepSGPhase_ContinuousSA\bin"
-sys.path.insert(0,bin_path)
+dotNetFWDirectory = r"C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32"
+dotNetClassLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.NIRfsa 20.0.0'
+dotNetTClockLibrary = r'v4.0.30319\NationalInstruments.ModularInstruments.TClock 3.2.0'
+assy_path = os.path.join(dotNetFWDirectory, dotNetClassLibrary)
+assy_path2 = os.path.join(dotNetFWDirectory, dotNetTClockLibrary)
 
-clr.AddReference(bin_path + r"\NationalInstruments.ModularInstruments.TClock.Fx40.dll")
-clr.AddReference(bin_path + r"\NationalInstruments.RFmx.InstrMX.Fx40.dll")
-clr.AddReference(bin_path + r"\NationalInstruments.RFmx.SpecanMX.Fx40.dll")
-clr.AddReference(bin_path + r"\NationalInstruments.ModularInstruments.Common.dll")
-clr.AddReference(bin_path + r"\NationalInstruments.Common.dll")
-clr.AddReference(bin_path + r"\NationalInstruments.ModularInstruments.NIRfsa.Fx45.dll")
+sys.path.append(assy_path)
+sys.path.append(assy_path2)
 
-import System
-import NationalInstruments.RFmx.InstrMX as InstrMX
-import NationalInstruments.RFmx.SpecAnMX as SpecanMX
+clr.AddReference("NationalInstruments.ModularInstruments.TClock.Fx40")
+clr.AddReference("NationalInstruments.ModularInstruments.NIRfsa.Fx40")
+clr.AddReference("NationalInstruments.Common")
+clr.AddReference("NationalInstruments.ModularInstruments.Common")
+
 import NationalInstruments.ModularInstruments.SystemServices.TimingServices as TClck
 import NationalInstruments.ModularInstruments.NIRfsa as NIRfsa
 from NationalInstruments import PrecisionTimeSpan
