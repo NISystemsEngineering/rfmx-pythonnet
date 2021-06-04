@@ -45,7 +45,7 @@ for i, s11, s21, s12, s22 in zip(range(len(freq)), fwd_ref_gain, fwd_gain, rever
 # create a simulated VST to demonstrate de-embedding configuration
 rfsg = NIRfsg.NIRfsg('sim', True, False, 'Simulate=1, DriverSetup=Model:5840')
 
-# load s-parameter array into RFSG with orientation of port 2 towards the DUT
+# load s-parameter array into RFSG with orientation of port 2 towards the DUT, use indexer to select instrument port
 rfsg.Deembedding[""].CreateDeembeddingSParameterTableArray('exampleTable', freq, s2p, NIRfsg.RfsgSParameterOrientation.Port2TowardsDut)
 
 rfsg.RF.PowerLevel = 0  # if running on real hardware, the power level needs to be set to prevent potential errors
