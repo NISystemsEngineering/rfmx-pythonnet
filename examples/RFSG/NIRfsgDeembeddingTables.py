@@ -52,7 +52,7 @@ rfsg.RF.PowerLevel = 0  # if running on real hardware, the power level needs to 
 rfsg.RF.Frequency = 1.5e9  # change this value to observe effect on returned de-emdedding table below
 
 # fetch and index individual s-parameters
-s_param = rfsg.Deembedding[""].GetDeembeddingSParameters(None)
+s_param = rfsg.Deembedding.GetDeembeddingSParameters(None)  # looks to sg configuration for selected port, etc.
 s11 = s_param.GetValue(0, 0)
 s21 = s_param.GetValue(1, 0)
 s12 = s_param.GetValue(0, 1)
