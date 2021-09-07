@@ -13,7 +13,7 @@ import NationalInstruments.ModularInstruments.NIRfsgPlayback as NIRfsgPlayback  
 
 # read waveform from file
 waveform_path = os.path.abspath(r"../../waveforms/nr100.tdms")
-waveform = NationalInstruments.ComplexWaveform[NationalInstruments.ComplexDouble](0)  # for selecting correct overload
+waveform = NationalInstruments.ComplexWaveform[NationalInstruments.ComplexSingle](0)  # for selecting correct overload
 _, waveform = NIRfsgPlayback.NIRfsgPlayback.ReadWaveformFromFileComplex(waveform_path, waveform)
 
 # convert to python types
